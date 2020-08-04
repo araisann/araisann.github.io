@@ -232,6 +232,104 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2020/07/24/flutter/Flutter的版本号/">
+        <h2 class="post-title">
+            Flutter的版本号
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/flutter/Flutter的版本号/">
+
+        <div class="post-content-preview">
+            Flutter的版本号pubspec.yaml  
+1version: 1.0.1+2
+
+123PackageInfo packageInfo &#x3D; await PackageInfo.fromPlatform();Config.appVersion &#x3D; packageInfo.buildNumber;&#x2F;&#x2F;&#39;2&#39;Config.app.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2020/07/24/错误记录/No_MediaQuery_widget_found/">
+        <h2 class="post-title">
+            No MediaQuery widget found
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/错误记录/No_MediaQuery_widget_found/">
+
+        <div class="post-content-preview">
+            FlutterEasyLoading导致表现：TextField长按报No MediaQuery widget found。原因：需要被MaterialApp包裹。解决：main.dart 的 MaterialApp 不要被 FlutterEasyLoading 包裹。改为  
+12345678return MaterialApp(      builder: (BuildContex.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+        <h2 class="post-title">
+            cutButtonlabel called on null
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+
+        <div class="post-content-preview">
+            长按TextField出现表现：长按TextField提示cutButtonlabel called on null。  
+原因：复制粘贴按钮未进行本地化。  
+解决：  
+pubspec.yaml 中，在dependencies 的flutter:sdk:flutter下增加flutter_localizations  
+12345dependencies:  flutter:   .........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2020/06/23/flutter/Provider/">
         <h2 class="post-title">
             Provider：全局State管理
@@ -457,111 +555,6 @@ ScrollablePositionedListScrollablePositionedList类似ListView，提供滚动到
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/11/26/flutter/Widget基础/">
-        <h2 class="post-title">
-            Flutter Widget基础
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/26/flutter/Widget基础/">
-
-        <div class="post-content-preview">
-            
-
-一、 Container(容器组件)可以用来控制大小、背景颜色、边框、阴影、内外边距和内容排列方式等。  
-1234567891011121314Container(&#123;  Key key,  double width,  double height,  this.margin,  this.padding,  Color color,  this.alignment,  .........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月26日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/26/flutter/Drawer侧边栏抽屉/">
-        <h2 class="post-title">
-            Drawer侧边栏抽屉
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/26/flutter/Drawer侧边栏抽屉/">
-
-        <div class="post-content-preview">
-            打开侧边栏抽屉：  
-1234567891011class _HomePageState extends State&lt;HomePage&gt; &#123;  GlobalKey&lt;ScaffoldState&gt; _scaffoldKey = new GlobalKey();  @override  Widget build(BuildContext context) &.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月26日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/14/android/协程Coroutines/">
-        <h2 class="post-title">
-            协程Coroutines
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/14/android/协程Coroutines/">
-
-        <div class="post-content-preview">
-            特点：  
-
-实现简单  
-比线程性能消耗的少很多  
-
-协程必须运行中协程作用域中，即CoroutineScope  
-
-launch：无法返回   
-async：  接收返回   
-
-suspend：挂起函数，和生命周期没有关系，离开理解后，还需要继续执行的任务。  
-最简单的协程例子1234GlobalScope.launch &#123; // 在后台启动一个新的协程，不阻塞U.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月14日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -641,7 +634,7 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="40">flutter</a>
+            <a href="/tags/#flutter" title="flutter" rel="41">flutter</a>
             
         
             
@@ -668,6 +661,10 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
             <a href="/tags/#android系统相关" title="android系统相关" rel="7">android系统相关</a>
             
         
+            
+            <a href="/tags/#错误记录" title="错误记录" rel="2">错误记录</a>
+            
+        
     </div>
 </section>
 
@@ -679,23 +676,23 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
     <ul>
       
         <li>
+          <a href="/2020/07/24/flutter/Flutter%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7/">Flutter的版本号</a>
+        </li>
+      
+        <li>
+          <a href="/2020/07/24/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/No_MediaQuery_widget_found/">No MediaQuery widget found</a>
+        </li>
+      
+        <li>
+          <a href="/2020/07/24/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/cutButtonlabel_call_on_null/">cutButtonlabel called on null</a>
+        </li>
+      
+        <li>
           <a href="/2020/06/23/flutter/Provider/">Provider：全局State管理</a>
         </li>
       
         <li>
           <a href="/2020/06/23/flutter/%E5%9F%BA%E6%9C%AC%E6%8A%80%E5%B7%A7/">常用技巧</a>
-        </li>
-      
-        <li>
-          <a href="/2020/06/23/flutter/%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7/">基础属性</a>
-        </li>
-      
-        <li>
-          <a href="/2020/06/23/flutter/%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6%E6%8A%80%E5%B7%A7/">第三方组件技巧</a>
-        </li>
-      
-        <li>
-          <a href="/2019/12/11/flutter/Google%E6%8F%90%E4%BE%9B%E7%9A%84Flutter_Widgets/">Google提供的Flutter_Widgets</a>
         </li>
       
     </ul>
