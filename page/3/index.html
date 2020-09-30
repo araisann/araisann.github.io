@@ -232,6 +232,141 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/11/09/linux/Linux生成随机字符串/">
+        <h2 class="post-title">
+            Linux生成随机字符串
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/09/linux/Linux生成随机字符串/">
+
+        <div class="post-content-preview">
+            使用openssl1openssl rand -base64 15
+
+使用/dev/urandom1&lt; &#x2F;dev&#x2F;urandom tr -cd _A-Z-a-z-0-9@#^~\ | head -c $&#123;1:-15&#125;; echo
+
+使用sha256sum算法处理秒数，取前15位1date +%s | sha256sum | base64 |.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月09日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/11/07/android/Navigation/">
+        <h2 class="post-title">
+            Navigation Fragment
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/07/android/Navigation/">
+
+        <div class="post-content-preview">
+            使用Navigation实现多Fragment单Activity应用   
+示例代码位置： https://gitee.com/alois/NavigationTest     
+MainActivity部分activity_main.xml:fragment容器属性：  
+
+app:defaultNavHost=”true” : true代表拦截系统的back按键。  
+app:na.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月07日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/11/05/android系统相关/删除内置应用/">
+        <h2 class="post-title">
+            删除内置应用
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/05/android系统相关/删除内置应用/">
+
+        <div class="post-content-preview">
+            
+
+123456adb rootadb remount  //否则为只读目录无法删除  adb shellcd system/priv-applsrm -rf ...
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月05日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/11/04/android/kotlin语法/">
+        <h2 class="post-title">
+            Kotlin语法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/04/android/kotlin语法/">
+
+        <div class="post-content-preview">
+            表达式函数体1fun max(a: Int, b: Int)  = if(a &gt; b)  a else b
+
+
+顶层函数直接把方法写到kt文件中而不是类中
+1234567// 文件名 join.ktpackage stringsfun joinToString() : String &#123;...&#125;/* Java */import strings.JoinKt;Jo.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月04日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/10/24/web/css/">
         <h2 class="post-title">
             css
@@ -433,139 +568,6 @@ hexo _config.yml1234567891011121314151617181920212223242526272829303132333435363
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/动画/">
-        <h2 class="post-title">
-            Flutter动画
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/动画/">
-
-        <div class="post-content-preview">
-            
-
-
-AnimationController控制器，指定时间。在屏幕刷新的每一帧，就会生成一个新的值。默认情况下，AnimationController在给定的时间段内会线性的生成从0.0到1.0的数字。AnimationController需要一个sync参数，用来防止屏幕外动画。但widget不显示时，自动暂停动画。显示后恢复。通过调用controller?.forward();启.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/TabBar页签/">
-        <h2 class="post-title">
-            TabBar页签
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/TabBar页签/">
-
-        <div class="post-content-preview">
-            
-
-TabController.index从0开始  
-TabController123456789101112131415class _FollowingGlobalPageState extends State&lt;FollowingGlobalPage&gt;    with SingleTickerProviderStateMixin &#123;  TabControlle.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Flutter状态栏高度/">
-        <h2 class="post-title">
-            状态栏高度
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Flutter状态栏高度/">
-
-        <div class="post-content-preview">
-            
-
-MediaQuery.of(context).padding.top;
-...
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Fluro路由管理/">
-        <h2 class="post-title">
-            Fluro路由管理
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Fluro路由管理/">
-
-        <div class="post-content-preview">
-            
-
-1fluro: ^1.5.0
-缺陷：通过url的方式传递参数，不支持中文如/page?params1=标题&amp;params=颜色需要进行编码转换实测英文用这种转码方式也不会有问题  
-1234567891011121314151617181920import &#x27;dart:convert&#x27;;/// fluro 参数编码解码 工具 类class FluroCo.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -653,7 +655,7 @@ MediaQuery.of(context).padding.top;
             
         
             
-            <a href="/tags/#macOS" title="macOS" rel="3">macOS</a>
+            <a href="/tags/#macOS" title="macOS" rel="4">macOS</a>
             
         
             
@@ -677,7 +679,11 @@ MediaQuery.of(context).padding.top;
             
         
             
-            <a href="/tags/#错误记录" title="错误记录" rel="2">错误记录</a>
+            <a href="/tags/#错误记录" title="错误记录" rel="3">错误记录</a>
+            
+        
+            
+            <a href="/tags/#iOS开发" title="iOS开发" rel="1">iOS开发</a>
             
         
     </div>
@@ -691,23 +697,23 @@ MediaQuery.of(context).padding.top;
     <ul>
       
         <li>
+          <a href="/2020/09/30/flutter/pushName%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">pushNamed页面跳转</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/18/iOS%E5%BC%80%E5%8F%91/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81/">为第三方库添加中文支持</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/14/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/">错误记录</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/14/macOS/OSX%E8%8E%B7%E5%8F%96ip%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C%E7%9A%84%E9%97%AE%E9%A2%98/">OS X获取ip无法连接网络的问题</a>
+        </li>
+      
+        <li>
           <a href="/2020/07/24/flutter/Flutter%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7/">Flutter的版本号</a>
-        </li>
-      
-        <li>
-          <a href="/2020/07/24/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/No_MediaQuery_widget_found/">No MediaQuery widget found</a>
-        </li>
-      
-        <li>
-          <a href="/2020/07/24/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/cutButtonlabel_call_on_null/">cutButtonlabel called on null</a>
-        </li>
-      
-        <li>
-          <a href="/2020/06/23/flutter/Provider/">Provider：全局State管理</a>
-        </li>
-      
-        <li>
-          <a href="/2020/06/23/flutter/%E5%9F%BA%E6%9C%AC%E6%8A%80%E5%B7%A7/">常用技巧</a>
         </li>
       
     </ul>

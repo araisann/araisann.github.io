@@ -232,6 +232,136 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/10/22/flutter/自定义AppBar/">
+        <h2 class="post-title">
+            自定义AppBar
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/flutter/自定义AppBar/">
+
+        <div class="post-content-preview">
+            
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647import &#x27;package:flutter/material.dart&#x27;;///带返回按钮的简单appbarclass CustomAppBar extends StatelessWidge.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/flutter/Scoped_Model/">
+        <h2 class="post-title">
+            Scoped_Model：全局State管理
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/flutter/Scoped_Model/">
+
+        <div class="post-content-preview">
+            多个model合并1class MainModel extends Model with AModel,BModel,CModel&#123;&#125;
+并在flutter工程根目录下创建analysis_options.yaml  
+123analyzer:  errors:    mixin_inherits_from_not_object: ignore
+
+
+使用这种方法可是使.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/flutter/Flare制作不需要代码交互的动画/">
+        <h2 class="post-title">
+            Flare动画
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/flutter/Flare制作不需要代码交互的动画/">
+
+        <div class="post-content-preview">
+            Flare制作部分在https://www.2dimensions.com 上创建自己的flare，拖动调整关键帧，形成动画。菱形代表关键帧。动画制作成功后，左下侧面板Untitled，改成自定义的动画名称比如anime。export动画，选择Binary，打开Duration from Last KeyFrame。下载生成的flr文件。  
+Flutter代码部分在根目录下创建flr.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/flutter/单例/">
+        <h2 class="post-title">
+            单例
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/flutter/单例/">
+
+        <div class="post-content-preview">
+            123456789class Singleton &#123;  static final Singleton _singleton = new Singleton._internal();  factory Singleton() &#123;    return _singleton;  &#125;  Singleton._internal();&#125;
+
+就算new 多次，.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/10/22/flutter/Eventbus消息总线/">
         <h2 class="post-title">
             Eventbus消息总线
@@ -249,38 +379,6 @@
             1234567891011//页面A中... //监听登录事件bus.on(&quot;login&quot;, (arg) &#123;  // do something&#125;);//登录页B中...//登录成功后触发登录事件，页面A中订阅者会被调用bus.emit(&quot;login&quot;, userInfo);
 
 1234567891011121314151617.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/页面跳转/">
-        <h2 class="post-title">
-            页面跳转
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/页面跳转/">
-
-        <div class="post-content-preview">
-            1Navigator.push(context,  new MaterialPageRoute(builder: (conxt) =&gt; new SecondScreen()));
-
-12Map coordinates = await Navigator.of(context).pushNamed(&#x27;/location&#x27;);Navigator.of(contex.........
         </div>
     </a>
     
@@ -459,107 +557,6 @@ plugin package是一种调用特定平台，通过platform chann.........
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/构建Release版本/">
-        <h2 class="post-title">
-            Flutter构建Release版本
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/构建Release版本/">
-
-        <div class="post-content-preview">
-            创建一个key文件1keytool -genkey -v -keystore ~/workspace/zwtx.jks -keyalg RSA -keysize 2048 -validity 10000 -alias wifimanager
-在flutter工程/android/目录下创建key.properties写入key的信息  
-1234storePassword=zwtxrj.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Flutter直接调用原生页面/">
-        <h2 class="post-title">
-            Flutter直接调用原生页面，并接收返回参数
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Flutter直接调用原生页面/">
-
-        <div class="post-content-preview">
-            可参考 “Flutter 创建plugin package插件” 条目  
-
-flutter  部分   
-
-1234import &#x27;package:flutter/services.dart&#x27;; //通道名称为samples.flutter.io/battery，和android原生中接收的一样 static const platform = const Meth.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/零散知识点/">
-        <h2 class="post-title">
-            Flutter零散知识点
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/零散知识点/">
-
-        <div class="post-content-preview">
-            
-
-弧度和角度换算1234//角度转弧度num degToRad(num deg) =&gt; deg * (pi / 180.0);//弧度转角度num radToDeg(num rad) =&gt; rad * (180.0 / pi);
-
-对比实例是否相等可以引入equatable实现
-12import &#x27;package:equatable/equatable.dart.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -647,7 +644,7 @@ flutter  部分
             
         
             
-            <a href="/tags/#macOS" title="macOS" rel="3">macOS</a>
+            <a href="/tags/#macOS" title="macOS" rel="4">macOS</a>
             
         
             
@@ -671,7 +668,11 @@ flutter  部分
             
         
             
-            <a href="/tags/#错误记录" title="错误记录" rel="2">错误记录</a>
+            <a href="/tags/#错误记录" title="错误记录" rel="3">错误记录</a>
+            
+        
+            
+            <a href="/tags/#iOS开发" title="iOS开发" rel="1">iOS开发</a>
             
         
     </div>
@@ -685,23 +686,23 @@ flutter  部分
     <ul>
       
         <li>
+          <a href="/2020/09/30/flutter/pushName%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">pushNamed页面跳转</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/18/iOS%E5%BC%80%E5%8F%91/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81/">为第三方库添加中文支持</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/14/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/">错误记录</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/14/macOS/OSX%E8%8E%B7%E5%8F%96ip%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C%E7%9A%84%E9%97%AE%E9%A2%98/">OS X获取ip无法连接网络的问题</a>
+        </li>
+      
+        <li>
           <a href="/2020/07/24/flutter/Flutter%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7/">Flutter的版本号</a>
-        </li>
-      
-        <li>
-          <a href="/2020/07/24/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/No_MediaQuery_widget_found/">No MediaQuery widget found</a>
-        </li>
-      
-        <li>
-          <a href="/2020/07/24/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/cutButtonlabel_call_on_null/">cutButtonlabel called on null</a>
-        </li>
-      
-        <li>
-          <a href="/2020/06/23/flutter/Provider/">Provider：全局State管理</a>
-        </li>
-      
-        <li>
-          <a href="/2020/06/23/flutter/%E5%9F%BA%E6%9C%AC%E6%8A%80%E5%B7%A7/">常用技巧</a>
         </li>
       
     </ul>

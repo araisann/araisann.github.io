@@ -232,6 +232,137 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2020/06/23/flutter/第三方组件技巧/">
+        <h2 class="post-title">
+            第三方组件技巧
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/06/23/flutter/第三方组件技巧/">
+
+        <div class="post-content-preview">
+            第三方组件技巧fluromain.dart初始化
+123MaterialApp(          initialRoute: Routes.root,          onGenerateRoute: Routes.router.generator),
+
+跳转登录，清除页面栈  
+123Navigator.of(context).popUntil(ModalRoute.withNa.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年06月23日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/12/11/flutter/Google提供的Flutter_Widgets/">
+        <h2 class="post-title">
+            Google提供的Flutter_Widgets
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/12/11/flutter/Google提供的Flutter_Widgets/">
+
+        <div class="post-content-preview">
+            flutter_widgets是由Google提供，但不是来自Flutter团队的第三方组件。  
+1flutter_widgets: ^0.1.7+1
+
+​    
+ScrollablePositionedListScrollablePositionedList类似ListView，提供滚动到指定元素的功能。  
+12345678910111213141516171819import.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年12月11日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/12/07/flutter/HTML相关/">
+        <h2 class="post-title">
+            HTML相关
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/12/07/flutter/HTML相关/">
+
+        <div class="post-content-preview">
+            去掉Html代表的标签html: ^0.14.0+3  
+1234import &#x27;package:html/parser.dart&#x27; show parse;var htmlStr = &quot;&lt;![CDATA[时政频道]]&gt;&quot;var text = parse(htmlStr).documentElement.text;//text =  时政频道...
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年12月07日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/11/28/flutter/Card_Container根据子View宽度自动适应宽度/">
+        <h2 class="post-title">
+            Card、Container根据子View宽度自动适应宽度
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/28/flutter/Card_Container根据子View宽度自动适应宽度/">
+
+        <div class="post-content-preview">
+            如Card内嵌Text，根据Text文字长度自动调整宽度。    
+12345678910111213141516171819202122Flex(        crossAxisAlignment: CrossAxisAlignment.start,        direction: Axis.vertical,        mainAxisSize: MainAxisSize.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月28日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/11/26/flutter/Widget基础/">
         <h2 class="post-title">
             Flutter Widget基础
@@ -431,141 +562,6 @@ build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/11/09/linux/Linux生成随机字符串/">
-        <h2 class="post-title">
-            Linux生成随机字符串
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/09/linux/Linux生成随机字符串/">
-
-        <div class="post-content-preview">
-            使用openssl1openssl rand -base64 15
-
-使用/dev/urandom1&lt; &#x2F;dev&#x2F;urandom tr -cd _A-Z-a-z-0-9@#^~\ | head -c $&#123;1:-15&#125;; echo
-
-使用sha256sum算法处理秒数，取前15位1date +%s | sha256sum | base64 |.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月09日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/07/android/Navigation/">
-        <h2 class="post-title">
-            Navigation Fragment
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/07/android/Navigation/">
-
-        <div class="post-content-preview">
-            使用Navigation实现多Fragment单Activity应用   
-示例代码位置： https://gitee.com/alois/NavigationTest     
-MainActivity部分activity_main.xml:fragment容器属性：  
-
-app:defaultNavHost=”true” : true代表拦截系统的back按键。  
-app:na.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月07日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/05/android系统相关/删除内置应用/">
-        <h2 class="post-title">
-            删除内置应用
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/05/android系统相关/删除内置应用/">
-
-        <div class="post-content-preview">
-            
-
-123456adb rootadb remount  //否则为只读目录无法删除  adb shellcd system/priv-applsrm -rf ...
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月05日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/04/android/kotlin语法/">
-        <h2 class="post-title">
-            Kotlin语法
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/04/android/kotlin语法/">
-
-        <div class="post-content-preview">
-            表达式函数体1fun max(a: Int, b: Int)  = if(a &gt; b)  a else b
-
-
-顶层函数直接把方法写到kt文件中而不是类中
-1234567// 文件名 join.ktpackage stringsfun joinToString() : String &#123;...&#125;/* Java */import strings.JoinKt;Jo.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月04日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -653,7 +649,7 @@ app:na.........
             
         
             
-            <a href="/tags/#macOS" title="macOS" rel="3">macOS</a>
+            <a href="/tags/#macOS" title="macOS" rel="4">macOS</a>
             
         
             
@@ -677,7 +673,11 @@ app:na.........
             
         
             
-            <a href="/tags/#错误记录" title="错误记录" rel="2">错误记录</a>
+            <a href="/tags/#错误记录" title="错误记录" rel="3">错误记录</a>
+            
+        
+            
+            <a href="/tags/#iOS开发" title="iOS开发" rel="1">iOS开发</a>
             
         
     </div>
@@ -691,23 +691,23 @@ app:na.........
     <ul>
       
         <li>
+          <a href="/2020/09/30/flutter/pushName%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">pushNamed页面跳转</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/18/iOS%E5%BC%80%E5%8F%91/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81/">为第三方库添加中文支持</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/14/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/">错误记录</a>
+        </li>
+      
+        <li>
+          <a href="/2020/09/14/macOS/OSX%E8%8E%B7%E5%8F%96ip%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C%E7%9A%84%E9%97%AE%E9%A2%98/">OS X获取ip无法连接网络的问题</a>
+        </li>
+      
+        <li>
           <a href="/2020/07/24/flutter/Flutter%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7/">Flutter的版本号</a>
-        </li>
-      
-        <li>
-          <a href="/2020/07/24/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/No_MediaQuery_widget_found/">No MediaQuery widget found</a>
-        </li>
-      
-        <li>
-          <a href="/2020/07/24/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/cutButtonlabel_call_on_null/">cutButtonlabel called on null</a>
-        </li>
-      
-        <li>
-          <a href="/2020/06/23/flutter/Provider/">Provider：全局State管理</a>
-        </li>
-      
-        <li>
-          <a href="/2020/06/23/flutter/%E5%9F%BA%E6%9C%AC%E6%8A%80%E5%B7%A7/">常用技巧</a>
         </li>
       
     </ul>

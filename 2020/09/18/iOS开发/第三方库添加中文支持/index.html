@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          页面跳转 - null
+          为第三方库添加中文支持 - null
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2019/10/22/flutter/页面跳转/">
+    <link rel="canonical" href="https://araisann.github.io/2020/09/18/iOS开发/第三方库添加中文支持/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -122,14 +122,14 @@
                     <div class="post-heading" style="padding:40px">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#flutter" title="flutter">flutter</a>
+                              <a class="tag" href="/tags/#iOS开发" title="iOS开发">iOS开发</a>
                             
                         </div>
-                        <h1>页面跳转</h1>
+                        <h1>为第三方库添加中文支持</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
-                            2019年10月22日
+                            2020年09月18日
                         </span>
                     </div>
                 
@@ -229,11 +229,19 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Navigator.push(context,  <span class="keyword">new</span> MaterialPageRoute(builder: (conxt) =&gt; <span class="keyword">new</span> SecondScreen()));</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Map</span> coordinates = <span class="keyword">await</span> Navigator.of(context).pushNamed(<span class="string">&#x27;/location&#x27;</span>);</span><br><span class="line">Navigator.of(context).pop(&#123;<span class="string">&quot;lat&quot;</span>:<span class="number">43.821757</span>,<span class="string">&quot;long&quot;</span>:<span class="number">-79.226392</span>&#125;);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转页面，用await等待返回。页面返回的值存在result</span></span><br><span class="line"> <span class="keyword">final</span> result = <span class="keyword">await</span> Navigator.push(context, <span class="keyword">new</span> MaterialPageRoute(builder: (context) =&gt; <span class="keyword">new</span> SecondPage()));</span><br><span class="line"> Scaffold.of(context).showSnackBar(<span class="keyword">new</span> SnackBar(content: Text(<span class="string">&#x27;<span class="subst">$result</span>&#x27;</span>)));</span><br><span class="line"><span class="comment">//pop返回页面，传回字符串</span></span><br><span class="line">Navigator.pop(context, <span class="string">&#x27;hi flutter&#x27;</span>);</span><br></pre></td></tr></table></figure>
+                <ul>
+<li><p>工程目录右键点击Runner，New File…  </p>
+</li>
+<li><p>添加一个String File类型的文件，起名Localizable.string  </p>
+</li>
+<li><p>在Runner的info的Localizations中，新增一个Chinese,Simplified</p>
+</li>
+<li><p>打开新增的Localizable.string，添加语言翻译，如：</p>
+<p>“Done” = “选好了”;</p>
+</li>
+<li><p>在右侧的Localization中，勾选Chinese,Simplified  </p>
+</li>
+</ul>
 
                 
 
@@ -242,12 +250,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2019/10/22/flutter/Eventbus消息总线/" data-toggle="tooltip" data-placement="top" title="Eventbus消息总线">&larr; Previous post</a>
+                            <a href="/2020/09/30/flutter/pushName页面跳转/" data-toggle="tooltip" data-placement="top" title="pushNamed页面跳转">&larr; Previous post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2019/10/22/flutter/绘制：CustomPaint、CustomPainter/" data-toggle="tooltip" data-placement="top" title="绘制：CustomPaint、CustomPainter">Next post &rarr;</a>
+                            <a href="/2020/09/14/错误记录/错误记录/" data-toggle="tooltip" data-placement="top" title="错误记录">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -297,7 +305,7 @@
                     <h5><a href="/tags/">Tags</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#flutter" title="flutter">flutter</a>
+                          <a class="tag" href="/tags/#iOS开发" title="iOS开发">iOS开发</a>
                         
                     </div>
                 </section>
@@ -454,7 +462,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2019/10/22/flutter/%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2020/09/18/iOS%E5%BC%80%E5%8F%91/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
