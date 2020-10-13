@@ -232,6 +232,70 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/11/12/android/Data_Binding/">
+        <h2 class="post-title">
+            Data Binding
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/12/android/Data_Binding/">
+
+        <div class="post-content-preview">
+            data binding xml中无须做null判断，自带  
+module的build.gradle12345android &#123;    dataBinding &#123;       enabled true    &#125;&#125;
+
+xml自动创建：在xml文件的根节点点击，就会出现灯泡，点击灯泡可选“Convert to data binding layout.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月12日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/11/12/android/Android_LiveData/">
+        <h2 class="post-title">
+            LiveData(ViewModel)
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/12/android/Android_LiveData/">
+
+        <div class="post-content-preview">
+            介绍ViewModel可以自动感应生命周期储存和管理数据。ViewModel从Repository获取数据，把数据提供给View。LiveData在setValue(非UI线程使用postValue)，会根据界面生命周期，回调更新UI界面。  
+build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月12日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/11/09/linux/Linux生成随机字符串/">
         <h2 class="post-title">
             Linux生成随机字符串
@@ -502,72 +566,6 @@ hexo _config.yml1234567891011121314151617181920212223242526272829303132333435363
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/10/23/其他技术/使用SSH_Key连接Github/">
-        <h2 class="post-title">
-            使用SSH连接Github
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/23/其他技术/使用SSH_Key连接Github/">
-
-        <div class="post-content-preview">
-            
-
-创建一个SSH key1ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
-提示输入ssh key的名字Enter passphrase，提示输入ssh时的密码（可以直接按回车无需密码）  
-进入/home/user/.ssh/目录复制刚创建的、带pub后缀的key文件中的内容。粘贴到github的  设置  -  SSH.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月23日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Flutter隐藏状态栏或底部虚拟栏/">
-        <h2 class="post-title">
-            隐藏状态栏或底部虚拟栏
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Flutter隐藏状态栏或底部虚拟栏/">
-
-        <div class="post-content-preview">
-            
-
-12345import&#x27;package:flutter/services.dart&#x27;;//只隐藏状态栏，显示底部栏SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);//恢复状态栏和底部栏SystemChrome.setEnabledSystemUIOverlays(SystemUi.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -651,7 +649,7 @@ hexo _config.yml1234567891011121314151617181920212223242526272829303132333435363
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="41">flutter</a>
+            <a href="/tags/#flutter" title="flutter" rel="42">flutter</a>
             
         
             
@@ -697,6 +695,14 @@ hexo _config.yml1234567891011121314151617181920212223242526272829303132333435363
     <ul>
       
         <li>
+          <a href="/2020/10/13/flutter/TabBar%E9%A1%B5%E7%AD%BE/">TabBar+TabController+TabBarView</a>
+        </li>
+      
+        <li>
+          <a href="/2020/10/13/flutter/vscode%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode常用快捷键</a>
+        </li>
+      
+        <li>
           <a href="/2020/09/30/flutter/pushName%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">pushNamed页面跳转</a>
         </li>
       
@@ -706,14 +712,6 @@ hexo _config.yml1234567891011121314151617181920212223242526272829303132333435363
       
         <li>
           <a href="/2020/09/14/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/">错误记录</a>
-        </li>
-      
-        <li>
-          <a href="/2020/09/14/macOS/OSX%E8%8E%B7%E5%8F%96ip%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C%E7%9A%84%E9%97%AE%E9%A2%98/">OS X获取ip无法连接网络的问题</a>
-        </li>
-      
-        <li>
-          <a href="/2020/07/24/flutter/Flutter%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7/">Flutter的版本号</a>
         </li>
       
     </ul>

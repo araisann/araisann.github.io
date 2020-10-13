@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Flutter动画 - null
+          VsCode常用快捷键 - null
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2019/10/22/flutter/动画/">
+    <link rel="canonical" href="https://araisann.github.io/2020/10/13/flutter/vscode常用快捷键/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -125,11 +125,11 @@
                               <a class="tag" href="/tags/#flutter" title="flutter">flutter</a>
                             
                         </div>
-                        <h1>Flutter动画</h1>
+                        <h1>VsCode常用快捷键</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
-                            2019年10月22日
+                            2020年10月13日
                         </span>
                     </div>
                 
@@ -229,15 +229,33 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <br>
-
-<ul>
-<li><strong>AnimationController</strong><br>控制器，指定时间。在屏幕刷新的每一帧，就会生成一个新的值。<br>默认情况下，AnimationController在给定的时间段内会线性的生成从0.0到1.0的数字。<br>AnimationController需要一个sync参数，用来防止屏幕外动画。但widget不显示时，自动暂停动画。显示后恢复。<br>通过调用controller?.forward();启动动画。<br>通过调用controller?.reverse();反向还原动画。  </li>
-<li>__Animation&lt;&gt; __<br>抽象类。  指定起始和终止的值。<br>&lt;&gt;中的值可以是double，Color，Size等等。<br>实现方式：Tween。  </li>
-<li>__CurvedAnimation __<br>原理类似Animation。但为非线性的曲线。  </li>
-<li>__Tween __<br>Animation&lt;&gt;的实现。指定起始和终止的值。比如colorTween可以指定颜色。<br>Tween.animate传入一个AnimationController。  </li>
-<li><strong>AnimatedWidget</strong><br>将动画的widget封装起来。方便重用。代码见下方。  </li>
-<li><strong>Animation.addListener、Animation.addStatusListener</strong><br>监听器。addListener为帧监听器，addStatusListener为状态监听器。当动画的值改变时调用。  </li>
+                <ul>
+<li><p>格式化代码<br>alt+shift+f</p>
+</li>
+<li><p>唤出packages<br>command+shift+p  </p>
+</li>
+<li><p>跳转光标上/下位置  </p>
+<p>control+-  control+shift+-</p>
+</li>
+<li><p>打开关闭侧边栏   </p>
+<p>command+b</p>
+</li>
+<li><p>复制一行  </p>
+<p>alt+shift+上下方向键</p>
+</li>
+<li><p>在下方插入一行  </p>
+<p>command+enter</p>
+</li>
+<li><p>在上方插入一行   </p>
+<p>command+shift+enter</p>
+</li>
+<li><p>打开文件  </p>
+<p>command+o</p>
+</li>
+<li><p>全屏  </p>
+<p>command+control+f</p>
+</li>
+<li></li>
 </ul>
 
                 
@@ -247,12 +265,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2019/10/22/flutter/Flutter隐藏状态栏或底部虚拟栏/" data-toggle="tooltip" data-placement="top" title="隐藏状态栏或底部虚拟栏">&larr; Previous post</a>
+                            <a href="/2020/10/13/flutter/TabBar页签/" data-toggle="tooltip" data-placement="top" title="TabBar+TabController+TabBarView">&larr; Previous post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2019/10/22/flutter/Flutter状态栏高度/" data-toggle="tooltip" data-placement="top" title="状态栏高度">Next post &rarr;</a>
+                            <a href="/2020/09/30/flutter/pushName页面跳转/" data-toggle="tooltip" data-placement="top" title="pushNamed页面跳转">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -459,7 +477,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2019/10/22/flutter/%E5%8A%A8%E7%94%BB/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2020/10/13/flutter/vscode%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
