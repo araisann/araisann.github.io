@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          git常用命令 - null
+          git基础 - null
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2019/10/22/其他技术/git常用命令/">
+    <link rel="canonical" href="https://araisann.github.io/2020/10/23/其他技术/git基础/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -125,11 +125,11 @@
                               <a class="tag" href="/tags/#其他技术" title="其他技术">其他技术</a>
                             
                         </div>
-                        <h1>git常用命令</h1>
+                        <h1>git基础</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
-                            2019年10月22日
+                            2020年10月23日
                         </span>
                     </div>
                 
@@ -245,7 +245,12 @@
 <h2 id="git查看本地分支："><a href="#git查看本地分支：" class="headerlink" title="git查看本地分支："></a>git查看本地分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
 <h2 id="git查看远程和本地的所有分支："><a href="#git查看远程和本地的所有分支：" class="headerlink" title="git查看远程和本地的所有分支："></a>git查看远程和本地的所有分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
 <h2 id="git切换本地分支："><a href="#git切换本地分支：" class="headerlink" title="git切换本地分支："></a>git切换本地分支：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
-<h2 id="git拉取代码："><a href="#git拉取代码：" class="headerlink" title="git拉取代码："></a>git拉取代码：</h2><h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><h3 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin Test_APP</span><br><span class="line">```  </span><br><span class="line">拉取origin主机上的Test_APP分支的新修改  </span><br><span class="line">fetch不会自动合并。   </span><br><span class="line">```shell</span><br><span class="line">git log -p Test_APP..origin/Test_APP</span><br><span class="line">git merge origin/Test_APP</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 推送到服务器：</span></span></span><br><span class="line">```shell</span><br><span class="line">git push --signed=yes origin Test_APP:refs/for/Test_APP</span><br></pre></td></tr></table></figure>
+<h2 id="git拉取代码："><a href="#git拉取代码：" class="headerlink" title="git拉取代码："></a>git拉取代码：</h2><h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><h3 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin Test_APP</span><br></pre></td></tr></table></figure>
+<p>拉取origin主机上的Test_APP分支的新修改<br>fetch不会自动合并。   </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log -p Test_APP..origin/Test_APP</span><br><span class="line">git merge origin/Test_APP</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="推送到服务器："><a href="#推送到服务器：" class="headerlink" title="推送到服务器："></a>推送到服务器：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --signed=yes origin Test_APP:refs/for/Test_APP</span><br></pre></td></tr></table></figure>
 <p>origin代表远程主机名<br>将本地的Test_APP分支推送到远程的Test_APP分支</p>
 <h2 id="回滚代码"><a href="#回滚代码" class="headerlink" title="回滚代码"></a>回滚代码</h2><p>通过git log查看历史commit 54d87dc4199f5a4a242c9bf5ccc630fac3f04997    </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 54d87dc4199f5a4a242c9bf5ccc630fac3f04997</span><br></pre></td></tr></table></figure>
@@ -255,20 +260,18 @@
 <p>commit之后的，可以用</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></table></figure>
 <h2 id="clean删除没有被跟踪的文件"><a href="#clean删除没有被跟踪的文件" class="headerlink" title="clean删除没有被跟踪的文件"></a>clean删除没有被跟踪的文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//交互式清除</span><br><span class="line">git clean -xdi</span><br><span class="line">//强制清除</span><br><span class="line">git clean -xdf</span><br></pre></td></tr></table></figure>
-
+<h2 id="配置当前目录不验证证书"><a href="#配置当前目录不验证证书" class="headerlink" title="配置当前目录不验证证书"></a>配置当前目录不验证证书</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim project/.git/config</span><br></pre></td></tr></table></figure>
+<p>增加  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[http]</span><br><span class="line">        sslVerify = false</span><br></pre></td></tr></table></figure>
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2019/10/22/macOS/插入android手机adb没有反应无法识别/" data-toggle="tooltip" data-placement="top" title="插入android手机adb没有反应无法识别">&larr; Previous post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2019/10/22/其他技术/git拉取特定分支/" data-toggle="tooltip" data-placement="top" title="git拉取特定分支">Next post &rarr;</a>
+                            <a href="/2020/10/20/flutter/密码键盘/" data-toggle="tooltip" data-placement="top" title="密码键盘">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -475,7 +478,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2019/10/22/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2020/10/23/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/git%E5%9F%BA%E7%A1%80/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},

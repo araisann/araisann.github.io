@@ -232,6 +232,72 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+        <h2 class="post-title">
+            cutButtonlabel called on null
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+
+        <div class="post-content-preview">
+            长按TextField出现表现：长按TextField提示cutButtonlabel called on null。  
+原因：复制粘贴按钮未进行本地化。  
+解决：  
+pubspec.yaml 中，在dependencies 的flutter:sdk:flutter下增加flutter_localizations  
+12345dependencies:  flutter:   .........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2020/06/23/flutter/Provider/">
+        <h2 class="post-title">
+            Provider：全局State管理
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/06/23/flutter/Provider/">
+
+        <div class="post-content-preview">
+            类似Scoped_Model  
+1provider: ^4.1.3
+Model12345678910import &#x27;package:flutter/foundation.dart&#x27;;class TestModel with ChangeNotifier&#123;  String _text = &#x27;default&#x27;;  String get t.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年06月23日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2020/06/23/flutter/基本技巧/">
         <h2 class="post-title">
             常用技巧
@@ -489,78 +555,6 @@ ScrollablePositionedListScrollablePositionedList类似ListView，提供滚动到
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/11/14/android/协程Coroutines/">
-        <h2 class="post-title">
-            协程Coroutines
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/14/android/协程Coroutines/">
-
-        <div class="post-content-preview">
-            特点：  
-
-实现简单  
-比线程性能消耗的少很多  
-
-协程必须运行中协程作用域中，即CoroutineScope  
-
-launch：无法返回   
-async：  接收返回   
-
-suspend：挂起函数，和生命周期没有关系，离开理解后，还需要继续执行的任务。  
-最简单的协程例子1234GlobalScope.launch &#123; // 在后台启动一个新的协程，不阻塞U.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月14日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/13/android/Android杂项知识/">
-        <h2 class="post-title">
-            Android杂项知识
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/13/android/Android杂项知识/">
-
-        <div class="post-content-preview">
-            RecyclerView的tools:listitem属性xml预览时即可在xml中展示item的布局
-...
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月13日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -644,7 +638,7 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="42">flutter</a>
+            <a href="/tags/#flutter" title="flutter" rel="43">flutter</a>
             
         
             
@@ -690,6 +684,14 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
     <ul>
       
         <li>
+          <a href="/2020/10/23/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/git%E5%9F%BA%E7%A1%80/">git基础</a>
+        </li>
+      
+        <li>
+          <a href="/2020/10/20/flutter/%E5%AF%86%E7%A0%81%E9%94%AE%E7%9B%98/">密码键盘</a>
+        </li>
+      
+        <li>
           <a href="/2020/10/13/flutter/TabBar%E9%A1%B5%E7%AD%BE/">TabBar+TabController+TabBarView</a>
         </li>
       
@@ -699,14 +701,6 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
       
         <li>
           <a href="/2020/09/30/flutter/pushName%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">pushNamed页面跳转</a>
-        </li>
-      
-        <li>
-          <a href="/2020/09/18/iOS%E5%BC%80%E5%8F%91/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81/">为第三方库添加中文支持</a>
-        </li>
-      
-        <li>
-          <a href="/2020/09/14/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/">错误记录</a>
         </li>
       
     </ul>
