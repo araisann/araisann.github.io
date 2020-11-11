@@ -232,6 +232,37 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/10/22/android/AIDL跨App（跨进程）通信/">
+        <h2 class="post-title">
+            AIDL跨App（跨进程）通信
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android/AIDL跨App（跨进程）通信/">
+
+        <div class="post-content-preview">
+            实测kotlin实现时，明明类存在，但会出现unresolved reference模式：一个App开启Service服务，一个App绑定服务进行交互。
+要点：Service App和Client App要使用同一份aidl文件，包名也必须相同。如果不是用基础数据而是要使用序列化后的Data，Data的包名也必须相同。/———————————————————————————/—————.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/10/22/android/ADB相关命令/">
         <h2 class="post-title">
             ADB相关命令
@@ -520,37 +551,6 @@ LiveData：可观察的，数据持有者，遵守生命周期（不需要在onS
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/Kotlin_Gson转换/">
-        <h2 class="post-title">
-            Kotlin Gson转换
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/Kotlin_Gson转换/">
-
-        <div class="post-content-preview">
-            123val gson = Gson()val itemType = object : TypeToken&lt;List&lt;Item&gt;&gt;() &#123;&#125;.typeitemList = gson.fromJson&lt;List&lt;Item&gt;&gt;(itemListJsonString, itemType)
-...
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -634,7 +634,7 @@ LiveData：可观察的，数据持有者，遵守生命周期（不需要在onS
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="43">flutter</a>
+            <a href="/tags/#flutter" title="flutter" rel="44">flutter</a>
             
         
             
@@ -680,6 +680,14 @@ LiveData：可观察的，数据持有者，遵守生命周期（不需要在onS
     <ul>
       
         <li>
+          <a href="/2020/11/11/flutter/await-loop/">await loop</a>
+        </li>
+      
+        <li>
+          <a href="/2020/11/05/flutter/Hive%E6%95%B0%E6%8D%AE%E5%BA%93/">Hive数据库</a>
+        </li>
+      
+        <li>
           <a href="/2020/10/23/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/git%E5%9F%BA%E7%A1%80/">git基础</a>
         </li>
       
@@ -689,14 +697,6 @@ LiveData：可观察的，数据持有者，遵守生命周期（不需要在onS
       
         <li>
           <a href="/2020/10/13/flutter/TabBar%E9%A1%B5%E7%AD%BE/">TabBar+TabController+TabBarView</a>
-        </li>
-      
-        <li>
-          <a href="/2020/10/13/flutter/vscode%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode常用快捷键</a>
-        </li>
-      
-        <li>
-          <a href="/2020/09/30/flutter/pushName%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">pushNamed页面跳转</a>
         </li>
       
     </ul>
