@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          await loop - null
+          下拉弹出框PopupMenuButton - null
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2020/11/11/flutter/await-loop/">
+    <link rel="canonical" href="https://araisann.github.io/2020/11/12/flutter/下拉弹出框PopupMenuButton/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -125,11 +125,11 @@
                               <a class="tag" href="/tags/#flutter" title="flutter">flutter</a>
                             
                         </div>
-                        <h1>await loop</h1>
+                        <h1>下拉弹出框PopupMenuButton</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
-                            2020年11月11日
+                            2020年11月12日
                         </span>
                     </div>
                 
@@ -229,7 +229,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span> list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">await</span> Future.forEach(list, (data) <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">await</span> Future.delayed(<span class="built_in">Duration</span>(milliseconds: <span class="number">3000</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+                <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">PopupMenuButton&lt;<span class="built_in">String</span>&gt;(</span><br><span class="line">  shape: RoundedRectangleBorder(</span><br><span class="line">    borderRadius: BorderRadius.circular(<span class="number">20.0</span>),</span><br><span class="line">    side: <span class="keyword">new</span> BorderSide(</span><br><span class="line">      color: CommonColors.mainRed,</span><br><span class="line">      style: BorderStyle.solid,</span><br><span class="line">    )),</span><br><span class="line">  child: Row(</span><br><span class="line">    mainAxisSize: MainAxisSize.min,</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.start,</span><br><span class="line">    crossAxisAlignment: CrossAxisAlignment.center,</span><br><span class="line">    children: [</span><br><span class="line">      ConstrainedBox(</span><br><span class="line">        constraints: BoxConstraints(</span><br><span class="line">          maxWidth: ScreenUtil().setWidth(<span class="number">150</span>),</span><br><span class="line">        ),</span><br><span class="line">        child: Text(</span><br><span class="line">          _currTag,</span><br><span class="line">          maxLines: <span class="number">1</span>,</span><br><span class="line">          overflow: TextOverflow.ellipsis,</span><br><span class="line">          style: TextStyle(</span><br><span class="line">            color: Colors.black,</span><br><span class="line">            fontSize: ScreenUtil().setSp(<span class="number">30</span>),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">      Icon(</span><br><span class="line">        Icons.keyboard_arrow_down,</span><br><span class="line">        size: ScreenUtil().setWidth(<span class="number">40</span>),</span><br><span class="line">        color: CommonColors.textGrey,</span><br><span class="line">      ),</span><br><span class="line">    ],</span><br><span class="line">  ),</span><br><span class="line">  padding: EdgeInsets.zero,</span><br><span class="line">  itemBuilder: (BuildContext context) =&gt;</span><br><span class="line">      _targetListWidget(context),</span><br><span class="line">  onSelected: (<span class="built_in">String</span> value) &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _currTag = value;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;),</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">_targetListWidget(BuildContext context) &#123;</span><br><span class="line">  <span class="built_in">List</span>&lt;PopupMenuItem&lt;<span class="built_in">String</span>&gt;&gt; targetList = [];</span><br><span class="line">  tags.forEach((element) &#123;</span><br><span class="line">    targetList.add(PopupMenuItem&lt;<span class="built_in">String</span>&gt;(</span><br><span class="line">      value: element,</span><br><span class="line">      child: Text(</span><br><span class="line">        element,</span><br><span class="line">        maxLines: <span class="number">1</span>,</span><br><span class="line">        overflow: TextOverflow.ellipsis,</span><br><span class="line">        style: TextStyle(</span><br><span class="line">          color: Colors.black,</span><br><span class="line">          fontSize: ScreenUtil().setSp(<span class="number">28</span>),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    ));</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> targetList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -238,13 +238,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2020/11/12/flutter/下拉弹出框PopupMenuButton/" data-toggle="tooltip" data-placement="top" title="下拉弹出框PopupMenuButton">&larr; Previous post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2020/11/05/flutter/Hive数据库/" data-toggle="tooltip" data-placement="top" title="Hive数据库">Next post &rarr;</a>
+                            <a href="/2020/11/11/flutter/await-loop/" data-toggle="tooltip" data-placement="top" title="await loop">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -451,7 +447,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2020/11/11/flutter/await-loop/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2020/11/12/flutter/%E4%B8%8B%E6%8B%89%E5%BC%B9%E5%87%BA%E6%A1%86PopupMenuButton/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
