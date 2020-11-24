@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Flutter零散知识点 - null
+          常用 - null
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2019/10/22/flutter/零散知识点/">
+    <link rel="canonical" href="https://araisann.github.io/2020/11/24/flutter/常用/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -125,11 +125,11 @@
                               <a class="tag" href="/tags/#flutter" title="flutter">flutter</a>
                             
                         </div>
-                        <h1>Flutter零散知识点</h1>
+                        <h1>常用</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
-                            2019年10月22日
+                            2020年11月24日
                         </span>
                     </div>
                 
@@ -229,21 +229,36 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <br>
+                <h2 id="自动构建"><a href="#自动构建" class="headerlink" title="自动构建"></a>自动构建</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages pub run build_runner build</span><br></pre></td></tr></table></figure>
+
+<h2 id="单个页面修改状态栏文字图标颜色"><a href="#单个页面修改状态栏文字图标颜色" class="headerlink" title="单个页面修改状态栏文字图标颜色"></a>单个页面修改状态栏文字图标颜色</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AnnotatedRegion&lt;SystemUiOverlayStyle&gt;(</span><br><span class="line">        value: SystemUiOverlayStyle.light,</span><br><span class="line">        child: ),</span><br></pre></td></tr></table></figure>
+
+<h2 id="Animation-lt-Color-gt"><a href="#Animation-lt-Color-gt" class="headerlink" title="Animation&lt;Color&gt;"></a>Animation&lt;Color&gt;</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AlwaysStoppedAnimation&lt;Color&gt;(Colors.white)</span><br></pre></td></tr></table></figure>
+
+<h2 id="延迟执行"><a href="#延迟执行" class="headerlink" title="延迟执行"></a>延迟执行</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> Future.delayed(<span class="keyword">const</span> <span class="built_in">Duration</span>(seconds: time), () &#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="软键盘覆盖在界面上"><a href="#软键盘覆盖在界面上" class="headerlink" title="软键盘覆盖在界面上"></a>软键盘覆盖在界面上</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scaffold(</span><br><span class="line">      resizeToAvoidBottomInset: <span class="keyword">false</span>,)</span><br></pre></td></tr></table></figure>
+
+<h2 id="TextField无法顶部对齐"><a href="#TextField无法顶部对齐" class="headerlink" title="TextField无法顶部对齐"></a>TextField无法顶部对齐</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Row(</span><br><span class="line">              crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">              textBaseline: TextBaseline.alphabetic,</span><br><span class="line">              )</span><br></pre></td></tr></table></figure>
+<h2 id="TextFeild"><a href="#TextFeild" class="headerlink" title="TextFeild"></a>TextFeild</h2><p><strong>设置文字后保持光标在文字之后：</strong>  </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_controller.text =</span><br><span class="line">          <span class="string">&#x27;<span class="subst">$&#123;Provider.of&lt;PersonState&gt;(context, listen: <span class="keyword">false</span>).nickName&#125;</span>&#x27;</span>;</span><br><span class="line">_controller.selection = TextSelection.fromPosition(TextPosition(offset: _controller.text.length));</span><br></pre></td></tr></table></figure>
+<h2 id="MaterialApp"><a href="#MaterialApp" class="headerlink" title="MaterialApp"></a>MaterialApp</h2><p><strong>清除右上角debug角标</strong>  </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MaterialApp(</span><br><span class="line">          debugShowCheckedModeBanner: <span class="keyword">false</span>,)</span><br></pre></td></tr></table></figure>
+<h2 id="list转化为children-widget"><a href="#list转化为children-widget" class="headerlink" title="list转化为children widget"></a>list转化为children widget</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Column(</span><br><span class="line">  children: [<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>].map((e) =&gt; Container()).toList(),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<h2 id="list转化为children-widget，保留index"><a href="#list转化为children-widget，保留index" class="headerlink" title="list转化为children widget，保留index"></a>list转化为children widget，保留index</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Column(</span><br><span class="line">  children: [<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>].asMap().map((index,data) =&gt; Container()).values.toList(),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<h2 id="List-lt-List-gt-转换成List"><a href="#List-lt-List-gt-转换成List" class="headerlink" title="List&lt;List&gt;转换成List"></a>List&lt;List<T>&gt;转换成List<T></h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">List</span>&lt;T&gt;&gt;.expand((element)=&gt;element).toList();</span><br></pre></td></tr></table></figure>
+
+<h2 id="在滚动视图中滚动到指定widget"><a href="#在滚动视图中滚动到指定widget" class="headerlink" title="在滚动视图中滚动到指定widget"></a>在滚动视图中滚动到指定widget</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> _myKey = <span class="keyword">new</span> GlobalKey(); </span><br><span class="line">Scrollable.ensureVisible(_myKey.currentContext,</span><br><span class="line">        duration: <span class="built_in">Duration</span>(seconds: <span class="number">1</span>));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
 <h2 id="弧度和角度换算"><a href="#弧度和角度换算" class="headerlink" title="弧度和角度换算"></a>弧度和角度换算</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//角度转弧度</span></span><br><span class="line"><span class="built_in">num</span> degToRad(<span class="built_in">num</span> deg) =&gt; deg * (pi / <span class="number">180.0</span>);</span><br><span class="line"><span class="comment">//弧度转角度</span></span><br><span class="line"><span class="built_in">num</span> radToDeg(<span class="built_in">num</span> rad) =&gt; rad * (<span class="number">180.0</span> / pi);</span><br></pre></td></tr></table></figure>
 
 <h2 id="对比实例是否相等"><a href="#对比实例是否相等" class="headerlink" title="对比实例是否相等"></a>对比实例是否相等</h2><p>可以引入equatable实现</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:equatable/equatable.dart&#x27;</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Post</span> <span class="keyword">extends</span> <span class="title">Equatable</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<br>
-
-<h2 id="immutable、final、StatefulWidget"><a href="#immutable、final、StatefulWidget" class="headerlink" title="immutable、final、StatefulWidget"></a>immutable、final、StatefulWidget</h2><p>在Flutter中，StatefulWidget只是持有一些immutable（不可变）的数据以及创建它的状态，<strong>所有成员变量都应该是final</strong>，动态部分全部放到了State中。<br>当状态改变时，通知视图重新绘制，就是setState。<br><br><br><br></p>
+<h2 id="immutable、final、StatefulWidget"><a href="#immutable、final、StatefulWidget" class="headerlink" title="immutable、final、StatefulWidget"></a>immutable、final、StatefulWidget</h2><p>在Flutter中，StatefulWidget只是持有一些immutable（不可变）的数据以及创建它的状态，<strong>所有成员变量都应该是final</strong>，动态部分全部放到了State中。<br>当状态改变时，通知视图重新绘制，就是setState。  </p>
 <h2 id="immutable-注解"><a href="#immutable-注解" class="headerlink" title="@immutable 注解"></a>@immutable 注解</h2><p>不可修改，只能重新创建。由于const必须在编译时创建，所以有时候需要用immutable来完成不可变。<br>类一旦创建，成员变量就不可改变。    </p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:meta/meta.dart&#x27;</span>;</span><br><span class="line"><span class="comment">// 因为当前类使用@immutable注解，所以变量必须是final的</span></span><br><span class="line"><span class="meta">@immutable</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> name;</span><br><span class="line">  User(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br>
-<br>
-## 命令行新建项目  
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create -i swift -a kotlin 工程名</span><br></pre></td></tr></table></figure>
+<h2 id="命令行新建项目"><a href="#命令行新建项目" class="headerlink" title="命令行新建项目"></a>命令行新建项目</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create -i swift -a kotlin 工程名</span><br></pre></td></tr></table></figure>
 
 <h2 id="显示布局线"><a href="#显示布局线" class="headerlink" title="显示布局线"></a>显示布局线</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/rendering.dart&#x27;</span> <span class="keyword">show</span> debugPaintSizeEnabled;</span><br><span class="line"><span class="keyword">void</span> main()&#123;</span><br><span class="line">  debugPaintSizeEnabled = <span class="keyword">true</span>;</span><br><span class="line">  runApp(<span class="keyword">new</span> MyApp());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -307,13 +322,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2019/10/22/flutter/Flutter直接调用原生页面/" data-toggle="tooltip" data-placement="top" title="Flutter直接调用原生页面，并接收返回参数">&larr; Previous post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2019/10/22/flutter/原生主动调用flutter/" data-toggle="tooltip" data-placement="top" title="原生主动调用flutter">Next post &rarr;</a>
+                            <a href="/2020/11/12/flutter/下拉弹出框PopupMenuButton/" data-toggle="tooltip" data-placement="top" title="下拉弹出框PopupMenuButton">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -520,7 +531,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2019/10/22/flutter/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2020/11/24/flutter/%E5%B8%B8%E7%94%A8/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
