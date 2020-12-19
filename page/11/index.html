@@ -232,6 +232,42 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/10/22/macOS/Macbook_dd刻录/">
+        <h2 class="post-title">
+            Macbook dd刻录
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/macOS/Macbook_dd刻录/">
+
+        <div class="post-content-preview">
+            12diskutil list  sudo dd if=ubuntu-17.10-desktop-amd64.iso of=/dev/disk2 bs=2m  
+
+如果提示繁忙  
+12df -h  sudo diskutil umount /dev/disk2s1  
+
+使用后的u盘无法使用。需要  
+1sudo dd if=/dev/zero of=/dev/disk2 bs=51.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/10/22/macOS/插入android手机adb没有反应无法识别/">
         <h2 class="post-title">
             插入android手机adb没有反应无法识别
@@ -514,38 +550,6 @@ i = 行  j = 列cell[i][j] = （cell[i-1][j]）  比较  （当前 + cell[i-1][j
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/10/22/算法/选择排序/">
-        <h2 class="post-title">
-            选择排序
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/算法/选择排序/">
-
-        <div class="post-content-preview">
-            选择排序效率为O( n × 1/ 2 × n)。省略常数之后变成O(n*n)    
-遍历列表，选择最小值，排到第一位。从第二位开始，遍历列表……   
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -629,7 +633,7 @@ i = 行  j = 列cell[i][j] = （cell[i-1][j]）  比较  （当前 + cell[i-1][j
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="47">flutter</a>
+            <a href="/tags/#flutter" title="flutter" rel="48">flutter</a>
             
         
             
@@ -675,6 +679,10 @@ i = 行  j = 列cell[i][j] = （cell[i-1][j]）  比较  （当前 + cell[i-1][j
     <ul>
       
         <li>
+          <a href="/2020/12/19/flutter/dart%E7%9A%84goto/">dart的goto</a>
+        </li>
+      
+        <li>
           <a href="/2020/12/16/flutter/textField%E5%B1%85%E4%B8%AD/">TextField居中问题</a>
         </li>
       
@@ -688,10 +696,6 @@ i = 行  j = 列cell[i][j] = （cell[i-1][j]）  比较  （当前 + cell[i-1][j
       
         <li>
           <a href="/2020/12/11/flutter/RawGestureDetector%E7%9B%91%E5%90%AC%E7%82%B9%E5%87%BB/">RawGestrueDetector监听子widget的点击</a>
-        </li>
-      
-        <li>
-          <a href="/2020/12/09/flutter/vscode%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode常用快捷键</a>
         </li>
       
     </ul>

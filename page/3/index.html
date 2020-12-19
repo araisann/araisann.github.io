@@ -232,6 +232,40 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+        <h2 class="post-title">
+            cutButtonlabel called on null
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+
+        <div class="post-content-preview">
+            长按TextField出现表现：长按TextField提示cutButtonlabel called on null。  
+原因：复制粘贴按钮未进行本地化。  
+解决：  
+pubspec.yaml 中，在dependencies 的flutter:sdk:flutter下增加flutter_localizations  
+12345dependencies:  flutter:   .........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2020/06/23/flutter/Provider/">
         <h2 class="post-title">
             Provider：全局State管理
@@ -530,39 +564,6 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/11/12/android/Data_Binding/">
-        <h2 class="post-title">
-            Data Binding
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/12/android/Data_Binding/">
-
-        <div class="post-content-preview">
-            data binding xml中无须做null判断，自带  
-module的build.gradle12345android &#123;    dataBinding &#123;       enabled true    &#125;&#125;
-
-xml自动创建：在xml文件的根节点点击，就会出现灯泡，点击灯泡可选“Convert to data binding layout.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月12日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -646,7 +647,7 @@ xml自动创建：在xml文件的根节点点击，就会出现灯泡，点击�
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="47">flutter</a>
+            <a href="/tags/#flutter" title="flutter" rel="48">flutter</a>
             
         
             
@@ -692,6 +693,10 @@ xml自动创建：在xml文件的根节点点击，就会出现灯泡，点击�
     <ul>
       
         <li>
+          <a href="/2020/12/19/flutter/dart%E7%9A%84goto/">dart的goto</a>
+        </li>
+      
+        <li>
           <a href="/2020/12/16/flutter/textField%E5%B1%85%E4%B8%AD/">TextField居中问题</a>
         </li>
       
@@ -705,10 +710,6 @@ xml自动创建：在xml文件的根节点点击，就会出现灯泡，点击�
       
         <li>
           <a href="/2020/12/11/flutter/RawGestureDetector%E7%9B%91%E5%90%AC%E7%82%B9%E5%87%BB/">RawGestrueDetector监听子widget的点击</a>
-        </li>
-      
-        <li>
-          <a href="/2020/12/09/flutter/vscode%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">VsCode常用快捷键</a>
         </li>
       
     </ul>
