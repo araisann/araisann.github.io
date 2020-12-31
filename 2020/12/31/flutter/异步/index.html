@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Provider：全局State管理 - null
+          Future - null
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2020/06/23/flutter/Provider/">
+    <link rel="canonical" href="https://araisann.github.io/2020/12/31/flutter/异步/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -125,11 +125,11 @@
                               <a class="tag" href="/tags/#flutter" title="flutter">flutter</a>
                             
                         </div>
-                        <h1>Provider：全局State管理</h1>
+                        <h1>Future</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
-                            2020年06月23日
+                            2020年12月31日
                         </span>
                     </div>
                 
@@ -229,18 +229,10 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>类似Scoped_Model  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">provider: ^4.1.3</span><br></pre></td></tr></table></figure>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/foundation.dart&#x27;</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestModel</span> <span class="title">with</span> <span class="title">ChangeNotifier</span></span>&#123;</span><br><span class="line">  <span class="built_in">String</span> _text = <span class="string">&#x27;default&#x27;</span>;</span><br><span class="line">  <span class="built_in">String</span> <span class="keyword">get</span> text =&gt; _text;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> setText()&#123;</span><br><span class="line">    _text = <span class="string">&#x27;setText&#x27;</span>;</span><br><span class="line">    notifyListeners();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="引入多个Model"><a href="#引入多个Model" class="headerlink" title="引入多个Model"></a>引入多个Model</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">runApp(MultiProvider(</span><br><span class="line">  providers: [</span><br><span class="line">    ChangeNotifierProvider(create: (_) =&gt; TestModel()),</span><br><span class="line">    ChangeNotifierProvider(create: (_) =&gt; TestModel1()),</span><br><span class="line">  ],</span><br><span class="line">  child: MyApp(),</span><br><span class="line">));</span><br></pre></td></tr></table></figure>
-<h2 id="实际使用的页面"><a href="#实际使用的页面" class="headerlink" title="实际使用的页面"></a>实际使用的页面</h2><p><strong>调用:</strong>  </p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.read&lt;PersonState&gt;().updateNickName(nickName)</span><br></pre></td></tr></table></figure>
+                <h2 id="异步顺序"><a href="#异步顺序" class="headerlink" title="异步顺序"></a>异步顺序</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///<span class="markdown">执行顺序：4 -&gt; 普通方法 -&gt; 3 -&gt; 2 -&gt; 1</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//延迟3秒执行</span></span><br><span class="line">Future.delayed(<span class="built_in">Duration</span>(seconds: <span class="number">3</span>), () =&gt; <span class="built_in">print</span>(<span class="string">&#x27;异步方法1&#x27;</span>));</span><br><span class="line"><span class="comment">//普通Future</span></span><br><span class="line">Future(() &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&#x27;异步方法2&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//微任务优先级比普通Future高</span></span><br><span class="line">Future.microtask(() =&gt; <span class="built_in">print</span>(<span class="string">&#x27;异步方法3&#x27;</span>));</span><br><span class="line"><span class="comment">//同步方法，相当于直接调用</span></span><br><span class="line">Future.<span class="keyword">sync</span>(() =&gt; <span class="built_in">print</span>(<span class="string">&#x27;异步方法4&#x27;</span>));</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;普通方法&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-<p><strong>监听：</strong>   </p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Text(</span><br><span class="line">  <span class="string">&#x27;<span class="subst">$&#123;context.watch&lt;PersonState&gt;().productCollectNumber&#125;</span>&#x27;</span>),</span><br></pre></td></tr></table></figure>
 
-<p><strong>只是获取值，不需要绑定监听：</strong>  </p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Provider.of&lt;PersonState&gt;(context, listen: <span class="keyword">false</span>).nickName</span><br></pre></td></tr></table></figure>
+<h2 id="then、catchError、whenComplete"><a href="#then、catchError、whenComplete" class="headerlink" title="then、catchError、whenComplete"></a>then、catchError、whenComplete</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Future(() &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&#x27;异步方法&#x27;</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.then((_) =&gt; <span class="built_in">print</span>(<span class="string">&#x27;运行的Future第一个then&#x27;</span>))</span><br><span class="line">.then((_)&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;运行有错误的then&#x27;</span>);</span><br><span class="line">    <span class="built_in">List</span> a= [];</span><br><span class="line">    <span class="built_in">print</span>(a[<span class="number">2</span>]);</span><br><span class="line">&#125;)</span><br><span class="line">.then((_) =&gt; <span class="built_in">print</span>(<span class="string">&#x27;不会被执行&#x27;</span>))</span><br><span class="line">.whenComplete(()&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;whenComplete总会被执行&#x27;</span>);</span><br><span class="line">    <span class="built_in">List</span> a= [];</span><br><span class="line">    <span class="built_in">print</span>(a[<span class="number">5</span>]);</span><br><span class="line">&#125;)</span><br><span class="line">.catchError((error)=&gt;<span class="built_in">print</span>(<span class="string">&#x27;捕捉到whenComplete的错误&#x27;</span>));</span><br></pre></td></tr></table></figure>
                 
 
                 <hr>
@@ -248,12 +240,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/" data-toggle="tooltip" data-placement="top" title="cutButtonlabel called on null">&larr; Previous post</a>
+                            <a href="/2020/12/31/flutter/Provider/" data-toggle="tooltip" data-placement="top" title="Provider">&larr; Previous post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2020/06/23/flutter/第三方组件技巧/" data-toggle="tooltip" data-placement="top" title="第三方组件技巧">Next post &rarr;</a>
+                            <a href="/2020/12/19/flutter/dart的goto/" data-toggle="tooltip" data-placement="top" title="dart的goto">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -460,7 +452,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2020/06/23/flutter/Provider/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2020/12/31/flutter/%E5%BC%82%E6%AD%A5/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
