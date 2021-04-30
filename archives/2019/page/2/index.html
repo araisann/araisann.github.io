@@ -158,7 +158,7 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a  href="/">Homepage</a>
+                        <a  href="/">主页</a>
                     </li>
 		    
                     
@@ -243,6 +243,21 @@
                     <span class="tag-text">2021</span>
                 </span>
                 <ul>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    04-30
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2021/04/30/iOS开发/使用命令行上传ipa/" style="color: #0085a1">
+                        <span>
+                            使用命令行上传ipa
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
                 
                   <!-- <li class="listing-item">
                   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
@@ -2224,7 +2239,7 @@
     
         <!-- Short About -->
 <section class="visible-md visible-lg">
-    <h5><a href="/about/">About me</a></h5>
+    <h5><a href="/about/">关于</a></h5>
     <div class="short-about">
 
         
@@ -2259,7 +2274,7 @@
 
 <section>
     <!-- no hr -->
-    <h5><a href="/tags/">Tags</a></h5>
+    <h5><a href="/tags/">标签云</a></h5>
     <div class="tags">
         
             
@@ -2303,7 +2318,7 @@
             
         
             
-            <a href="/tags/#iOS开发" title="iOS开发" rel="1">iOS开发</a>
+            <a href="/tags/#iOS开发" title="iOS开发" rel="2">iOS开发</a>
             
         
     </div>
@@ -2312,9 +2327,13 @@
         <hr>
     
         
-  <h5>Recent posts</h3>
+  <h5>最近发表</h3>
   <div class="widget">
     <ul>
+      
+        <li>
+          <a href="/2021/04/30/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8A%E4%BC%A0ipa/">使用命令行上传ipa</a>
+        </li>
       
         <li>
           <a href="/2021/02/25/flutter/redux/">Redux</a>
@@ -2330,10 +2349,6 @@
       
         <li>
           <a href="/2020/12/31/flutter/%E5%BC%82%E6%AD%A5/">Future</a>
-        </li>
-      
-        <li>
-          <a href="/2020/12/19/flutter/dart%E7%9A%84goto/">dart的goto</a>
         </li>
       
     </ul>
