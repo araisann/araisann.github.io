@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ノート">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          GetX - null
+        
+    </title>
+
+    <link rel="canonical" href="https://araisann.github.io/2021/07/28/flutter/getX/">
+
+    <!-- Bootstrap Core CSS -->
+
+   
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+	
+<link rel="stylesheet" href="/css/w3.css">
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+    }
+   .post-heading{
+    padding:20px;
+    }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+</style>
+
+<header id="headerid" class="w3-indigo intro-header" style="position:relative;">
+    <!-- Signature -->
+	
+        <div class="container">
+            <div class=" row" >
+			
+			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
+			
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
+                
+                    <div class="post-heading" style="padding:40px">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#flutter" title="flutter">flutter</a>
+                            
+                        </div>
+                        <h1>GetX</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by アライさん on
+                            2021年07月28日
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+  
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">アライさん ノート</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a  href="/">Homepage</a>
+                    </li>
+		    
+                    
+
+                        
+                        <li>
+           
+                            <a  href="https://araisann.github.io/tags/">Tags</a>
+                           
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="GetBuilder、GetX、Obx"><a href="#GetBuilder、GetX、Obx" class="headerlink" title="GetBuilder、GetX、Obx"></a>GetBuilder、GetX、Obx</h1><ul>
+<li>GetBuilder在RAM中最高效，但需要手动调用update()刷新，并且所有GetBuilder同一个Controller的地方都会被重建。</li>
+<li>GetX比GetBuilder消耗内存多一些，无需调用update()刷新，并且只有自己使用的值变化了才会rebuild。有越多的 “单独 “部件，GetX的性能就越突出。   </li>
+</ul>
+<h1 id="一、响应式状态管理"><a href="#一、响应式状态管理" class="headerlink" title="一、响应式状态管理"></a>一、响应式状态管理</h1><p><strong>有越多的 “单独 “部件，GetX的性能就越突出！</strong></p>
+<p><strong>响应式状态管理，使用.obs，配合GetX、Obx使用</strong>   </p>
+<p><strong>响应式编程对RAM的消耗比较大</strong></p>
+<p>使用响应式状态管理，Controller无须手动调用update()去更新，widget会自动更新。</p>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Class MyController <span class="keyword">extends</span> GetxController&#123;</span><br><span class="line">  <span class="comment">///<span class="markdown">除obs之外，也可以使用Rx<span class="xml"><span class="tag">&lt;<span class="name">Type</span>&gt;</span></span>或Rx&#123;Type&#125;</span></span></span><br><span class="line">  <span class="comment">///<span class="markdown">final name = Rx<span class="xml"><span class="tag">&lt;<span class="name">String</span>&gt;</span></span>(&#x27;&#x27;);</span></span></span><br><span class="line">  <span class="comment">///<span class="markdown">final name = RxString(&#x27;&#x27;);</span></span></span><br><span class="line">  <span class="keyword">final</span> number = <span class="number">0.</span>obs;</span><br><span class="line">  <span class="keyword">final</span> items = &lt;<span class="built_in">String</span>&gt;[].obs;</span><br><span class="line">  <span class="keyword">final</span> myMap = &lt;<span class="built_in">String</span>, <span class="built_in">int</span>&gt;&#123;&#125;.obs;</span><br><span class="line">  </span><br><span class="line">  setNumber(<span class="built_in">int</span> number)&#123;</span><br><span class="line">    <span class="keyword">this</span>.number.value = number;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">///<span class="markdown">与setUserName2相同，另一种方法</span></span></span><br><span class="line">  setUserName1(&#123;<span class="keyword">required</span> <span class="built_in">String</span> name&#125;)&#123;</span><br><span class="line">    user.update((user)&#123;</span><br><span class="line">      user.name = name;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">///<span class="markdown">与setUserName1相同，另一种方法</span></span></span><br><span class="line">  setUserName2(&#123;<span class="keyword">required</span> <span class="built_in">String</span> name&#125;)&#123;</span><br><span class="line">    user(User(name:name,age:user.value.age));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///<span class="markdown">使用GetX的方法，将直接绑定具体的值，如myController.name，其他属性更改不会引起重建</span></span></span><br><span class="line">GetX&lt;MyController&gt;(</span><br><span class="line">  init: MyController(),</span><br><span class="line">  builder: (myController) &#123;</span><br><span class="line">    <span class="keyword">return</span> Text(</span><br><span class="line">      myController.name.value,</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MyController myController = Get.put(MyController());</span><br><span class="line"><span class="comment">///<span class="markdown">使用Obx的方法，将直接绑定具体的值，如myController.name，其他属性更改不会引起重建</span></span></span><br><span class="line"> Obx(() &#123;</span><br><span class="line">   <span class="keyword">return</span> Text(</span><br><span class="line">     myController.name.value,</span><br><span class="line">   );</span><br><span class="line"> &#125;),</span><br></pre></td></tr></table></figure>
+
+
+
+<p>List   </p>
+<p>对list进行插入删除操作，会自动重建使用它的widget。   </p>
+<p>且调用list的属性不需要用.value</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//controller中</span></span><br><span class="line"><span class="keyword">final</span> list = <span class="built_in">List</span>&lt;User&gt;().obs;</span><br><span class="line"><span class="comment">//widget中,不需要.value</span></span><br><span class="line">controller.list.length;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Workers"><a href="#Workers" class="headerlink" title="Workers"></a>Workers</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///<span class="markdown">每次Rx变量发出一个新值时，即<span class="code">`count1`</span>变化时调用。</span></span></span><br><span class="line">ever(count1, (_) =&gt; <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">$_</span> has been changed&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">///<span class="markdown">只有在变量$<span class="emphasis">_第一次被改变时才会被调用。</span></span></span></span><br><span class="line">once(count1, (_) =&gt; <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">$_</span> was changed once&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">///<span class="markdown">防DDos - 每当用户停止输入1秒时调用，例如。</span></span></span><br><span class="line">debounce(count1, (_) =&gt; <span class="built_in">print</span>(<span class="string">&quot;debouce<span class="subst">$_</span>&quot;</span>), time: <span class="built_in">Duration</span>(seconds: <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">///<span class="markdown">忽略1秒内的所有变化。</span></span></span><br><span class="line">interval(count1, (_) =&gt; <span class="built_in">print</span>(<span class="string">&quot;interval <span class="subst">$_</span>&quot;</span>), time: <span class="built_in">Duration</span>(seconds: <span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="二、简单状态管理"><a href="#二、简单状态管理" class="headerlink" title="二、简单状态管理"></a>二、简单状态管理</h1><p><strong>对CPU影响最小，已经尽可能花费最少的资源。</strong>  </p>
+<p><strong>简单状态管理使用GetBuilder，修改配合update()进行更新，如果要只rebuild指定属性，需要指定id。</strong>  </p>
+<h2 id="Controller-1"><a href="#Controller-1" class="headerlink" title="Controller"></a>Controller</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Class MyController <span class="keyword">extends</span> GetxController&#123;</span><br><span class="line">  <span class="keyword">final</span> number = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">final</span> items = &lt;<span class="built_in">String</span>&gt;[];</span><br><span class="line">  <span class="keyword">final</span> myMap = &lt;<span class="built_in">String</span>, <span class="built_in">int</span>&gt;&#123;&#125;;</span><br><span class="line">  </span><br><span class="line">  setNumber(<span class="built_in">int</span> number)&#123;</span><br><span class="line">    <span class="keyword">this</span>.number.value = number;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//rebuild所有绑定了MyController的组件</span></span><br><span class="line">    <span class="comment">//update();</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//当number&gt;10时，将会rebuild id为number的所有widget</span></span><br><span class="line">    <span class="comment">//update([&#x27;number&#x27;],number&gt;10);</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//将会rebuild id为number的所有widget</span></span><br><span class="line">    update([<span class="string">&#x27;number&#x27;</span>]);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="View-1"><a href="#View-1" class="headerlink" title="View"></a>View</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///<span class="markdown">使用GetBuilder的方式，需要配合MyController中的update()，</span></span></span><br><span class="line"><span class="comment">///<span class="markdown">一旦调用update()，所有GetBuilder<span class="xml"><span class="tag">&lt;<span class="name">MyController</span>&gt;</span></span>的界面都会刷新，类似provider</span></span></span><br><span class="line">GetBuilder&lt;MyController&gt;(</span><br><span class="line">  init: MyController(), <span class="comment">// 首次启动,如果已经由其他路由创建，就不需要</span></span><br><span class="line">  builder: (_) =&gt; Text(</span><br><span class="line">    <span class="string">&#x27;<span class="subst">$&#123;_.counter&#125;</span>&#x27;</span>,</span><br><span class="line">  ),</span><br><span class="line">),</span><br><span class="line"></span><br><span class="line">GetBuilder&lt;MyController&gt;(</span><br><span class="line">  id: <span class="string">&#x27;counter&#x27;</span>, <span class="comment">//设置id,用update([&#x27;counter&#x27;])来更新这个id的widget</span></span><br><span class="line">  init: MyController(), <span class="comment">// 首次启动,如果已经由其他路由创建，就不需要</span></span><br><span class="line">  builder: (_) =&gt; Text(</span><br><span class="line">    <span class="string">&#x27;<span class="subst">$&#123;_.counter&#125;</span>&#x27;</span>,</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="三、其他地方使用"><a href="#三、其他地方使用" class="headerlink" title="三、其他地方使用"></a>三、其他地方使用</h1><p>如果需要在GetBuilder之外，使用Controller，可以用  </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MyController controller = Get.find&lt;MyController&gt;();</span><br><span class="line">controller.setNumber(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
+<li><p>Get被设计为从内存中删除每一个没有创建者ID的控制器。<br>如果你打算这样做，在B类的GetBuilder中添加 “autoRemove: false “标志，并在C类的GetBuilder中使用adopID = true；  </p>
+</li>
+<li><p>一般不需要StatefulWidget，除非需要使用混合器如TickerProviderStateMixin。<br>需要init和dispose，可以使用GetBuilder中的initState与dispose。<br>更好的做法是使用Controller中的onInit\</p>
+</li>
+<li><p>一般来说，对于大多数场景都是可以使用响应式变量的。</p>
+<p>但是，在一个包含了大量对象的List，都使用响应式变量，将生成大量的<code>StreamBuilder</code>，必将对内存造成较大的压力，该情况下，就要考虑使用简单状态管理了</p>
+</li>
+</ul>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2021/05/12/其他技术/git基础/" data-toggle="tooltip" data-placement="top" title="git基础">Next post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+				
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">Tags</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#flutter" title="flutter">flutter</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; アライさん 2021 
+                    <br>
+                    Powered by <a target="_blank" rel="noopener" href="http://www.hexo.io">Hexo</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Theme by <a target="_blank" rel="noopener" href="https://github.com/kinggozhang/hexo-theme-ace">ACE</a> 
+					
+					
+					<i class="fa fa-eye" id="leancounter"></i>
+					
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+   
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+
+<!-- Bootstrap Core JavaScript -->
+
+   
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+	
+<script src="/js/particles.js"></script>
+
+	
+<script src="/js/particles_config.js"></script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://araisann.github.io/2021/07/28/flutter/getX/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://araisann.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
