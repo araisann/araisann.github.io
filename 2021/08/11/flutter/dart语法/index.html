@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2019/10/23/flutter/dart语法/">
+    <link rel="canonical" href="https://araisann.github.io/2021/08/11/flutter/dart语法/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -129,7 +129,7 @@
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
-                            2019年10月23日
+                            2021年08月11日
                         </span>
                     </div>
                 
@@ -229,7 +229,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="没有初始化的属性为null"><a href="#没有初始化的属性为null" class="headerlink" title="没有初始化的属性为null"></a>没有初始化的属性为null</h2><h2 id="static、final、const"><a href="#static、final、const" class="headerlink" title="static、final、const"></a>static、final、const</h2><p>static修饰的成员变量属于类，而不是属于对象。<br>final必须初始化，之后不可变。<br>const只能修饰编译期间就能确定的值，值不可能改变。const修饰的集合里的元素也不可变。</p>
+                <h2 id="List-constructor"><a href="#List-constructor" class="headerlink" title="List constructor"></a>List constructor</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  <span class="built_in">String</span> name = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> name;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;A&gt; aList;</span><br><span class="line">  B(&#123;</span><br><span class="line">    <span class="keyword">required</span> <span class="keyword">this</span>.name,</span><br><span class="line">    <span class="built_in">List</span>&lt;A&gt;? aList,</span><br><span class="line">  &#125;) : <span class="keyword">this</span>.aList = aList ?? [] &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="没有初始化的属性为null"><a href="#没有初始化的属性为null" class="headerlink" title="没有初始化的属性为null"></a>没有初始化的属性为null</h2><h2 id="static、final、const"><a href="#static、final、const" class="headerlink" title="static、final、const"></a>static、final、const</h2><p>static修饰的成员变量属于类，而不是属于对象。<br>final必须初始化，之后不可变。<br>const只能修饰编译期间就能确定的值，值不可能改变。const修饰的集合里的元素也不可变。</p>
 <h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><p>通过async函数和await表达式<br>或者可以使用Future功能  </p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fileOperate() <span class="keyword">async</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> file = <span class="keyword">await</span> readFile();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>枚举可以用switch判断</p>
@@ -266,12 +267,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2019/10/23/其他技术/hexo全局_config/" data-toggle="tooltip" data-placement="top" title="hexo全局_config.yml配置">&larr; Previous post</a>
+                            <a href="/2021/08/11/flutter/常用/" data-toggle="tooltip" data-placement="top" title="常用">&larr; Previous post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2019/10/23/其他技术/使用SSH_Key连接Github/" data-toggle="tooltip" data-placement="top" title="使用SSH连接Github">Next post &rarr;</a>
+                            <a href="/2021/07/28/flutter/getX/" data-toggle="tooltip" data-placement="top" title="GetX">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -478,7 +479,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2019/10/23/flutter/dart%E8%AF%AD%E6%B3%95/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2021/08/11/flutter/dart%E8%AF%AD%E6%B3%95/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},

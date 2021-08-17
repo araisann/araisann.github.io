@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2020/11/24/flutter/常用/">
+    <link rel="canonical" href="https://araisann.github.io/2021/08/11/flutter/常用/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -129,7 +129,7 @@
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
-                            2020年11月24日
+                            2021年08月11日
                         </span>
                     </div>
                 
@@ -229,7 +229,9 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="自动构建"><a href="#自动构建" class="headerlink" title="自动构建"></a>自动构建</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages pub run build_runner build</span><br></pre></td></tr></table></figure>
+                <h2 id="防止软键盘把floatingActionButton顶上去"><a href="#防止软键盘把floatingActionButton顶上去" class="headerlink" title="防止软键盘把floatingActionButton顶上去"></a>防止软键盘把floatingActionButton顶上去</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="built_in">bool</span> keyboardIsOpened = MediaQuery.of(context).viewInsets.bottom != <span class="number">0.0</span>;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,</span><br><span class="line">      floatingActionButton: Visibility(</span><br><span class="line">        visible: !keyboardIsOpened,</span><br><span class="line">        child: _floatingActionButton(),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动构建"><a href="#自动构建" class="headerlink" title="自动构建"></a>自动构建</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter packages pub run build_runner build</span><br></pre></td></tr></table></figure>
 
 <h2 id="单个页面修改状态栏文字图标颜色"><a href="#单个页面修改状态栏文字图标颜色" class="headerlink" title="单个页面修改状态栏文字图标颜色"></a>单个页面修改状态栏文字图标颜色</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AnnotatedRegion&lt;SystemUiOverlayStyle&gt;(</span><br><span class="line">        value: SystemUiOverlayStyle.light,</span><br><span class="line">        child: ),</span><br></pre></td></tr></table></figure>
 
@@ -322,13 +324,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2020/11/24/macOS/代码行数/" data-toggle="tooltip" data-placement="top" title="统计代码行数">&larr; Previous post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2020/11/12/flutter/下拉弹出框PopupMenuButton/" data-toggle="tooltip" data-placement="top" title="下拉弹出框PopupMenuButton">Next post &rarr;</a>
+                            <a href="/2021/08/11/flutter/dart语法/" data-toggle="tooltip" data-placement="top" title="dart语法">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -535,7 +533,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2020/11/24/flutter/%E5%B8%B8%E7%94%A8/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2021/08/11/flutter/%E5%B8%B8%E7%94%A8/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
