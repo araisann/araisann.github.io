@@ -301,9 +301,9 @@ FractionallySized.........
 
 
 <div class="w3-row-padding">
-	<a href="/2019/10/22/android/AIDL跨App（跨进程）通信/">
+	<a href="/2019/10/22/android系统相关/Settings/">
         <h2 class="post-title">
-            AIDL跨App（跨进程）通信
+            Settings
         </h2>
         <h3 class="post-subtitle">
             
@@ -312,11 +312,191 @@ FractionallySized.........
 
 <div>
 
-    <a href="/2019/10/22/android/AIDL跨App（跨进程）通信/">
+    <a href="/2019/10/22/android系统相关/Settings/">
 
         <div class="post-content-preview">
-            实测kotlin实现时，明明类存在，但会出现unresolved reference模式：一个App开启Service服务，一个App绑定服务进行交互。
-要点：Service App和Client App要使用同一份aidl文件，包名也必须相同。如果不是用基础数据而是要使用序列化后的Data，Data的包名也必须相同。/———————————————————————————/—————.........
+            SettingsLib目录结构
+accessibility 辅助功能相关
+accounts 账户相关  
+animation 动画相关  
+application 应用管理相关  
+bluetooth 蓝牙相关  
+datetime 日期相关   
+deviceinfo 关于手机相关   
+display 显示相关  
+drawable 菜单图片相关  
+drawer 侧滑菜单相关  .........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android系统相关/关机、恢复出厂设置（需要系统签名)/">
+        <h2 class="post-title">
+            关机、恢复出厂设置（需要系统签名)
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android系统相关/关机、恢复出厂设置（需要系统签名)/">
+
+        <div class="post-content-preview">
+            关机：  
+1234val intent =  Intent(&quot;com.android.internal.intent.action.REQUEST_SHUTDOWN&quot;)intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)intent.putExtra(&quot;android.intent.extra.KEY_CONFIR.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android系统相关/成为系统应用/">
+        <h2 class="post-title">
+            成为系统应用
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android系统相关/成为系统应用/">
+
+        <div class="post-content-preview">
+            需要使用系统签名   
+1、App的列表清单配置sharedUserId12345&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;    pack.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android系统相关/烧写/">
+        <h2 class="post-title">
+            烧写
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android系统相关/烧写/">
+
+        <div class="post-content-preview">
+            .linux烧写系统在ubuntu下使用upgrade_tool更新update.img时候一定要执行sudo ./upgrade_tool没有sudo会报错“Creating Comm Object failed!”Rockusbuf update.imgLoading firmware…
+单个镜像烧写sudo upgrade_tool di –k kernel.img(烧写内核)s.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android系统相关/编译系统/">
+        <h2 class="post-title">
+            编译系统
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android系统相关/编译系统/">
+
+        <div class="post-content-preview">
+            安装完android开发环境后  
+需要安装的包
+build-essential  
+git-core
+gnupg
+flex
+bison
+gperf
+zip
+curl
+zlib1g-dev
+gcc-multilib
+g++-multilib
+libc6-dev-i386
+lib32ncurses5-dev
+x11proto-core-dev
+libx11-dev
+lib32z-dev
+.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android系统相关/调节系统声音和亮度/">
+        <h2 class="post-title">
+            调节系统声音和亮度
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android系统相关/调节系统声音和亮度/">
+
+        <div class="post-content-preview">
+            123456789101112131415161718AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);int maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);seekBar.s.........
         </div>
     </a>
     
@@ -367,9 +547,9 @@ FractionallySized.........
 
 
 <div class="w3-row-padding">
-	<a href="/2019/10/22/android/Android动画/">
+	<a href="/2019/10/22/android/AIDL跨App（跨进程）通信/">
         <h2 class="post-title">
-            Android动画
+            AIDL跨App（跨进程）通信
         </h2>
         <h3 class="post-subtitle">
             
@@ -378,174 +558,11 @@ FractionallySized.........
 
 <div>
 
-    <a href="/2019/10/22/android/Android动画/">
+    <a href="/2019/10/22/android/AIDL跨App（跨进程）通信/">
 
         <div class="post-content-preview">
-            插值器
-AccelerateDecelerateInterolator：先加速后减速，开始结束时慢，中间快。   
-AccelerateInterpolator：加速，开始慢中间加速。   
-DecelerateInterpolator：减速，开始快之后减速。    
-AnticipateInterpolator：反向，先向相反方向改变一段，然后正向加速。   
-AnticipateO.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/Android根据包名启动其他app并传递参数/">
-        <h2 class="post-title">
-            Android根据包名启动其他app并传递参数
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/Android根据包名启动其他app并传递参数/">
-
-        <div class="post-content-preview">
-              
-
-1234val aPackage  = packageManager.getLaunchIntentForPackage(&quot;com.example.fress&quot;)aPackage?.putExtra(&quot;title&quot;,&quot;标题&quot;)aPackage?.putExtra(&quot;name&quot;,&quot;名字&qu.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/Architecture_Components/">
-        <h2 class="post-title">
-            Architecture Components
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/Architecture_Components/">
-
-        <div class="post-content-preview">
-            https://developer.android.com/jetpack/docs/guide
-
-ViewModel：为指定的UI组件提供数据，负责与数据处理业务部分的交互。ViewModel可以直接调用网络获取数据，但一般分离出一个Repository模块。    
-LiveData：可观察的，数据持有者，遵守生命周期（不需要在onStop或onDestory中解除，会自动处理）。.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/ConstraintLayout布局盖在上方/">
-        <h2 class="post-title">
-            ConstraintLayout布局盖在上方
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/ConstraintLayout布局盖在上方/">
-
-        <div class="post-content-preview">
-            android:elevation=”2dp”
-...
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/Bluetooth蓝牙/">
-        <h2 class="post-title">
-            Bluetooth蓝牙
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/Bluetooth蓝牙/">
-
-        <div class="post-content-preview">
-            BluetoothDeviceBluetoothDevice.getBondState()获取绑定状态。BluetoothDevice.BOND_BONDING：正在绑定BluetoothDevice.BOND_BONDED：已经绑定BluetoothDevice.BOND_NONE：未绑定  
-所需权限：123&lt;uses-permission android:name=&quo.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/ContentProvider/">
-        <h2 class="post-title">
-            ContentProvider
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/ContentProvider/">
-
-        <div class="post-content-preview">
-            1234&lt;provider    android:name=&quot;.alarm.AlarmContentProvider&quot;    android:authorities=&quot;com.testapp.AlarmContentProvider&quot;    android:exported=&quot;true&quot; /&gt;
-
-## Conten.........
+            实测kotlin实现时，明明类存在，但会出现unresolved reference模式：一个App开启Service服务，一个App绑定服务进行交互。
+要点：Service App和Client App要使用同一份aidl文件，包名也必须相同。如果不是用基础数据而是要使用序列化后的Data，Data的包名也必须相同。/———————————————————————————/—————.........
         </div>
     </a>
     
@@ -635,15 +652,19 @@ LiveData：可观察的，数据持有者，遵守生命周期（不需要在onS
     <div class="tags">
         
             
+            <a href="/tags/#android系统相关" title="android系统相关" rel="7">android系统相关</a>
+            
+        
+            
             <a href="/tags/#android" title="android" rel="31">android</a>
             
         
             
-            <a href="/tags/#linux" title="linux" rel="12">linux</a>
+            <a href="/tags/#iOS开发" title="iOS开发" rel="2">iOS开发</a>
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="52">flutter</a>
+            <a href="/tags/#linux" title="linux" rel="12">linux</a>
             
         
             
@@ -655,7 +676,15 @@ LiveData：可观察的，数据持有者，遵守生命周期（不需要在onS
             
         
             
+            <a href="/tags/#flutter" title="flutter" rel="52">flutter</a>
+            
+        
+            
             <a href="/tags/#其他技术" title="其他技术" rel="11">其他技术</a>
+            
+        
+            
+            <a href="/tags/#git" title="git" rel="1">git</a>
             
         
             
@@ -667,19 +696,7 @@ LiveData：可观察的，数据持有者，遵守生命周期（不需要在onS
             
         
             
-            <a href="/tags/#android系统相关" title="android系统相关" rel="7">android系统相关</a>
-            
-        
-            
             <a href="/tags/#错误记录" title="错误记录" rel="3">错误记录</a>
-            
-        
-            
-            <a href="/tags/#iOS开发" title="iOS开发" rel="2">iOS开发</a>
-            
-        
-            
-            <a href="/tags/#git" title="git" rel="1">git</a>
             
         
     </div>

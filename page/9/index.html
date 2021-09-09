@@ -232,9 +232,9 @@
 
 
 <div class="w3-row-padding">
-	<a href="/2019/10/22/android/Kotlin_Enum/">
+	<a href="/2019/10/22/android/Android动画/">
         <h2 class="post-title">
-            Kotlin Enum
+            Android动画
         </h2>
         <h3 class="post-subtitle">
             
@@ -243,10 +243,174 @@
 
 <div>
 
-    <a href="/2019/10/22/android/Kotlin_Enum/">
+    <a href="/2019/10/22/android/Android动画/">
 
         <div class="post-content-preview">
-            123456789enum class WheelPickerTimeEnum(val label: String, val time: Int) &#123;        TenSecond(&quot;10秒&quot;, 10),        ThirtySecond(&quot;30秒&quot;, 30),        OneMinute(&quot;1分钟&quot;.........
+            插值器
+AccelerateDecelerateInterolator：先加速后减速，开始结束时慢，中间快。   
+AccelerateInterpolator：加速，开始慢中间加速。   
+DecelerateInterpolator：减速，开始快之后减速。    
+AnticipateInterpolator：反向，先向相反方向改变一段，然后正向加速。   
+AnticipateO.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android/Android根据包名启动其他app并传递参数/">
+        <h2 class="post-title">
+            Android根据包名启动其他app并传递参数
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android/Android根据包名启动其他app并传递参数/">
+
+        <div class="post-content-preview">
+              
+
+1234val aPackage  = packageManager.getLaunchIntentForPackage(&quot;com.example.fress&quot;)aPackage?.putExtra(&quot;title&quot;,&quot;标题&quot;)aPackage?.putExtra(&quot;name&quot;,&quot;名字&qu.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android/Architecture_Components/">
+        <h2 class="post-title">
+            Architecture Components
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android/Architecture_Components/">
+
+        <div class="post-content-preview">
+            https://developer.android.com/jetpack/docs/guide
+
+ViewModel：为指定的UI组件提供数据，负责与数据处理业务部分的交互。ViewModel可以直接调用网络获取数据，但一般分离出一个Repository模块。    
+LiveData：可观察的，数据持有者，遵守生命周期（不需要在onStop或onDestory中解除，会自动处理）。.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android/Bluetooth蓝牙/">
+        <h2 class="post-title">
+            Bluetooth蓝牙
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android/Bluetooth蓝牙/">
+
+        <div class="post-content-preview">
+            BluetoothDeviceBluetoothDevice.getBondState()获取绑定状态。BluetoothDevice.BOND_BONDING：正在绑定BluetoothDevice.BOND_BONDED：已经绑定BluetoothDevice.BOND_NONE：未绑定  
+所需权限：123&lt;uses-permission android:name=&quo.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android/ConstraintLayout布局盖在上方/">
+        <h2 class="post-title">
+            ConstraintLayout布局盖在上方
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android/ConstraintLayout布局盖在上方/">
+
+        <div class="post-content-preview">
+            android:elevation=”2dp”
+...
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android/ContentProvider/">
+        <h2 class="post-title">
+            ContentProvider
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android/ContentProvider/">
+
+        <div class="post-content-preview">
+            1234&lt;provider    android:name=&quot;.alarm.AlarmContentProvider&quot;    android:authorities=&quot;com.testapp.AlarmContentProvider&quot;    android:exported=&quot;true&quot; /&gt;
+
+## Conten.........
         </div>
     </a>
     
@@ -277,6 +441,36 @@
 
         <div class="post-content-preview">
             123456789101112131415161718192021222324252627public abstract class BaseFragment extends Fragment &#123;    protected View rootView;    protected Context applicationContext;    protected abstract.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/android/Kotlin_Enum/">
+        <h2 class="post-title">
+            Kotlin Enum
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/android/Kotlin_Enum/">
+
+        <div class="post-content-preview">
+            123456789enum class WheelPickerTimeEnum(val label: String, val time: Int) &#123;        TenSecond(&quot;10秒&quot;, 10),        ThirtySecond(&quot;30秒&quot;, 30),        OneMinute(&quot;1分钟&quot;.........
         </div>
     </a>
     
@@ -340,193 +534,6 @@
             https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/index.html  
 Gradle配置app的build.gradle：  
 1234567891011121314151617181920apply plugin: &#x27;kotlin-kapt&#x27;andro.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/LiveData、Room、ViewModel（JAVA实现）/">
-        <h2 class="post-title">
-            LiveData、Room、ViewModel（JAVA实现）
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/LiveData、Room、ViewModel（JAVA实现）/">
-
-        <div class="post-content-preview">
-            https://codelabs.developers.google.com/codelabs/android-room-with-a-view/index.html  
-Gradle配置app的build.gradle：  
-123456789101112131415161718192021222324252627apply plugin: &#x27;kotlin-kapt&#x2.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/MVP/">
-        <h2 class="post-title">
-            MVP
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/MVP/">
-
-        <div class="post-content-preview">
-            将业务逻辑抽离到Presenter中，将数据请求抽离到Model中View视图层、Presenter业务处理层、Model数据层view -&gt; Presenter -&gt; model，用callback的方式方向通知。  
-代码
-MvpCallback类：定义联网callback，比如onSuccess,onFail,onComplete,onError。  
-MvpMode.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/Retrofit2_Token过期自动刷新/">
-        <h2 class="post-title">
-            Retrofit2 Token过期自动刷新
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/Retrofit2_Token过期自动刷新/">
-
-        <div class="post-content-preview">
-            12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/SeekBar样式（滑动块）/">
-        <h2 class="post-title">
-            SeekBar样式（滑动块）
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/SeekBar样式（滑动块）/">
-
-        <div class="post-content-preview">
-            maxHeight控制底色高度  
-12345678910111213141516&lt;SeekBar    android:id=&quot;@+id/seekBar&quot;    android:layout_marginLeft=&quot;30px&quot;    android:layout_marginRight=&quot;30px&quot;    androi.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/ViewPager中间大，两边pager小/">
-        <h2 class="post-title">
-            ViewPager中间大，两边pager小
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/ViewPager中间大，两边pager小/">
-
-        <div class="post-content-preview">
-            XML布局设置android:clipChildren=”false”，控制子视图可以超过父视图。实现一屏幕显示多个viewpager。设置两侧margin，留出空间给其他pager。  
-1234567891011121314151617181920&lt;FrameLayout        android:id=&quot;@+id/frameLayout&quot;      .........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/android/WeakReference_Handler/">
-        <h2 class="post-title">
-            WeakReference Handler
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/android/WeakReference_Handler/">
-
-        <div class="post-content-preview">
-            1234567891011121314151617object WeakHandler : Handler() &#123;    private lateinit var weakReference: WeakReference&lt;MainActivity&gt;    fun setActivity(activity: MainActivity) &#123;        w.........
         </div>
     </a>
     
@@ -616,15 +623,19 @@ MvpMode.........
     <div class="tags">
         
             
+            <a href="/tags/#android系统相关" title="android系统相关" rel="7">android系统相关</a>
+            
+        
+            
             <a href="/tags/#android" title="android" rel="31">android</a>
             
         
             
-            <a href="/tags/#linux" title="linux" rel="12">linux</a>
+            <a href="/tags/#iOS开发" title="iOS开发" rel="2">iOS开发</a>
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="52">flutter</a>
+            <a href="/tags/#linux" title="linux" rel="12">linux</a>
             
         
             
@@ -636,7 +647,15 @@ MvpMode.........
             
         
             
+            <a href="/tags/#flutter" title="flutter" rel="52">flutter</a>
+            
+        
+            
             <a href="/tags/#其他技术" title="其他技术" rel="11">其他技术</a>
+            
+        
+            
+            <a href="/tags/#git" title="git" rel="1">git</a>
             
         
             
@@ -648,19 +667,7 @@ MvpMode.........
             
         
             
-            <a href="/tags/#android系统相关" title="android系统相关" rel="7">android系统相关</a>
-            
-        
-            
             <a href="/tags/#错误记录" title="错误记录" rel="3">错误记录</a>
-            
-        
-            
-            <a href="/tags/#iOS开发" title="iOS开发" rel="2">iOS开发</a>
-            
-        
-            
-            <a href="/tags/#git" title="git" rel="1">git</a>
             
         
     </div>
