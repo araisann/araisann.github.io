@@ -232,6 +232,75 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/11/09/linux/Linux生成随机字符串/">
+        <h2 class="post-title">
+            Linux生成随机字符串
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/09/linux/Linux生成随机字符串/">
+
+        <div class="post-content-preview">
+            使用openssl1openssl rand -base64 15
+
+使用/dev/urandom1&lt; &#x2F;dev&#x2F;urandom tr -cd _A-Z-a-z-0-9@#^~\ | head -c $&#123;1:-15&#125;; echo
+
+使用sha256sum算法处理秒数，取前15位1date +%s | sha256sum | base64 |.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月09日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/11/07/android/Navigation/">
+        <h2 class="post-title">
+            Navigation Fragment
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/11/07/android/Navigation/">
+
+        <div class="post-content-preview">
+            使用Navigation实现多Fragment单Activity应用   
+示例代码位置： https://gitee.com/alois/NavigationTest     
+MainActivity部分activity_main.xml:fragment容器属性：  
+
+app:defaultNavHost=”true” : true代表拦截系统的back按键。  
+app:na.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年11月07日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/11/05/android系统相关/删除内置应用/">
         <h2 class="post-title">
             删除内置应用
@@ -498,74 +567,6 @@ MediaQuery.of(context).padding.top;
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Fluro路由管理/">
-        <h2 class="post-title">
-            Fluro路由管理
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Fluro路由管理/">
-
-        <div class="post-content-preview">
-            
-
-1fluro: ^1.5.0
-缺陷：通过url的方式传递参数，不支持中文如/page?params1=标题&amp;params=颜色需要进行编码转换实测英文用这种转码方式也不会有问题  
-1234567891011121314151617181920import &#x27;dart:convert&#x27;;/// fluro 参数编码解码 工具 类class FluroCo.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Dio联网封装成NetUtils/">
-        <h2 class="post-title">
-            Flutter Dio联网封装成NetUtils
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Dio联网封装成NetUtils/">
-
-        <div class="post-content-preview">
-            
-
-统一定义api地址列表，api.dart12345class Api&#123; flutter-go.alibaba.net/&#x27;;  static const String DO_LOGIN = BASE_URL+&#x27;doLogin&#x27;;//登陆&#125;
-
-net_utils.dart123456789101112131415161718192021.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -649,7 +650,7 @@ net_utils.dart123456789101112131415161718192021.........
             
         
             
-            <a href="/tags/#flutter" title="flutter" rel="51">flutter</a>
+            <a href="/tags/#flutter" title="flutter" rel="52">flutter</a>
             
         
             
@@ -661,7 +662,7 @@ net_utils.dart123456789101112131415161718192021.........
             
         
             
-            <a href="/tags/#其他技术" title="其他技术" rel="10">其他技术</a>
+            <a href="/tags/#其他技术" title="其他技术" rel="11">其他技术</a>
             
         
             
@@ -684,6 +685,10 @@ net_utils.dart123456789101112131415161718192021.........
             <a href="/tags/#iOS开发" title="iOS开发" rel="2">iOS开发</a>
             
         
+            
+            <a href="/tags/#git" title="git" rel="1">git</a>
+            
+        
     </div>
 </section>
 
@@ -695,6 +700,14 @@ net_utils.dart123456789101112131415161718192021.........
     <ul>
       
         <li>
+          <a href="/2021/09/09/flutter/%E9%99%8D%E7%BA%A7/">降级版本</a>
+        </li>
+      
+        <li>
+          <a href="/2021/09/06/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/git%E5%A2%9E%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">Git增加一个远程仓库</a>
+        </li>
+      
+        <li>
           <a href="/2021/08/11/flutter/%E5%B8%B8%E7%94%A8/">常用</a>
         </li>
       
@@ -704,14 +717,6 @@ net_utils.dart123456789101112131415161718192021.........
       
         <li>
           <a href="/2021/07/28/flutter/getX/">GetX</a>
-        </li>
-      
-        <li>
-          <a href="/2021/05/12/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/git%E5%9F%BA%E7%A1%80/">git基础</a>
-        </li>
-      
-        <li>
-          <a href="/2021/04/30/iOS%E5%BC%80%E5%8F%91/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8A%E4%BC%A0ipa/">使用命令行上传ipa</a>
         </li>
       
     </ul>
