@@ -269,6 +269,10 @@
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> SingleTickerProviderStateMixin</span><br></pre></td></tr></table></figure>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AnimationController(duration: <span class="keyword">const</span> <span class="built_in">Duration</span>(milliseconds: <span class="number">600</span>), vsync: <span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
 
+<h2 id="compute"><a href="#compute" class="headerlink" title="compute"></a>compute</h2><p>顶层方法：  </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//必须是顶层方法</span></span><br><span class="line">Future&lt;<span class="built_in">int</span>&gt; testFunction(<span class="built_in">String</span> str) <span class="keyword">async</span> &#123;</span><br><span class="line">  sleep(<span class="built_in">Duration</span>(seconds: <span class="number">10</span>));</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;test&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用：  </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span> result = <span class="keyword">await</span> compute(testFunction,<span class="string">&#x27;hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="Row和Column的mainAxisAlignment"><a href="#Row和Column的mainAxisAlignment" class="headerlink" title="Row和Column的mainAxisAlignment"></a>Row和Column的mainAxisAlignment</h2><ul>
