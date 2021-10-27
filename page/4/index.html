@@ -232,6 +232,71 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2020/07/24/错误记录/No_MediaQuery_widget_found/">
+        <h2 class="post-title">
+            No MediaQuery widget found
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/错误记录/No_MediaQuery_widget_found/">
+
+        <div class="post-content-preview">
+            FlutterEasyLoading导致表现：TextField长按报No MediaQuery widget found。原因：需要被MaterialApp包裹。解决：main.dart 的 MaterialApp 不要被 FlutterEasyLoading 包裹。改为  
+12345678return MaterialApp(      builder: (BuildContex.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+        <h2 class="post-title">
+            cutButtonlabel called on null
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+
+        <div class="post-content-preview">
+            长按TextField出现表现：长按TextField提示cutButtonlabel called on null。  
+原因：复制粘贴按钮未进行本地化。  
+解决：  
+pubspec.yaml 中，在dependencies 的flutter:sdk:flutter下增加flutter_localizations  
+12345dependencies:  flutter:   .........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2020/06/23/flutter/第三方组件技巧/">
         <h2 class="post-title">
             第三方组件技巧
@@ -498,70 +563,6 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/11/12/android/Data_Binding/">
-        <h2 class="post-title">
-            Data Binding
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/12/android/Data_Binding/">
-
-        <div class="post-content-preview">
-            data binding xml中无须做null判断，自带  
-module的build.gradle12345android &#123;    dataBinding &#123;       enabled true    &#125;&#125;
-
-xml自动创建：在xml文件的根节点点击，就会出现灯泡，点击灯泡可选“Convert to data binding layout.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月12日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/12/android/Android_LiveData/">
-        <h2 class="post-title">
-            LiveData(ViewModel)
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/12/android/Android_LiveData/">
-
-        <div class="post-content-preview">
-            介绍ViewModel可以自动感应生命周期储存和管理数据。ViewModel从Repository获取数据，把数据提供给View。LiveData在setValue(非UI线程使用postValue)，会根据界面生命周期，回调更新UI界面。  
-build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月12日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -653,7 +654,7 @@ build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
             
         
             
-            <a href="/tags/#macOS" title="macOS" rel="6">macOS</a>
+            <a href="/tags/#macOS" title="macOS" rel="7">macOS</a>
             
         
             
@@ -684,6 +685,10 @@ build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
             <a href="/tags/#错误记录" title="错误记录" rel="3">错误记录</a>
             
         
+            
+            <a href="/tags/#nodejs" title="nodejs" rel="1">nodejs</a>
+            
+        
     </div>
 </section>
 
@@ -695,6 +700,14 @@ build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
     <ul>
       
         <li>
+          <a href="/2021/10/27/macOS/macOS%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/">macOS启动管理</a>
+        </li>
+      
+        <li>
+          <a href="/2021/10/13/nodejs/nodejs%E5%9F%BA%E7%A1%80/">nodejs基础</a>
+        </li>
+      
+        <li>
           <a href="/2021/10/08/flutter/%E5%B8%B8%E7%94%A8/">常用</a>
         </li>
       
@@ -704,14 +717,6 @@ build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
       
         <li>
           <a href="/2021/09/06/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/git%E5%A2%9E%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">Git增加一个远程仓库</a>
-        </li>
-      
-        <li>
-          <a href="/2021/08/11/flutter/dart%E8%AF%AD%E6%B3%95/">dart语法</a>
-        </li>
-      
-        <li>
-          <a href="/2021/07/28/flutter/getX/">GetX</a>
         </li>
       
     </ul>
