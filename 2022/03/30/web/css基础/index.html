@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ノート">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          
+        
+    </title>
+
+    <link rel="canonical" href="https://araisann.github.io/2022/03/30/web/css基础/">
+
+    <!-- Bootstrap Core CSS -->
+
+   
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+	
+<link rel="stylesheet" href="/css/w3.css">
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+    }
+   .post-heading{
+    padding:20px;
+    }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+</style>
+
+<header id="headerid" class="w3-indigo intro-header" style="position:relative;">
+    <!-- Signature -->
+	
+        <div class="container">
+            <div class=" row" >
+			
+			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
+			
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
+                
+                    <div class="post-heading" style="padding:40px">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1></h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by アライさん on
+                            2022年03月30日
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+  
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">アライさん ノート</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a  href="/">Homepage</a>
+                    </li>
+		    
+                    
+
+                        
+                        <li>
+           
+                            <a  href="https://araisann.github.io/tags/">Tags</a>
+                           
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="一、样式"><a href="#一、样式" class="headerlink" title="一、样式"></a>一、样式</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">&quot;color:red;&quot;</span>&gt;</span>红色<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="长宽单位："><a href="#长宽单位：" class="headerlink" title="长宽单位："></a>长宽单位：</h2><ul>
+<li>px：像素  </li>
+<li>%：百分比  </li>
+<li>in：英寸  </li>
+<li>mm：毫米  </li>
+<li>em：根据父级字体尺寸。如果字体是12pt，那么2em就是24pt。  </li>
+<li>rem：根据根级别字体尺寸（html的字体尺寸）。  </li>
+<li>vw：10vw = 视窗宽度的10%尺寸  </li>
+<li>vh：10vh = 视窗宽度的10%尺寸  </li>
+<li>vmin：10vmin = 视窗长宽中较小的一个的10%尺寸  </li>
+<li>vmax：10vmax = 视窗长宽中较大的一个的10%尺寸</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入Lobster字体 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://fonts.googleapis.com/css?family=Lobster&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="comment">/* root中的变量可被后面的选择器继承 */</span></span></span><br><span class="line"><span class="css">  <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="css">      <span class="comment">/* 定义变量penguin-skin为灰色 */</span></span></span><br><span class="line">      --penguin-skin: gray;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"><span class="css">  <span class="comment">/* 当屏幕尺寸小于350px时，使用下面的属性 */</span></span></span><br><span class="line"><span class="css">  <span class="keyword">@media</span> (<span class="attribute">max-width:</span> <span class="number">350px</span>) &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line">      --penguin-size: 200px;</span><br><span class="line">      --penguin-skin: black;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="comment">/* p标签的字体大小 */</span></span></span><br><span class="line">    p &#123;</span><br><span class="line"><span class="css">      <span class="selector-tag">font-size</span><span class="selector-pseudo">:20px</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="comment">/* 为所有h2标签设置默认颜色，优先级低于直接在h2标签中设置 */</span></span></span><br><span class="line"><span class="css">  <span class="comment">/* 使用变量--penguin-skin的颜色，取不到则为红色 */</span></span></span><br><span class="line">  h2 &#123;</span><br><span class="line"><span class="css">    <span class="selector-tag">color</span><span class="selector-pseudo">:var(--penguin-skin</span>, <span class="selector-tag">red</span>);</span></span><br><span class="line"><span class="css">    <span class="selector-tag">display</span><span class="selector-pseudo">:flex</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 排列方式：row、column、row-reverse、column-reverse */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">flex-direction</span><span class="selector-pseudo">:row-reverse</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-class">.customStyle</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 可以覆盖root的属性 */</span></span></span><br><span class="line">    --penguin-skin: white;</span><br><span class="line"><span class="css">    <span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">font-size</span><span class="selector-pseudo">:16px</span>;</span></span><br><span class="line"><span class="css">     <span class="comment">/* 优先使用Lobster字体，不行的话使用monospace */</span></span></span><br><span class="line">    font-family: Lobster,monospace;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-class">.thick-green-border</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* !important代表这个样式级别最高，不会被其他同属性取代 */</span></span></span><br><span class="line">    border-color: green!important;</span><br><span class="line">    border-width: 10px;</span><br><span class="line">    border-style: solid;</span><br><span class="line"><span class="css">    <span class="comment">/* border-radius可以设置10px，或者百分比 */</span></span></span><br><span class="line">    border-radius: 50%;</span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>:<span class="selector-id">#000000</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">opacity</span><span class="selector-pseudo">:0.5</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">text-transform</span><span class="selector-pseudo">:uppercase</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">font-weight</span><span class="selector-pseudo">:300</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">line-height</span><span class="selector-pseudo">:25px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">box-shadow</span>: 0 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.19</span>), 0 6<span class="selector-tag">px</span> 6<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.23</span>);</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="comment">/* id=&quot;hello&quot;的样式 */</span></span></span><br><span class="line"><span class="css">  <span class="selector-id">#hello</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 背景色 */</span></span></span><br><span class="line"><span class="css">      <span class="selector-tag">background-color</span><span class="selector-pseudo">:silver</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* h代表色环角度，s代表饱和度，l代表亮度 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span><span class="selector-pseudo">:hsl(0</span>, 100%, 50%);</span></span><br><span class="line"><span class="css">    <span class="comment">/* 线性渐变色。deg是角度，从哪个位置开始。后面几种颜色，代表渐变的几种颜色 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span><span class="selector-pseudo">:linear-gradient(35deg</span>, <span class="selector-id">#CCFFFF</span>, <span class="selector-id">#FFCCCC</span>);</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span><span class="selector-pseudo">:linear-gradient(35deg</span>, <span class="selector-id">#CCFFFF</span>, <span class="selector-id">#FFCCCC</span>,<span class="selector-id">#000000</span>);</span></span><br><span class="line"><span class="css">    <span class="comment">/* 线性渐变色。deg是角度，从哪个位置开始。后面几种颜色，不同位置的起止颜色 */</span></span></span><br><span class="line">    repeating-linear-gradient(</span><br><span class="line">      45deg,</span><br><span class="line">      yellow 0px,</span><br><span class="line">      yellow 40px,</span><br><span class="line">      black 40px,</span><br><span class="line">      black 80px</span><br><span class="line">    );</span><br><span class="line">    background:url(&quot;https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png&quot;);</span><br><span class="line"><span class="css">    <span class="comment">/* 内容色（文字颜色） */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line">    padding: 20px;</span><br><span class="line">    margin: -20px;</span><br><span class="line"><span class="css">    <span class="comment">/* 水平居中 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin</span><span class="selector-pseudo">:auto</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-top</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-right</span><span class="selector-pseudo">:20px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-bottom</span><span class="selector-pseudo">:20px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-left</span><span class="selector-pseudo">:40px</span></span></span><br><span class="line">    margin-top: 40px;</span><br><span class="line">    margin-right: 20px;</span><br><span class="line">    margin-bottom: 20px;</span><br><span class="line">    margin-left: 40px;</span><br><span class="line"><span class="css">    <span class="selector-tag">padding</span><span class="selector-pseudo">:10px</span> 20<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> 40<span class="selector-tag">px</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* in代表英寸、mm代表毫米、em、rem都是相对尺寸 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding-bottom</span><span class="selector-pseudo">:1.5em</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">position</span><span class="selector-pseudo">:relative</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* fixed代表固定，比如固定在上方，不随网页滚动 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">position</span><span class="selector-pseudo">:fixed</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">top</span><span class="selector-pseudo">:15px</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 靠右 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">float</span><span class="selector-pseudo">:right</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 堆叠的顺序，越大越在上层 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">z-index</span><span class="selector-pseudo">:2</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 放大2倍 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">transform</span><span class="selector-pseudo">:scale(2)</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 沿X轴倾斜24度（变成平行四边形，不是旋转） */</span></span></span><br><span class="line">    transform: skewX(24deg);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"><span class="css">  <span class="comment">/* 所有type为checkbox的都会用这个样式 */</span></span></span><br><span class="line"><span class="css">  <span class="selector-attr">[type=<span class="string">&#x27;checkbox&#x27;</span>]</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin</span><span class="selector-pseudo">:10px</span> 0<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 0<span class="selector-tag">px</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"><span class="css">  <span class="comment">/* 设置标签a的hover属性的颜色 */</span></span></span><br><span class="line"><span class="css">  <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span><span class="selector-pseudo">:blue</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">&quot;hello&quot;</span> &gt;</span>16px红色文本<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;thick-green-border&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 同时使用2种样式class --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot;customStyle thick-green-border&quot;</span> <span class="attr">scr</span>=<span class="string">&quot;url&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="样式优先级"><a href="#样式优先级" class="headerlink" title="样式优先级"></a>样式优先级</h1><p>带有!important的样式级别最高。<br>其次是标签的style属性中的样式。<br>然后  id样式 &gt; class样式<br>style中class样式后定义的  &gt; class前定义的</p>
+<h1 id="二、动画"><a href="#二、动画" class="headerlink" title="二、动画"></a>二、动画</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  div &#123;</span><br><span class="line">    height: 40px;</span><br><span class="line">    width: 70%;</span><br><span class="line">    background: black;</span><br><span class="line">    margin: 50px auto;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-id">#rect</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 要使用的动画名 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">animation-name</span><span class="selector-pseudo">:rainbow</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 一次循环用时 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">animation-duration</span><span class="selector-pseudo">:4s</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 动画结束后定格在结束状态，不填默认是恢复到最初状态 */</span></span></span><br><span class="line">    animation-fill-mode: forwards;</span><br><span class="line"><span class="css">    <span class="comment">/* 动画循环次数，infinite代表无限循环 */</span></span></span><br><span class="line">    animation-iteration-count: 3;</span><br><span class="line"><span class="css">    <span class="selector-tag">animation-timing-function</span><span class="selector-pseudo">:ease-out</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 手动设置的贝塞尔曲线 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">animation-timing-function</span>: <span class="selector-tag">cubic-bezier</span>(0<span class="selector-class">.25</span>, 0<span class="selector-class">.25</span>, 0<span class="selector-class">.75</span>, 0<span class="selector-class">.75</span>);</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="comment">/* 关键帧动画 */</span></span></span><br><span class="line"><span class="css">  <span class="keyword">@keyframes</span> rainbow &#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 0%时的颜色和位置 */</span></span></span><br><span class="line">    0% &#123;</span><br><span class="line"><span class="css">      <span class="selector-tag">background-color</span><span class="selector-pseudo">:blue</span>;</span></span><br><span class="line">      top: 0px;</span><br><span class="line"><span class="css">      <span class="selector-tag">opacity</span><span class="selector-pseudo">:1</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line"><span class="css">      <span class="selector-tag">background-color</span><span class="selector-pseudo">:green</span>;</span></span><br><span class="line">      top: 50px;</span><br><span class="line"><span class="css">      <span class="selector-tag">opacity</span><span class="selector-pseudo">:0.1</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line"><span class="css">      <span class="selector-tag">background-color</span><span class="selector-pseudo">:yellow</span>;</span></span><br><span class="line">      top: 0px;</span><br><span class="line"><span class="css">      <span class="selector-tag">opacity</span><span class="selector-pseudo">:1</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;rect&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、Flex弹性盒子"><a href="#三、Flex弹性盒子" class="headerlink" title="三、Flex弹性盒子"></a>三、Flex弹性盒子</h1><p>父元素设置：display: flex; </p>
+<h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h2><ul>
+<li><p>flex-start  </p>
+</li>
+<li><p>flex-end</p>
+</li>
+<li><p>space-between  </p>
+</li>
+<li><p>space-around  </p>
+</li>
+<li><p>space-evenly  </p>
+</li>
+</ul>
+<h2 id="align-items-相当于crossAxisAlignment"><a href="#align-items-相当于crossAxisAlignment" class="headerlink" title="align-items(相当于crossAxisAlignment)"></a>align-items(相当于crossAxisAlignment)</h2><ul>
+<li><p>flex-start  </p>
+</li>
+<li><p>flex-end  </p>
+</li>
+<li><p>center  </p>
+</li>
+<li><p>stretch：拉伸填满容器  </p>
+</li>
+<li><p>baseline：文字基线对齐</p>
+</li>
+</ul>
+<h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h2><ul>
+<li>nowrap：不换行  </li>
+<li>wrap：从上往下、从左往右，自动换行  </li>
+<li>wrap-reverse：反向，从下往上、从右往左，自动换行</li>
+</ul>
+<h2 id="flex-grow、flex-shrink"><a href="#flex-grow、flex-shrink" class="headerlink" title="flex-grow、flex-shrink"></a>flex-grow、flex-shrink</h2><p>flex-grow相当于Expanded(flex:1)    </p>
+<p>flex-shrink相当于反的Expanded(flex:1)    </p>
+<ul>
+<li><p>flex-shrink:1; flex-shrink:2;  </p>
+<p>2比1小一半</p>
+</li>
+<li><p>flex-grow:1;flex-grow:2;</p>
+<p>2比1大一倍</p>
+</li>
+</ul>
+<h2 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h2><p>设置尺寸。</p>
+<p>flex-basis：20em;  </p>
+<p>flex-basis：auto;  </p>
+<h2 id="flex-1-0-10px"><a href="#flex-1-0-10px" class="headerlink" title="flex:1 0 10px;"></a>flex:1 0 10px;</h2><p>组合设置。  </p>
+<p>第一个数字代表flex-grow  </p>
+<p>第二个数字代表flex-shrink  </p>
+<p>第三个数字代表flex-basis   </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- box1和box2的总宽度是300px。 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 当页面大于300px时，采用flex-grow。box1是box2的2倍 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 当页面小于300px时，采用flex-shrink。box1是box2的一半 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 当页面等于300px时，大家都是150px --&gt;</span></span><br><span class="line">#box-1 &#123;</span><br><span class="line">  background-color: dodgerblue;</span><br><span class="line">  flex:2 2 150px;</span><br><span class="line">  height: 200px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#box-2 &#123;</span><br><span class="line">  background-color: orangered;</span><br><span class="line">  flex:1 1 150px;</span><br><span class="line">  height: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><p>不同的子元素，使用自己的align-items。  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#box-container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  height: 500px;</span><br><span class="line">&#125;</span><br><span class="line">#box-1 &#123;</span><br><span class="line">  background-color: dodgerblue;</span><br><span class="line">  align-self:center;</span><br><span class="line">  height: 200px;</span><br><span class="line">  width: 200px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#box-2 &#123;</span><br><span class="line">  background-color: orangered;</span><br><span class="line">  align-self:flex-end;</span><br><span class="line">  height: 200px;</span><br><span class="line">  width: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="order-1"><a href="#order-1" class="headerlink" title="order:1;"></a>order:1;</h2><p>order属性，可以强行调整html元素顺序。  </p>
+<p>默认先写的元素在前，后写的在后。  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-id">#box-1</span> &#123;</span></span><br><span class="line">    background-color: dodgerblue;</span><br><span class="line"><span class="css">    <span class="selector-tag">order</span><span class="selector-pseudo">:2</span>;</span></span><br><span class="line">    height: 200px;</span><br><span class="line">    width: 200px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-id">#box-2</span> &#123;</span></span><br><span class="line">    background-color: orangered;</span><br><span class="line"><span class="css">    <span class="selector-tag">order</span><span class="selector-pseudo">:1</span>;</span></span><br><span class="line">    height: 200px;</span><br><span class="line">    width: 200px;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 通过上面的order设置，强行调换了box顺序。实际显示时，box2在左边或上面--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box-1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box-2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="四、grid网格"><a href="#四、grid网格" class="headerlink" title="四、grid网格"></a>四、grid网格</h1><p>自身设置display:grid;    </p>
+<ul>
+<li><p><strong>grid-template-columns</strong>:100px 200px  300px;  3列，宽度分别是100px,200px,300px  </p>
+</li>
+<li><p><strong>grid-template-rows</strong>:50px 100px; 2行，高度分别是50px,100px。</p>
+</li>
+<li><p><strong>grid-template-columns</strong>: auto 50px 10% 2fr 1fr;  auto代表它自己的尺寸。%代表容器尺寸的百分比。fr代表占剩余空间的比例。 </p>
+</li>
+<li><p><strong>grid-column-gap</strong>:10px;  列的横向间距为10px。  </p>
+</li>
+<li><p><strong>grid-row-gap</strong>:5px;  行的竖向间距为5px。  </p>
+</li>
+<li><p><strong>grid-gap</strong>:5px 10px;  只有一个值，代表行列间距都这个值。</p>
+<p>有2个值，前一个代表行的竖向间距。后一个代表列的横向间距。  </p>
+</li>
+<li><p><strong>grid-column</strong>: 2 / 4; 代表这一个格子，占据2～3列。  </p>
+</li>
+<li><p><strong>grid-row</strong>:2 / 4; 代表这一个格子，占据2～3行。  </p>
+</li>
+</ul>
+<ul>
+<li><p><strong>justify-items</strong>:center; start、center、end。所有子cell的横向方向对齐方式。</p>
+</li>
+<li><p><strong>align-items</strong>:end;  start、center、end。所有子cell的竖直方向对齐方式。</p>
+</li>
+</ul>
+<p>grid-template-areas</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grid-template-areas:</span><br><span class="line">  /* 单元格分为4个区域，分别是header、advert、content、footer */</span><br><span class="line">  &quot;header header header&quot;</span><br><span class="line">  &quot;advert content content&quot;</span><br><span class="line">  &quot;advert footer footer&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="grid-template-areas"><a href="#grid-template-areas" class="headerlink" title="grid-template-areas"></a>grid-template-areas</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  grid-template-areas:</span><br><span class="line">    /* 单元格分为4个区域，分别是header、advert、content、footer */</span><br><span class="line">    &quot;header header header&quot;</span><br><span class="line">    &quot;advert content content&quot;</span><br><span class="line">    &quot;footer footer footer&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.item5 &#123;</span><br><span class="line">  background: PaleGreen;</span><br><span class="line">  /* 由于grid-template-areas中设置了footer占了第3行的3列，所以item5也会占据那么多 */</span><br><span class="line">  grid-area:footer;</span><br><span class="line">    /* 这4个数字分别代表，占据水平的第3线，垂直的第1线，水平的第4线，垂直的第4线之间 */</span><br><span class="line">    grid-area: 3/1/4/4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>![grid-area: 3/1/4/4](/images/2022-03-31 15.55.50.png)  </p>
+<h2 id="cell"><a href="#cell" class="headerlink" title="cell"></a>cell</h2><ul>
+<li><strong>justify-self</strong>:center;  start、center、end。子cell的对齐方式。  </li>
+<li></li>
+</ul>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2022/03/30/web/html标签/" data-toggle="tooltip" data-placement="top" title="">Next post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+				
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">Tags</a></h5>
+                    <div class="tags">
+                       
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; アライさん 2022 
+                    <br>
+                    Powered by <a target="_blank" rel="noopener" href="http://www.hexo.io">Hexo</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Theme by <a target="_blank" rel="noopener" href="https://github.com/kinggozhang/hexo-theme-ace">ACE</a> 
+					
+					
+					<i class="fa fa-eye" id="leancounter"></i>
+					
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+   
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+
+<!-- Bootstrap Core JavaScript -->
+
+   
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+	
+<script src="/js/particles.js"></script>
+
+	
+<script src="/js/particles_config.js"></script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://araisann.github.io/2022/03/30/web/css%E5%9F%BA%E7%A1%80/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://araisann.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
