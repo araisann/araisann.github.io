@@ -232,6 +232,107 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/10/22/linux/ubuntu_boot空间不足/">
+        <h2 class="post-title">
+            ubuntu boot空间不足
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/linux/ubuntu_boot空间不足/">
+
+        <div class="post-content-preview">
+            查询现有版本  
+1dpkg --get-selections | grep linux-image
+用uname列出当前所用
+1uname -a
+
+用如下卸载
+12sudo apt-get purge linux-image-4.4.0-104-genericsudo dpkg -P linux-image-extra-3.5.0-17-generic
+...
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/linux/ubuntu安装openvpn/">
+        <h2 class="post-title">
+            ubuntu安装openvpn
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/linux/ubuntu安装openvpn/">
+
+        <div class="post-content-preview">
+            sudo apt install network-manager-openvpn-gnome
+网路中选择添加vpn，从文件导入
+...
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/linux/ubuntu终端代理/">
+        <h2 class="post-title">
+            ubuntu终端代理
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/linux/ubuntu终端代理/">
+
+        <div class="post-content-preview">
+            全局代理1sudo vim ~/.bashrc
+添加：  
+123export http_proxy=&quot;http://127.0.0.1:2002&quot;export https_proxy=&quot;http://127.0.0.1:2002&quot;export no_proxy=&quot;localhost,127.0.0.1,localaddress,.lo.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/10/22/linux/ubuntu设置root密码/">
         <h2 class="post-title">
             ubuntu设置root密码
@@ -463,102 +564,6 @@ clipboard前面为+代表支持，为-代表不支持可以安装gvim
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/10/22/macOS/插入android手机adb没有反应无法识别/">
-        <h2 class="post-title">
-            插入android手机adb没有反应无法识别
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/macOS/插入android手机adb没有反应无法识别/">
-
-        <div class="post-content-preview">
-            1system_profiler SPUSBDataType
-...
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Theme/">
-        <h2 class="post-title">
-            Flutter Theme
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Theme/">
-
-        <div class="post-content-preview">
-            创建colors.dart，设定一些颜色：  
-1234import &#x27;package:flutter/material.dart&#x27;;const kShrineSurfaceWhite = const Color(0xFFFFFBFA);const kShrineBackgroundWhite = Colors.white;
-
-使用自定义的颜色主题：    
-123.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/其他技术/git拉取特定分支/">
-        <h2 class="post-title">
-            git拉取特定分支
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/其他技术/git拉取特定分支/">
-
-        <div class="post-content-preview">
-            12345git clone https://github.com/googlesamples/android-architecture.git  cd android-architecture/git branch –all  git checkout todo-mvpgit pull
-...
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -654,7 +659,7 @@ clipboard前面为+代表支持，为-代表不支持可以安装gvim
             
         
             
-            <a href="/tags/#web" title="web" rel="4">web</a>
+            <a href="/tags/#web" title="web" rel="7">web</a>
             
         
             
@@ -696,23 +701,23 @@ clipboard前面为+代表支持，为-代表不支持可以安装gvim
     <ul>
       
         <li>
+          <a href="/2022/08/16/web/vite%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">vite构建项目</a>
+        </li>
+      
+        <li>
+          <a href="/2022/08/16/web/vuex%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">vuex状态管理</a>
+        </li>
+      
+        <li>
+          <a href="/2022/08/16/web/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8/">基础组件使用</a>
+        </li>
+      
+        <li>
           <a href="/2022/08/12/web/setup/">setup</a>
         </li>
       
         <li>
           <a href="/2022/08/09/web/vue%E6%A0%87%E7%AD%BE/">vue标签</a>
-        </li>
-      
-        <li>
-          <a href="/2022/03/31/web/css%E5%9F%BA%E7%A1%80/">css基础</a>
-        </li>
-      
-        <li>
-          <a href="/2022/03/31/web/html%E6%A0%87%E7%AD%BE/">html标签</a>
-        </li>
-      
-        <li>
-          <a href="/2021/10/27/macOS/macOS%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86/">macOS启动管理</a>
         </li>
       
     </ul>
