@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          基础组件使用 - null
+          vuex状态管理 - null
         
     </title>
 
-    <link rel="canonical" href="https://araisann.github.io/2022/08/16/web/基础组件使用/">
+    <link rel="canonical" href="https://araisann.github.io/2022/08/16/vue/vuex状态管理/">
 
     <!-- Bootstrap Core CSS -->
 
@@ -122,10 +122,10 @@
                     <div class="post-heading" style="padding:40px">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#web" title="web">web</a>
+                              <a class="tag" href="/tags/#vue" title="vue">vue</a>
                             
                         </div>
-                        <h1>基础组件使用</h1>
+                        <h1>vuex状态管理</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by アライさん on
@@ -229,77 +229,20 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="element-plus"><a href="#element-plus" class="headerlink" title="element-plus"></a>element-plus</h1><p>UI组件  </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element-plus --save</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">import</span> ElementPlus <span class="keyword">from</span> <span class="string">&#x27;element-plus&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-plus/dist/index.css&#x27;</span>;</span><br><span class="line">app.use(ElementPlus)</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string"># vue-axios   </span></span><br><span class="line"><span class="string">联网  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>shell</span><br><span class="line">npm install --save axios vue-axios</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">import</span> VueAxios <span class="keyword">from</span> <span class="string">&#x27;vue-axios&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line">app.use(VueAxios, axios)</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="comment">//可以统一配置一些统一参数</span></span><br><span class="line"><span class="keyword">const</span> netClient = <span class="built_in">this</span>.axios.create(&#123;</span><br><span class="line">    baseURL:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    timeout:<span class="number">10000</span>,</span><br><span class="line">    headers:&#123;<span class="string">&#x27;token&#x27;</span>:<span class="string">&#x27;&#x27;</span>&#125;,</span><br><span class="line">&#125;);</span><br><span class="line">netClient.get(<span class="string">&#x27;&#x27;</span>).then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以修改defaults参数</span></span><br><span class="line"><span class="built_in">this</span>.axios.defaults.baseURL = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//也可以单独请求</span></span><br><span class="line"><span class="built_in">this</span>.axios.get(<span class="string">&#x27;&#x27;</span>).then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
+                <h1 id="vuex状态管理"><a href="#vuex状态管理" class="headerlink" title="vuex状态管理"></a>vuex状态管理</h1><p>安装  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">npm install vuex@next --save  </span><br><span class="line">```  </span><br><span class="line">  </span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># **state**  </span></span></span><br><span class="line">在createStore中定义，全局共享数据。   </span><br><span class="line">使用：this.$store.state     </span><br><span class="line">```javascript</span><br><span class="line">//createStore中</span><br><span class="line">state() &#123;</span><br><span class="line">    return &#123; count: 0 &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//页面使用</span><br><span class="line">import &#123; mapState &#125; from &#x27;vuex&#x27;</span><br><span class="line">computed: mapState([&#x27;count&#x27;]),</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># **getter**  </span></span></span><br><span class="line">计算属性，在createStore中定义。  </span><br><span class="line">```javascript</span><br><span class="line">//createStore中</span><br><span class="line">getters: &#123;</span><br><span class="line">    countText(state) &#123;</span><br><span class="line">        return state.count + &#x27;次&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    //接受传参拼接</span><br><span class="line">    countText2(state) &#123;</span><br><span class="line">        return (s) =&gt; &#123; return state.count + s; &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">//页面使用</span><br><span class="line">import &#123; mapGetters &#125; from &#x27;vuex&#x27;</span><br><span class="line">computed: mapGetters([&#x27;countText2&#x27;]),</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># **mutation**  </span></span></span><br><span class="line">修改state里的数据。只允许同步修改。  </span><br><span class="line">```javascript</span><br><span class="line">//createStore中</span><br><span class="line">mutations: &#123;</span><br><span class="line">    increment(state,payload) &#123;</span><br><span class="line">        state.count+=payload.count</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//页面调用时</span><br><span class="line">this.$store.commit(&#123;</span><br><span class="line">   type: &#x27;increment&#x27;,</span><br><span class="line">   count:2,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="action"><a href="#action" class="headerlink" title="action"></a><strong>action</strong></h2><p>调用mutation，异步修改数据。<br>action本身不修改数据，包装mutation实现。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//createStore中</span></span><br><span class="line">actions: &#123;</span><br><span class="line">    asyncIncrement(context, payload) &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">//调用mutations中的方法修改</span></span><br><span class="line">            context.commit(<span class="string">&#x27;increment&#x27;</span>, payload);</span><br><span class="line">        &#125;, <span class="number">3000</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">//页面使用</span></span><br><span class="line"><span class="built_in">this</span>.$store.dispatch(<span class="string">&#x27;asyncIncrement&#x27;</span>,&#123;<span class="attr">count</span>:<span class="number">2</span>&#125;);</span><br><span class="line"><span class="string">``</span><span class="string">`    </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## **module**    </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">拆分store，每个module都有自己的state、mutations、actions、getters。  </span></span><br><span class="line"><span class="string">module还可以拥有自己的子module。  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript  </span><br><span class="line"><span class="keyword">const</span> module1 = &#123;</span><br><span class="line">    <span class="comment">//隔离。必须通过  &#x27;helloWorld1/increment1&#x27; 才能访问</span></span><br><span class="line">    namespaced: <span class="literal">true</span>,</span><br><span class="line">    state() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            count1: <span class="number">7</span></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        increment1(state, payload) &#123;</span><br><span class="line">            state.count1 += payload.count</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> module2 = &#123;</span><br><span class="line">    <span class="comment">//getter、mutations、actio共用，其他module也可以访问到</span></span><br><span class="line">    namespaced: <span class="literal">false</span>,</span><br><span class="line">    state() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            count2: <span class="number">0</span></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        increment2(state, payload) &#123;</span><br><span class="line">            state.count2 += payload.count;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(&#123;</span><br><span class="line">    modules: &#123;</span><br><span class="line">        helloWorld1: module1,</span><br><span class="line">        helloWorld2: module2,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//页面使用</span></span><br><span class="line"><span class="comment">//namespaced: true,</span></span><br><span class="line">increment() &#123;</span><br><span class="line">    <span class="built_in">this</span>.$store.commit(&#123;</span><br><span class="line">    type: <span class="string">&#x27;helloWorld1/increment1&#x27;</span>,</span><br><span class="line">    count: <span class="number">2</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//namespaced: false,</span></span><br><span class="line">increment2() &#123;</span><br><span class="line">    <span class="built_in">this</span>.$store.commit(&#123;</span><br><span class="line">        type: <span class="string">&#x27;increment2&#x27;</span>,</span><br><span class="line">        count: <span class="number">3</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>请求时配置的参数优先级 &gt; defaults参数 &gt; axios默认配置  </p>
-<p>可配置请求参数：  </p>
-<ul>
-<li>url  </li>
-<li>method （默认’get’）  </li>
-<li>baseURL  </li>
-<li>transformRequest （拦截请求，传入data、headers，修改后返回data）  </li>
-<li>transformResponse （拦截返回，传入data，修改后返回data）  </li>
-<li>headers  </li>
-<li>paramsSerializer （自定义参数序列化方法）  </li>
-<li>data (要发送的数据)  </li>
-<li>timeout  </li>
-<li>withCredentials (跨域请求是否需要凭证)  </li>
-<li>auth (设置用户信息)  </li>
-<li>responseType (响应数据的类型，默认’json’)  </li>
-<li>responseEncoding （响应数据的编码方式，默认’utf8’）  </li>
-<li>maxContentLength （响应的最大字节数）  </li>
-<li>maxBodyLength (响应内容的最大字节数)    </li>
-<li>validateStatus （自定义状态是成功或失败，传入status状态码，返回true/false）      </li>
-</ul>
-<p>返回的数据：  </p>
-<ul>
-<li>data   </li>
-<li>status  </li>
-<li>statusText  </li>
-<li>headers  </li>
-<li>config （请求时的配置信息）   </li>
-<li>request （请求实例）      </li>
-</ul>
-<p><strong>拦截器</strong>  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置拦截器</span></span><br><span class="line"><span class="keyword">let</span> requestInterceptor =  <span class="built_in">this</span>.axios.interceptors.request.use(<span class="function">(<span class="params">config</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//TODO一些发起请求前的统一处理</span></span><br><span class="line">    <span class="keyword">return</span> config;</span><br><span class="line">&#125;,<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//请求出错</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">let</span> responseInterceptor =  <span class="built_in">this</span>.axios.interceptors.response.use(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//TODO一些返回的统一处理</span></span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">&#125;,<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//请求出错</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//之后的请求已经带有拦截器</span></span><br><span class="line"><span class="built_in">this</span>.axios.get(<span class="string">&#x27;&#x27;</span>).then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;&#125;);</span><br><span class="line"><span class="comment">//移除指定拦截器</span></span><br><span class="line"><span class="built_in">this</span>.axios.interceptors.request.eject(requestInterceptor);</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string"># vue-router  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>shell</span><br><span class="line">npm install vue-router@<span class="number">4</span> -s</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>html  </span><br><span class="line">&lt;!-- 导航栏 --&gt;</span><br><span class="line">&lt;router-link to=<span class="string">&quot;/helloword&quot;</span>&gt;欢迎&lt;/router-link&gt;</span><br><span class="line">&lt;br /&gt;</span><br><span class="line">&lt;router-link to=<span class="string">&quot;/weather&quot;</span>&gt;天气&lt;/router-link&gt;</span><br><span class="line">&lt;!-- 页面内容 --&gt;</span><br><span class="line">&lt;router-view&gt;&lt;/router-view</span><br></pre></td></tr></table></figure>
-<pre><code class="javascript">import &#123; createRouter, createWebHashHistory &#125; from &#39;vue-router&#39;;
-
-import HelloWorld from &#39;./components/HelloWorld.vue&#39;
-import WeatherPage from &#39;./components/WeatherPage.vue&#39;
-import User from &#39;./components/UserPage.vue&#39;
-
-const routes = [
-    &#123; path: &#39;/helloword&#39;, component: HelloWorld &#125;,
-    &#123; path: &#39;/weather&#39;, component: WeatherPage &#125;,
-    //请求链接：/user/名字/123。页面取值：this.$route.params.username
-    &#123; path: &#39;/user/:username/:id&#39;, component: User &#125;,
-];
-
-const router = createRouter(&#123;
-    history: createWebHashHistory(),
-    routes: routes
-&#125;)</code></pre>
-<p><strong>mounted</strong>方法只有在页面销毁重建才会调用。<br>如果同一个页面参数不同跳过去，需要实现<strong>beforeRouteUpdate</strong>。  </p>
-<pre><code class="javascript">//同一页面参数不同时调用（路由更新），但首次进入时不会调用。
-//to.params.username。新参数从to取。
-beforeRouteUpdate(to, from) &#123;
-    console.log(to, from);
-&#125;,</code></pre>
-<p><strong>嵌套路由</strong></p>
-<pre><code class="javascript">//在User页面内嵌&lt;router-view&gt;&lt;/router-view&gt;用户塞入子页面
-//可以通过“/user/用户名/111/friends/6”访问
-const routes = [
-    &#123;
-        path: &#39;/user/:username/:id&#39;, 
-        component: User,
-        children: [
-            &#123; path: &#39;friends/:count&#39;, component: Friends &#125;,
-        ],
+<p><strong>module支持动态注册</strong>  </p>
+<pre><code class="javascript">//默认没有module2
+const store = createStore(&#123;
+    modules: &#123;
+        helloWorld1: module1,
     &#125;,
-];</code></pre>
+&#125;);
+//动态注册module2
+store.registerModule(&#39;helloWorld2&#39;,module2);</code></pre>
 
                 
 
@@ -308,12 +251,12 @@ const routes = [
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2022/08/16/web/vuex状态管理/" data-toggle="tooltip" data-placement="top" title="vuex状态管理">&larr; Previous post</a>
+                            <a href="/2022/08/16/vue/vite构建项目/" data-toggle="tooltip" data-placement="top" title="vite构建项目">&larr; Previous post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2022/08/12/web/setup/" data-toggle="tooltip" data-placement="top" title="setup">Next post &rarr;</a>
+                            <a href="/2022/08/16/vue/基础组件使用/" data-toggle="tooltip" data-placement="top" title="基础组件使用">Next post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -363,7 +306,7 @@ const routes = [
                     <h5><a href="/tags/">Tags</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#web" title="web">web</a>
+                          <a class="tag" href="/tags/#vue" title="vue">vue</a>
                         
                     </div>
                 </section>
@@ -520,7 +463,7 @@ const routes = [
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://araisann.github.io/2022/08/16/web/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8/index.html/js/jquery.tagcloud.js",function(){
+        async("https://araisann.github.io/2022/08/16/vue/vuex%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/index.html/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},

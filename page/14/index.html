@@ -232,6 +232,100 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/10/22/算法/动态规划/">
+        <h2 class="post-title">
+            动态规划
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/算法/动态规划/">
+
+        <div class="post-content-preview">
+            有限资源空间总数，元素所占资源，元素权重，计算最佳合集（在问题可分解为彼此独立且离散的子问题时，就哦使用动态规划来解决）   
+i = 行  j = 列cell[i][j] = （cell[i-1][j]）  比较  （当前 + cell[i-1][j-当前商品重量]）
+1234567891011121314151617181920212223242526272829303132333.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/算法/快速排序法/">
+        <h2 class="post-title">
+            快速排序法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/算法/快速排序法/">
+
+        <div class="post-content-preview">
+            思路：选择一个基准值array[(startIndex + endIndex) / 2]，比基准值小的挪到左边，比基准值大的挪到右边。对左边、右边，再分别用递归进行这种处理。基准值可以取array[0]，但如果数组为已经逆序排序，快速排序的效率就会变成冒泡排序。快速排序在最糟糕的情况下，效率等于冒泡排序。   
+1234567891011121314151617181920212223.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/算法/狄克斯特拉算法/">
+        <h2 class="post-title">
+            狄克斯特拉算法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/算法/狄克斯特拉算法/">
+
+        <div class="post-content-preview">
+            狄克斯特拉算法和旅行商问题的区别：狄克斯特拉算法解决的问题，中间不需要经过指定的节点，并且有指定的起点和终点。广度优先算法的线路没有权重。只计算最短路径，相当于权重都相同。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/10/22/算法/选择排序/">
         <h2 class="post-title">
             选择排序
@@ -470,98 +564,6 @@ password: 密码
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/07/21/android/LocalSocket_IPC/">
-        <h2 class="post-title">
-            动画
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/07/21/android/LocalSocket_IPC/">
-
-        <div class="post-content-preview">
-            LocalSocketAddress.Namespace :ABSTRACT（Linux抽象命名空间，内存中）、FILESYSTEM（文件系统命名空间）、RESERVED（Android系统预定的命名空间，系统用，/dev/socket）。
-1234567891011121314151617181920212223242526272829303132333435363738394041.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年07月21日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/06/21/android/Android面试/">
-        <h2 class="post-title">
-            Android面试
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/06/21/android/Android面试/">
-
-        <div class="post-content-preview">
-            Service生命周期：call startservice：oncreate-&gt;onStartCommond-&gt;onDestory （绑定关系，退出就一起退出。多次start之后调用一次oncreate）call bindService: onCreate-&gt;onBind -&gt;onUnbind-&gt;onDestory
-UncaughtExceptionHan.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年06月21日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/06/21/android/线程停止/">
-        <h2 class="post-title">
-            线程停止
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/06/21/android/线程停止/">
-
-        <div class="post-content-preview">
-            通过interrupt()方法：123456789101112131415161718192021private  var thread:Thread? = nulloverride fun onDestroy() &#123;   Log.d(&quot;tag&quot;,&quot;onDestroy&quot;)   thread?.interrupt()   super.on.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年06月21日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -571,6 +573,10 @@ UncaughtExceptionHan.........
             <a href="/page/13/">&larr; Newer Posts</a>
         </li>
     
+    
+        <li class="next">
+            <a href="/page/15/">Older Posts &rarr;</a>
+        </li>
     
 </ul>
 
@@ -653,10 +659,6 @@ UncaughtExceptionHan.........
             
         
             
-            <a href="/tags/#web" title="web" rel="7">web</a>
-            
-        
-            
             <a href="/tags/#flutter" title="flutter" rel="52">flutter</a>
             
         
@@ -684,6 +686,14 @@ UncaughtExceptionHan.........
             <a href="/tags/#nodejs" title="nodejs" rel="1">nodejs</a>
             
         
+            
+            <a href="/tags/#react" title="react" rel="1">react</a>
+            
+        
+            
+            <a href="/tags/#vue" title="vue" rel="9">vue</a>
+            
+        
     </div>
 </section>
 
@@ -695,23 +705,23 @@ UncaughtExceptionHan.........
     <ul>
       
         <li>
-          <a href="/2022/08/16/web/vite%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">vite构建项目</a>
+          <a href="/2022/09/09/react/react%E5%9F%BA%E7%A1%80/">react基础</a>
         </li>
       
         <li>
-          <a href="/2022/08/16/web/vuex%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">vuex状态管理</a>
+          <a href="/2022/08/23/vue/web%E5%9F%BA%E7%A1%80/">web基础</a>
         </li>
       
         <li>
-          <a href="/2022/08/16/web/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8/">基础组件使用</a>
+          <a href="/2022/08/18/vue/ts%E4%B8%8Ejs/">typescript与javascript</a>
         </li>
       
         <li>
-          <a href="/2022/08/12/web/setup/">setup</a>
+          <a href="/2022/08/16/vue/vite%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">vite构建项目</a>
         </li>
       
         <li>
-          <a href="/2022/08/09/web/vue%E6%A0%87%E7%AD%BE/">vue标签</a>
+          <a href="/2022/08/16/vue/vuex%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">vuex状态管理</a>
         </li>
       
     </ul>

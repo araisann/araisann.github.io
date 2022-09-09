@@ -232,6 +232,105 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2020/07/24/错误记录/No_MediaQuery_widget_found/">
+        <h2 class="post-title">
+            No MediaQuery widget found
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/错误记录/No_MediaQuery_widget_found/">
+
+        <div class="post-content-preview">
+            FlutterEasyLoading导致表现：TextField长按报No MediaQuery widget found。原因：需要被MaterialApp包裹。解决：main.dart 的 MaterialApp 不要被 FlutterEasyLoading 包裹。改为  
+12345678return MaterialApp(      builder: (BuildContex.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+        <h2 class="post-title">
+            cutButtonlabel called on null
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/07/24/错误记录/cutButtonlabel_call_on_null/">
+
+        <div class="post-content-preview">
+            长按TextField出现表现：长按TextField提示cutButtonlabel called on null。  
+原因：复制粘贴按钮未进行本地化。  
+解决：  
+pubspec.yaml 中，在dependencies 的flutter:sdk:flutter下增加flutter_localizations  
+12345dependencies:  flutter:   .........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年07月24日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2020/06/23/flutter/第三方组件技巧/">
+        <h2 class="post-title">
+            第三方组件技巧
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2020/06/23/flutter/第三方组件技巧/">
+
+        <div class="post-content-preview">
+            第三方组件技巧fluromain.dart初始化
+123MaterialApp(          initialRoute: Routes.root,          onGenerateRoute: Routes.router.generator),
+
+跳转登录，清除页面栈  
+123Navigator.of(context).popUntil(ModalRoute.withNa.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2020年06月23日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/12/11/flutter/Google提供的Flutter_Widgets/">
         <h2 class="post-title">
             Google提供的Flutter_Widgets
@@ -464,104 +563,6 @@ suspend：挂起函数，和生命周期没有关系，离开理解后，还需�
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/11/12/android/Data_Binding/">
-        <h2 class="post-title">
-            Data Binding
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/12/android/Data_Binding/">
-
-        <div class="post-content-preview">
-            data binding xml中无须做null判断，自带  
-module的build.gradle12345android &#123;    dataBinding &#123;       enabled true    &#125;&#125;
-
-xml自动创建：在xml文件的根节点点击，就会出现灯泡，点击灯泡可选“Convert to data binding layout.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月12日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/12/android/Android_LiveData/">
-        <h2 class="post-title">
-            LiveData(ViewModel)
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/12/android/Android_LiveData/">
-
-        <div class="post-content-preview">
-            介绍ViewModel可以自动感应生命周期储存和管理数据。ViewModel从Repository获取数据，把数据提供给View。LiveData在setValue(非UI线程使用postValue)，会根据界面生命周期，回调更新UI界面。  
-build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月12日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/11/09/linux/Linux生成随机字符串/">
-        <h2 class="post-title">
-            Linux生成随机字符串
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/11/09/linux/Linux生成随机字符串/">
-
-        <div class="post-content-preview">
-            使用openssl1openssl rand -base64 15
-
-使用/dev/urandom1&lt; &#x2F;dev&#x2F;urandom tr -cd _A-Z-a-z-0-9@#^~\ | head -c $&#123;1:-15&#125;; echo
-
-使用sha256sum算法处理秒数，取前15位1date +%s | sha256sum | base64 |.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年11月09日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -657,10 +658,6 @@ build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
             
         
             
-            <a href="/tags/#web" title="web" rel="7">web</a>
-            
-        
-            
             <a href="/tags/#flutter" title="flutter" rel="52">flutter</a>
             
         
@@ -688,6 +685,14 @@ build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
             <a href="/tags/#nodejs" title="nodejs" rel="1">nodejs</a>
             
         
+            
+            <a href="/tags/#react" title="react" rel="1">react</a>
+            
+        
+            
+            <a href="/tags/#vue" title="vue" rel="9">vue</a>
+            
+        
     </div>
 </section>
 
@@ -699,23 +704,23 @@ build.gradle12implementation &#x27;androidx.lifecycle:lifecycle-viewmod.........
     <ul>
       
         <li>
-          <a href="/2022/08/16/web/vite%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">vite构建项目</a>
+          <a href="/2022/09/09/react/react%E5%9F%BA%E7%A1%80/">react基础</a>
         </li>
       
         <li>
-          <a href="/2022/08/16/web/vuex%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">vuex状态管理</a>
+          <a href="/2022/08/23/vue/web%E5%9F%BA%E7%A1%80/">web基础</a>
         </li>
       
         <li>
-          <a href="/2022/08/16/web/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8/">基础组件使用</a>
+          <a href="/2022/08/18/vue/ts%E4%B8%8Ejs/">typescript与javascript</a>
         </li>
       
         <li>
-          <a href="/2022/08/12/web/setup/">setup</a>
+          <a href="/2022/08/16/vue/vite%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">vite构建项目</a>
         </li>
       
         <li>
-          <a href="/2022/08/09/web/vue%E6%A0%87%E7%AD%BE/">vue标签</a>
+          <a href="/2022/08/16/vue/vuex%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">vuex状态管理</a>
         </li>
       
     </ul>
