@@ -229,7 +229,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>JSX中，用<code>&#123;&#125;</code>大括号包裹javascript代码。使用<code>&#123;&#123;&#125;&#125;</code>内联css。<br>JSX注释实用：<code>&#123;/* */&#125;</code>。<br>JSX 中所有 HTML 属性和事件引用的命名约定都变成了驼峰式。JSX中HTML标签的id，实用className。  </p>
+                <p>JSX中，用 {} 大括号包裹javascript代码。使用 { { } } 内联css。  </p>
+<p>JSX注释实用：<code>&#123;/* */&#125;</code>。<br>JSX 中所有 HTML 属性和事件引用的命名约定都变成了驼峰式。JSX中HTML标签的id，实用className。    </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将JSXName渲染到id为idName的节点中</span></span><br><span class="line">ReactDOM.render(JSXName, <span class="built_in">document</span>.getElementById(<span class="string">&#x27;idName&#x27;</span>));</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Kitten</span> <span class="attr">name</span>=<span class="string">&#x27;参数&#x27;</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">&#x27;idName&#x27;</span>))</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## 在JSX中使用内联样式  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>jsx</span><br><span class="line">&#123;<span class="comment">/* font-size之类需要变成驼峰写法 */</span>&#125;</span><br><span class="line">&lt;div style=&#123;&#123;<span class="attr">color</span>: <span class="string">&quot;purple&quot;</span>, <span class="attr">fontSize</span>: <span class="number">40</span>, <span class="attr">border</span>:<span class="string">&quot;2px solid purple&quot;</span>&#125;&#125;&gt;Big Red&lt;/div&gt;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 在JSX中使用ifelse  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>jsx</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123;<span class="built_in">this</span>.state.display &amp;&amp;  <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Displayed!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;<span class="comment">/* 等价 */</span>&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123;<span class="built_in">this</span>.state.display ?  <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Displayed!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> : <span class="literal">null</span>&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;abc&#x27;</span>,<span class="string">&#x27;efg&#x27;</span>,<span class="string">&#x27;hij&#x27;</span>].map(<span class="function">(<span class="params">item, index</span>) =&gt;</span></span><br><span class="line">  &lt;li key=&#123;index&#125;&gt;&#123;item&#125;&lt;/li&gt;</span><br><span class="line">);</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## filter   </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="comment">//过滤掉online=false的数据</span></span><br><span class="line">[&#123;<span class="attr">name</span>:<span class="string">&#x27;a&#x27;</span>,<span class="attr">online</span>:<span class="literal">false</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">&#x27;a&#x27;</span>,<span class="attr">online</span>:<span class="literal">true</span>&#125;,].filter(<span class="function"><span class="params">user</span> =&gt;</span> user.online);</span><br></pre></td></tr></table></figure>
@@ -237,12 +238,88 @@
 
 <h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MyComponent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;测试&lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Kitten</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state = &#123;</span><br><span class="line">        count:<span class="number">0</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//需要使用这种方式绑定，否则render中会找不到handleClick</span></span><br><span class="line">    <span class="built_in">this</span>.handleClick = <span class="built_in">this</span>.handleClick.bind(<span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleClick()&#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(<span class="function">(<span class="params">state,props</span>)=&gt;</span>(&#123;</span><br><span class="line">      count:state.count + <span class="number">1</span></span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;button onClick=&#123;<span class="built_in">this</span>.handleClick&#125;&gt;&#123;<span class="built_in">this</span>.props.name&#125; &#123;<span class="built_in">this</span>.state.count&#125;&lt;/button&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//设置默认参数</span></span><br><span class="line">Kitten.defaultProps = &#123;</span><br><span class="line">  name: <span class="string">&#x27;CamperBot&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//设置参数类型</span></span><br><span class="line">Kitten.propTypes = &#123; <span class="attr">name</span>: PropTypes.string.isRequired &#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## 生命周期  </span></span><br><span class="line"><span class="string">* componentWillMount() 废弃   </span></span><br><span class="line"><span class="string">* componentDidMount() 可在此挂在联网请求，使用setState刷新页面。也可以设置监听器。   </span></span><br><span class="line"><span class="string">* shouldComponentUpdate(nextProps, nextState) 根据nextProps和nextState，返回true/false手动确定是否要刷新。  </span></span><br><span class="line"><span class="string">* componentDidUpdate()   </span></span><br><span class="line"><span class="string">* componentWillUnmount()  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 按键监听  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line">componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">&quot;keydown&quot;</span>, <span class="built_in">this</span>.handleKeyPress);</span><br><span class="line">&#125;</span><br><span class="line">componentWillUnmount() &#123;</span><br><span class="line">    <span class="built_in">document</span>.removeEventListener(<span class="string">&quot;keydown&quot;</span>, <span class="built_in">this</span>.handleKeyPress);</span><br><span class="line">&#125;</span><br><span class="line">handleKeyPress(event) &#123;</span><br><span class="line">    <span class="keyword">if</span> (event.keyCode === <span class="number">13</span>) &#123;</span><br><span class="line">     <span class="comment">//todo</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><pre><code class="javascript">import React, &#123; useState, useEffect &#125; from &#39;react&#39;;
+
+function Example()&#123;
+  //count是一个state，setCount代表更新count的函数，0则是初始化值
+  const [count,setCount] = useState(0);
+  const [timer,setTimer] = useState(null);
+
+  useEffect(()=&gt;&#123;
+    //第一次渲染和每次刷新后都会执行
+    //[count]可以不传。传入后会对比count的值，不同才执行
+  &#125;,[count]);
+
+  return(
+    &lt;div&gt;
+      &lt;p&gt;You clicked &#123;count&#125; times&lt;/p&gt;
+      &lt;button onClick=&#123;()=&gt;setCount(count+1)&#125;&gt;click me&lt;/button&gt;
+    &lt;/div&gt;
+  );
+&#125;</code></pre>
+<h2 id="自定义Hook"><a href="#自定义Hook" class="headerlink" title="自定义Hook"></a>自定义Hook</h2><pre><code class="javascript">import React, &#123; useState, useEffect &#125; from &#39;react&#39;;
+
+//自定义hook
+function useFriendStatus( friendID ) &#123;
+  const [isOnline, setIsOnline] = useState(null);
+
+  useEffect(() =&gt; &#123;
+    function handleStatusChange(status) &#123;
+      setIsOnline(status.isOnline);
+    &#125;
+
+    //绑定监听，ChatAPI会调用handleStatusChange方法设置是否在线
+    ChatAPI.subscribeToFriendStatus(friendID,handleStatusChange);
+
+    //销毁时调用取消监听
+    return ()=&gt; &#123;
+      ChatAPI.unsubscribeToFriendStatus(friendID,handleStatusChange);
+    &#125;
+
+  &#125;);
+
+  return isOnline;
+&#125;</code></pre>
+<p>使用上述自定义的useFriendStatus：  </p>
+<pre><code class="javascript">function FriendItem(id) &#123;
+  const isOnline = userFriendStatus(id);
+  return (
+    &lt;li style=&#123;&#123; color: isOnlie? 'green':'black'&#125;&#125;&gt;
+      id: &#123;id&#125; 
+    &lt;/li&gt;
+  );
+&#125;</code></pre>
+<p><strong>不同组件中使用相同的自定义Hook并不会共享State（即useState()函数的返回值），它们都是独立的，并且在同一个组件中每次调用Hook都会获取独立的State</strong>  </p>
+<h2 id="useContext-hook获取全局属性"><a href="#useContext-hook获取全局属性" class="headerlink" title="useContext hook获取全局属性"></a>useContext hook获取全局属性</h2><pre><code class="javascript">const themes = &#123;
+  light: &#123;
+    foreground: &quot;#000000&quot;,
+  &#125;,
+  drak: &#123;
+    foreground: &quot;#ffffff&quot;,
+  &#125;,
+&#125;;
+
+const ThemeContext = React.createContext(themes.light);
+
+function ThemedButton() &#123;
+  //useContext的参数是React.createContext出来的context
+  const theme = useContext(ThemeContext);
+  return (
+    &lt;button style=&#123;&#123; color:theme.foreground&#125;&#125;&gt;按钮&lt;/button&gt;
+  );
+&#125;
+</code></pre>
+<p><strong>其他Hook： useReducer(), useCallback(), useMemo(), useImperativeHandle(), useLayoutEffect(), useDebugValue(), 等等</strong>  </p>
 
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2022/09/13/react/redux/" data-toggle="tooltip" data-placement="top" title="redux">&larr; Previous post</a>
+                        </li>
                     
                     
                         <li class="next">

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ノート">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          vue实战 - null
+        
+    </title>
+
+    <link rel="canonical" href="https://araisann.github.io/2022/09/23/vue/vue实战/">
+
+    <!-- Bootstrap Core CSS -->
+
+   
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+	
+<link rel="stylesheet" href="/css/w3.css">
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+    }
+   .post-heading{
+    padding:20px;
+    }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+</style>
+
+<header id="headerid" class="w3-indigo intro-header" style="position:relative;">
+    <!-- Signature -->
+	
+        <div class="container">
+            <div class=" row" >
+			
+			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
+			
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
+                
+                    <div class="post-heading" style="padding:40px">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#vue" title="vue">vue</a>
+                            
+                        </div>
+                        <h1>vue实战</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by アライさん on
+                            2022年09月23日
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+  
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">アライさん ノート</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a  href="/">Homepage</a>
+                    </li>
+		    
+                    
+
+                        
+                        <li>
+           
+                            <a  href="https://araisann.github.io/tags/">Tags</a>
+                           
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="一、基础结构"><a href="#一、基础结构" class="headerlink" title="一、基础结构"></a>一、基础结构</h1><h2 id="vue组件基础结构："><a href="#vue组件基础结构：" class="headerlink" title="vue组件基础结构："></a>vue组件基础结构：</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- HTML 代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="comment">// JavaScript 代码</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="comment">/* CSS 代码 */</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line">  </span><br><span class="line">## 使用typescript  </span><br><span class="line">```shell</span><br><span class="line">npm install -D typescript ts-node</span><br><span class="line">```  </span><br><span class="line">```json</span><br><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;dev:ts&quot;: &quot;ts-node src/ts/index.ts&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;tsc src/ts/index.ts --outDir dist --target es6&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>dev:ts 代表用了 ts-node 来代替原来在用的 node ，因为使用 node 无法识别 TypeScript 语言。<br>typescript 这个包是用 TypeScript 编程的语言依赖包<br>ts-node 是让 Node 可以运行 TypeScript 的执行环境  </p>
+<p>tsc src/ts/index.ts –outDir dist –target es6<br>代表打包成js（比如html中使用），输出到src的同级目录dist中，  –target es6可以省略，代表js规范。<br>执行npm run build，就可以在dist中看到相应的js文件。  </p>
+<p>使用<code>npm run dev:ts</code>,可以测试typescript的可运行性。    </p>
+<p>执行<code>npm run build</code>，会将代码打包到dist目录，之后怎么修改，dist里的代码都不变，直到再次build。  </p>
+<p>在 Webpack ，可以使用 process.env.NODE_ENV 来区分开发环境（ development ）还是生产环境（ production ）。<br>在 Vite ，还可以通过判断 import.meta.env.DEV 为 true 时是开发环境，判断 import.meta.env.PROD 为 true 时是生产环境。  </p>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><ul>
+<li>在.gitignore 文件里添加 node_modules 忽略。  </li>
+</ul>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><ul>
+<li>vite.config.ts脚手架配置文件  </li>
+<li>.editorconfig文件，代码风格，比如缩进和空格。vsCode需要安装EditorConfig扩展。  </li>
+<li>.prettierrc格式化代码。”semi”:true代表结尾需要分号。vsCode需要安装Prettier扩展。    </li>
+<li>.eslintrc.js ESLint代码检查工具。<br>需要在开发依赖中安装相关依赖。  </li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="二、创建项目"><a href="#二、创建项目" class="headerlink" title="二、创建项目"></a>二、创建项目</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">npm init vue@3</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;或者用Awesome Starter的脚手架创建模版项目  </span><br><span class="line">npm create preset  </span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line"></span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">  </span><br><span class="line"># 三、setup  </span><br><span class="line">setup在props解析之后，创建组件之前执行。  </span><br><span class="line">是组合式API的入口，业务代码可以直接放在里面。  </span><br><span class="line"></span><br><span class="line">**使用setup的时候，无法使用this来获取Vue实例。**  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p class&#x3D;&quot;msg&quot;&gt;&#123;&#123; msg &#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang&#x3D;&quot;ts&quot;&gt;</span><br><span class="line">import &#123; defineComponent &#125; from &#39;vue&#39;</span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  const msg &#x3D; &#39;Hello World!&#39;</span><br><span class="line">  &#x2F;&#x2F;context暴露三个属性，attrs、slots、emit</span><br><span class="line">  setup(props, context) &#123;</span><br><span class="line">    &#x2F;&#x2F; 业务代码写这里...</span><br><span class="line">    onBeforeMount(() &#x3D;&gt; &#123;</span><br><span class="line">      &#x2F;&#x2F;一些声明周期触发</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">      &#x2F;&#x2F; 需要给 template 用的数据、函数放这里 return</span><br><span class="line">      &#x2F;&#x2F; 只在函数中调用，不需要rerurn</span><br><span class="line">      msg,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.msg &#123;</span><br><span class="line">  font-size: 14px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="四、生命周期"><a href="#四、生命周期" class="headerlink" title="四、生命周期"></a>四、生命周期</h1><ul>
+<li><strong>setup</strong>    组件创建前执行  </li>
+<li><strong>setup</strong>    组件创建后执行  </li>
+<li><strong>onBeforeMount</strong>    组件挂载到节点上之前执行  </li>
+<li><strong>onMounted</strong>    组件挂载完成后执行  </li>
+<li><strong>onBeforeUpdate</strong>    组件更新之前执行  </li>
+<li><strong>onUpdated</strong>    组件更新完成之后执行  </li>
+<li><strong>onBeforeUnmount</strong>    组件卸载之前执行  </li>
+<li><strong>onUnmounted</strong>    组件卸载完成后执行  </li>
+<li><strong>onErrorCaptured</strong>    当捕获一个来自子孙组件的异常时激活钩子函数    </li>
+</ul>
+<p>被包含在<code>&lt;keep-alive&gt;</code>中的组件，会多出2个生命周期钩子：  </p>
+<ul>
+<li><strong>onActivated</strong>    被激活时执行 </li>
+<li><strong>onDeactivated</strong>    切换组件后，原组件消失前执行  </li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="五、ref与reactive的使用"><a href="#五、ref与reactive的使用" class="headerlink" title="五、ref与reactive的使用"></a>五、ref与reactive的使用</h1><p><strong>读取任何 ref 对象的值都必须通过 xxx.value。</strong><br>ref是一个对象，所以const定义后，依旧可以修改value。  </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> msg = ref&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;Hello World!&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> uids = ref&lt;<span class="built_in">number</span>[]&gt;([ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明对象的格式</span></span><br><span class="line"><span class="keyword">interface</span> Member &#123;</span><br><span class="line">  id: <span class="built_in">number</span>,</span><br><span class="line">  name: <span class="built_in">string</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个成员对象</span></span><br><span class="line"><span class="keyword">const</span> userInfo = ref&lt;Member&gt;(&#123;</span><br><span class="line">  id: <span class="number">1</span>,</span><br><span class="line">  name: <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 挂载DOM元素 --&gt;</span><br><span class="line">  &lt;p ref=<span class="string">&quot;msg&quot;</span>&gt;</span><br><span class="line">    留意该节点，有一个ref属性</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">  &lt;!-- 挂载DOM元素 --&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 挂载子组件 --&gt;</span><br><span class="line">  &lt;Child ref=<span class="string">&quot;child&quot;</span> /&gt;</span><br><span class="line">  &lt;!-- 挂载子组件 --&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">**reactive只用于对象、数组。**  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="comment">// 定义一个成员对象</span></span><br><span class="line"><span class="keyword">const</span> userInfo: Member = reactive(&#123;</span><br><span class="line">  id: <span class="number">1</span>,</span><br><span class="line">  name: <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 定义一个成员对象数组</span></span><br><span class="line"><span class="keyword">const</span> userList: Member[] = reactive([</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    name: <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    name: <span class="string">&#x27;Petter&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">3</span>,</span><br><span class="line">    name: <span class="string">&#x27;Andy&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">]);</span><br><span class="line"><span class="string">``</span><span class="string">`    </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">例子：  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">import</span> &#123; defineComponent, reactive, toRefs &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Member &#123;</span><br><span class="line">  id: <span class="built_in">number</span>,</span><br><span class="line">  name: <span class="built_in">string</span>,</span><br><span class="line">  age: <span class="built_in">number</span>,</span><br><span class="line">  gender: <span class="built_in">string</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> defineComponent(&#123;</span><br><span class="line">  setup () &#123;</span><br><span class="line">    <span class="comment">// 定义一个reactive对象</span></span><br><span class="line">    <span class="keyword">const</span> userInfo = reactive(&#123;</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      name: <span class="string">&#x27;Petter&#x27;</span>,</span><br><span class="line">      age: <span class="number">18</span>,</span><br><span class="line">      gender: <span class="string">&#x27;male&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义一个新的对象，它本身不具备响应性，但是它的字段全部是ref变量</span></span><br><span class="line">    <span class="keyword">const</span> userInfoRefs = toRefs(userInfo);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2s后更新userInfo</span></span><br><span class="line">    <span class="built_in">setTimeout</span>( <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      userInfo.id = <span class="number">2</span>;</span><br><span class="line">      userInfo.name = <span class="string">&#x27;Tom&#x27;</span>;</span><br><span class="line">      userInfo.age = <span class="number">20</span>;</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在这里结构toRefs对象才能继续保持响应式，使用时直接使用&#123;&#123;id&#125;&#125;、&#123;&#123;name&#125;&#125;</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...userInfoRefs</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string"># 六、watch  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">import</span> &#123; defineComponent, reactive, watch &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> defineComponent(&#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    <span class="comment">// 定义一个响应式数据</span></span><br><span class="line">    <span class="keyword">const</span> userInfo = reactive(&#123;</span><br><span class="line">      name: <span class="string">&#x27;Petter&#x27;</span>,</span><br><span class="line">      age: <span class="number">18</span>,</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2s后改变数据</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      userInfo.name = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">    &#125;, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line">    watch(userInfo, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;监听整个 userInfo &#x27;</span>, userInfo.name)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 也可以监听对象里面的某个值</span></span><br><span class="line"><span class="comment">     * 此时数据源需要写成 getter 函数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    watch(</span><br><span class="line">      <span class="comment">// 数据源，getter 形式</span></span><br><span class="line">      () =&gt; userInfo.name,</span><br><span class="line">      <span class="comment">// 回调函数 callback</span></span><br><span class="line">      (newValue, oldValue) =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;只监听 name 的变化 &#x27;</span>, userInfo.name)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;打印变化前后的值&#x27;</span>, &#123; oldValue, newValue &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> handleWatch = (</span><br><span class="line">      newValue: <span class="built_in">string</span> | <span class="built_in">number</span>,</span><br><span class="line">      oldValue: <span class="built_in">string</span> | <span class="built_in">number</span></span><br><span class="line">    ): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(&#123; newValue, oldValue &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 然后定义多个监听操作，传入这个公共函数</span></span><br><span class="line">    watch(userInfo, handleWatch)</span><br><span class="line">    <span class="comment">// watch(index, handleWatch)</span></span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="string">``</span><span class="string">`   </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">watchEffect:  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> defineComponent(&#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    <span class="keyword">const</span> foo = ref&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      foo.value = <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line">    &#125;, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(foo.value)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 可以通过 watchEffect 实现 bar() + watch(foo, bar) 的效果</span></span><br><span class="line">    watchEffect(bar)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="七、computed"><a href="#七、computed" class="headerlink" title="七、computed"></a>七、computed</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineComponent, ref, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> defineComponent(&#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    <span class="comment">// 定义基本的数据</span></span><br><span class="line">    <span class="keyword">const</span> firstName = ref&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;Bill&#x27;</span>)</span><br><span class="line">    <span class="keyword">const</span> lastName = ref&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;Gates&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义需要计算拼接结果的数据</span></span><br><span class="line">    <span class="keyword">const</span> fullName = computed(<span class="function">() =&gt;</span> <span class="string">`<span class="subst">$&#123;firstName.value&#125;</span> <span class="subst">$&#123;lastName.value&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//通过实现set和get，来实现对computed的value的修改</span></span><br><span class="line">    <span class="keyword">const</span> foo = computed(&#123;</span><br><span class="line">      <span class="comment">// 这里需要明确的返回一个值</span></span><br><span class="line">      get() &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 这里接收一个参数，代表修改 foo 时，赋值下来的新值</span></span><br><span class="line">      set(newValue) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2s 后改变某个数据的值</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      firstName.value = <span class="string">&#x27;Petter&#x27;</span></span><br><span class="line">    &#125;, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// template 那边在 2s 后也会显示为 Petter Gates</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      fullName,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">**computed的优势是会缓存数据，不用每次都执行一遍操作。**  </span></span><br><span class="line"><span class="string">**computed的变量获取依旧要通过.value，并且是只读。**  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 八、动态修改style    </span></span><br><span class="line"><span class="string">## 使用:class  </span></span><br></pre></td></tr></table></figure>
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  setup () {
+    const activeClass = 'active-class'
+
+    return {
+      activeClass,
+    }
+  }
+})
+</script>
+<template>
+  <p :class="activeClass">Hello World!</p>
+</template>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">## 使用 :style 动态修改内联样式  </span><br><span class="line">&#96;&#96;&#96;html</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p</span><br><span class="line">    :style&#x3D;&quot;[style1, style2]&quot;</span><br><span class="line">  &gt;</span><br><span class="line">    Hello World!</span><br><span class="line">  &lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang&#x3D;&quot;ts&quot;&gt;</span><br><span class="line">import &#123; defineComponent &#125; from &#39;vue&#39;</span><br><span class="line"></span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  setup () &#123;</span><br><span class="line">    const style1 &#x3D; &#123;</span><br><span class="line">      fontSize: &#39;13px&#39;,</span><br><span class="line">      &#39;line-height&#39;: 2,</span><br><span class="line">    &#125;</span><br><span class="line">    const style2 &#x3D; &#123;</span><br><span class="line">      color: &#39;#ff0000&#39;,</span><br><span class="line">      textAlign: &#39;center&#39;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">      style1,</span><br><span class="line">      style2,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用v-bind"><a href="#使用v-bind" class="headerlink" title="使用v-bind"></a>使用v-bind</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;msg&quot;</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">&quot;ts&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; defineComponent, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> defineComponent(&#123;</span></span><br><span class="line">  setup () &#123;</span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> fontColor = ref&lt;string&gt;(<span class="string">&#x27;#ff0000&#x27;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line">      fontColor,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.msg</span> &#123;</span></span><br><span class="line">  color: v-bind(fontColor);</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"># 九、路由  </span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 登录 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Login</span> <span class="attr">v-if</span>=<span class="string">&quot;route.name === &#x27;login&#x27;&quot;</span> /&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!-- 注册 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Register</span> <span class="attr">v-else-if</span>=<span class="string">&quot;route.name === &#x27;register&#x27;&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 带有侧边栏的其他路由 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 固定在左侧的侧边栏 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Sidebar</span> /&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 路由 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRouter &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="keyword">const</span> router = useRouter();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 跳转首页</span></span><br><span class="line">router.push(&#123;</span><br><span class="line">  name: <span class="string">&#x27;home&#x27;</span>,</span><br><span class="line">  params: &#123;</span><br><span class="line">    id: <span class="number">123</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//等价于，router-link默认是a标签，可以手动指定tag</span></span><br><span class="line"><span class="comment">// &lt;router-link</span></span><br><span class="line"><span class="comment">//   tag=&quot;span&quot;</span></span><br><span class="line"><span class="comment">//   class=&quot;link&quot;</span></span><br><span class="line"><span class="comment">//   :to=&quot;&#123;</span></span><br><span class="line"><span class="comment">//     name: &#x27;article&#x27;,</span></span><br><span class="line"><span class="comment">//     params: &#123;</span></span><br><span class="line"><span class="comment">//       id: 123</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">//   &#125;&quot;</span></span><br><span class="line"><span class="comment">// &gt;</span></span><br><span class="line"><span class="comment">//&lt;/router-link</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回上一页</span></span><br><span class="line">router.back();</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">配置404页面  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">const</span> routes: <span class="built_in">Array</span>&lt;RouteRecordRaw&gt; = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/:pathMatch(.*)*&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;404&#x27;</span>,</span><br><span class="line">    component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: &quot;404&quot; */</span> <span class="string">&#x27;@views/404.vue&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">路由守卫  </span></span><br></pre></td></tr></table></figure>
+<p>import { createRouter } from ‘vue-router’</p>
+<p>// 创建路由<br>const router = createRouter({ … })</p>
+<p>// 在路由跳转前触发<br>router.beforeEach((to, from) =&gt; {<br>  // …<br>})</p>
+<p>// 在导航被确认前，同时在组件内守卫和异步路由组件被解析后<br>router.beforeResolve(async to =&gt; {<br>  // 如果路由配置了必须调用相机权限<br>  if ( to.meta.requiresCamera ) {<br>    // 正常流程，咨询是否允许使用照相机<br>    try {<br>      await askForCameraPermission()<br>    }<br>    // 容错<br>    catch (error) {<br>      if ( error instanceof NotAllowedError ) {<br>        // … 处理错误，然后取消导航<br>        return false<br>      } else {<br>        // 如果出现意外，则取消导航并抛出错误<br>        throw error<br>      }<br>    }<br>  }<br>})</p>
+<p>//跳转完成后<br>router.afterEach( (to, from) =&gt; {<br>  // 上报流量的操作<br>  // …<br>})</p>
+<p>// 暴露出去<br>export default router</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">单独的路由跳转守卫，在跳转之前  </span><br></pre></td></tr></table></figure>
+<p>{<br>    path: ‘/home’,<br>    name: ‘home’,<br>    component: () =&gt; import(/* webpackChunkName: “home” */ ‘@views/home.vue’),<br>    // 在这里添加单独的路由守卫<br>    beforeEnter: (to, from) =&gt; {<br>      document.title = ‘程沛权 - 养了三只猫’;<br>    }<br>  }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line"></span><br><span class="line"># 十、组件通信  </span><br><span class="line">## 1、通过Props  </span><br><span class="line">&#96;&#96;&#96;html</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;Child</span><br><span class="line">    title&#x3D;&quot;用户信息&quot;</span><br><span class="line">    :index&#x3D;&quot;1&quot;</span><br><span class="line">    :uid&#x3D;&quot;userInfo.id&quot;</span><br><span class="line">    :user-name&#x3D;&quot;userInfo.name&quot;</span><br><span class="line">  &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">接收  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    title: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      required: true,</span><br><span class="line">      default: &#39;默认标题&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    index: Number,</span><br><span class="line">    userName: String,</span><br><span class="line">    &#x2F;&#x2F;两种类型之一</span><br><span class="line">    uid: 【Number,String]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">  </span><br><span class="line">## 2、通过emits  </span><br><span class="line">&#96;&#96;&#96;html</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;Child</span><br><span class="line">    @update-age&#x3D;&quot;updateAge&quot;</span><br><span class="line">  &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import &#123; defineComponent, reactive &#125; from &#39;vue&#39;</span><br><span class="line">import Child from &#39;@cp&#x2F;Child.vue&#39;</span><br><span class="line"></span><br><span class="line">interface Member &#123;</span><br><span class="line">  id: number,</span><br><span class="line">  name: string,</span><br><span class="line">  age: number</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Child</span><br><span class="line">  &#125;,</span><br><span class="line">  setup () &#123;</span><br><span class="line">    const userInfo: Member &#x3D; reactive(&#123;</span><br><span class="line">      id: 1,</span><br><span class="line">      name: &#39;Petter&#39;,</span><br><span class="line">      age: 0</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 定义一个更新年龄的方法</span><br><span class="line">    const updateAge &#x3D; (age: number): void &#x3D;&gt; &#123;</span><br><span class="line">      userInfo.age &#x3D; age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">      userInfo,</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; return给template用</span><br><span class="line">      updateAge</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">子元素调用    </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  emits: [</span><br><span class="line">    &#39;update-age&#39;</span><br><span class="line">  ],</span><br><span class="line">  setup (props, &#123; emit &#125;) &#123;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 2s 后更新年龄</span><br><span class="line">    setTimeout( () &#x3D;&gt; &#123;</span><br><span class="line">      emit(&#39;update-age&#39;, 22);</span><br><span class="line">    &#125;, 2000);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">  </span><br><span class="line">## 3、eventbus  </span><br><span class="line">&#96;&#96;&#96;shell</span><br><span class="line">npm install --save mitt </span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">在libs文件夹下建立bus.ts  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import mitt from &#39;mitt&#39;;</span><br><span class="line">export default mitt();</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">启用接收eventbus  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import &#123; defineComponent, onBeforeUnmount &#125; from &#39;vue&#39;</span><br><span class="line">import bus from &#39;@libs&#x2F;bus&#39;</span><br><span class="line"></span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  setup () &#123;</span><br><span class="line">    &#x2F;&#x2F; 定义一个打招呼的方法</span><br><span class="line">    const sayHi &#x3D; (msg: string &#x3D; &#39;Hello World!&#39;): void &#x3D;&gt; &#123;</span><br><span class="line">      console.log(msg);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 启用监听</span><br><span class="line">    bus.on(&#39;sayHi&#39;, sayHi);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 在组件卸载之前移除监听</span><br><span class="line">    onBeforeUnmount( () &#x3D;&gt; &#123;</span><br><span class="line">      bus.off(&#39;sayHi&#39;, sayHi);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">发送eventbus  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import &#123; defineComponent &#125; from &#39;vue&#39;</span><br><span class="line">import bus from &#39;@libs&#x2F;bus&#39;</span><br><span class="line"></span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  setup () &#123;</span><br><span class="line">    &#x2F;&#x2F; 调用打招呼事件，传入消息内容</span><br><span class="line">    bus.emit(&#39;sayHi&#39;, &#39;哈哈哈哈哈哈哈哈哈哈哈哈哈哈&#39;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;  </span><br><span class="line">  </span><br><span class="line"># 十一、Vuex  </span><br><span class="line">src&#x2F;store&#x2F;index  </span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import &#123; createStore &#125; from &#39;vuex&#39;</span><br><span class="line"></span><br><span class="line">export default createStore(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  modules: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">  </span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;  </span><br><span class="line">  </span><br><span class="line"># 十一、Pinia  </span><br><span class="line">&#96;&#96;&#96;shell</span><br><span class="line">npm install pinia</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">**scr&#x2F;main.ts**中  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import &#123; createApp &#125; from &#39;vue&#39;</span><br><span class="line">import &#123; createPinia &#125; from &#39;pinia&#39; &#x2F;&#x2F; 导入 Pinia</span><br><span class="line">import App from &#39;@&#x2F;App.vue&#39;</span><br><span class="line">createApp(App)</span><br><span class="line">  .use(createPinia()) &#x2F;&#x2F; 启用 Pinia</span><br><span class="line">  .mount(&#39;#app&#39;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">  </span><br><span class="line">**Pinia的核心也是store**   </span><br><span class="line">基本定义：  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">&#x2F;&#x2F; src&#x2F;stores&#x2F;index.ts</span><br><span class="line">import &#123; defineStore &#125; from &#39;pinia&#39;</span><br><span class="line">&#x2F;&#x2F;如果有多个store，可以分模块管理。useMessageStore、useUserStore等</span><br><span class="line">export const useStore &#x3D; defineStore(&#39;main&#39;, &#123;</span><br><span class="line">  state: () &#x3D;&gt; &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      message: &#39;Hello World&#39;,</span><br><span class="line">      &#x2F;&#x2F;通过as指定类型。等同&lt;string[]&gt;[]</span><br><span class="line">      randomMessages: [] as string[],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  actions: &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 异步更新 message</span><br><span class="line">    &#x2F;&#x2F;调用store.updateMessage(&#39;New message by async.&#39;).then((res)&#123;&#125;)</span><br><span class="line">    async updateMessage(newMessage: string): Promise&lt;string&gt; &#123;</span><br><span class="line">      return new Promise((resolve) &#x3D;&gt; &#123;</span><br><span class="line">        setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">          &#x2F;&#x2F; 这里的 this 是当前的 Store 实例</span><br><span class="line">          this.message &#x3D; newMessage</span><br><span class="line">          resolve(&#39;Async done.&#39;)</span><br><span class="line">        &#125;, 3000)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; 同步更新 message</span><br><span class="line">    updateMessageSync(newMessage: string): string &#123;</span><br><span class="line">      &#x2F;&#x2F; 这里的 this 是当前的 Store 实例</span><br><span class="line">      this.message &#x3D; newMessage</span><br><span class="line">      return &#39;Sync done.&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 定义一个 fullMessage 的计算数据</span><br><span class="line">  getters: &#123;</span><br><span class="line">    fullMessage: (state) &#x3D;&gt; &#96;The message is &quot;$&#123;state.message&#125;&quot;.&#96;,</span><br><span class="line">     &#x2F;&#x2F; 这个 getter 返回了另外一个 getter 的结果</span><br><span class="line">    emojiMessage(): string &#123;</span><br><span class="line">      return &#96;🎉🎉🎉 $&#123;this.fullMessage&#125;&#96;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; 定义一个接收入参的函数作为返回值。这种get没有相应性</span><br><span class="line">    &#x2F;&#x2F;调用const signedMessage &#x3D; store.signedMessage(&#39;Petter&#39;)</span><br><span class="line">    signedMessage: (state) &#x3D;&gt; &#123;</span><br><span class="line">      return (name: string) &#x3D;&gt; &#96;$&#123;name&#125; say: &quot;The message is $&#123;state.message&#125;&quot;.&#96;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;   </span><br><span class="line">基本使用：  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import &#123; defineComponent &#125; from &#39;vue&#39;</span><br><span class="line">import &#123; useStore &#125; from &#39;@&#x2F;stores&#39;</span><br><span class="line"></span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    &#x2F;&#x2F; 像 useRouter 那样定义一个变量拿到实例</span><br><span class="line">    const store &#x3D; useStore()</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 通过计算拿到里面的数据</span><br><span class="line">    &#x2F;&#x2F; 直接通过 message.value &#x3D; &#39;New Message.&#39;;就可以更新</span><br><span class="line">   const message &#x3D; computed(&#123;</span><br><span class="line">      &#x2F;&#x2F; getter 还是返回数据的值</span><br><span class="line">      get: () &#x3D;&gt; store.message,</span><br><span class="line">      &#x2F;&#x2F; 配置 setter 来定义赋值后的行为</span><br><span class="line">      set(newVal) &#123;</span><br><span class="line">        store.message &#x3D; newVal</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 传给 template 使用</span><br><span class="line">    return &#123;</span><br><span class="line">      message,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">&lt;br&gt;  </span><br><span class="line">&lt;br&gt;  </span><br><span class="line">  </span><br><span class="line">也提供&#96;&#96;&#96;storeToRefs&#96;&#96;&#96;把state 的数据转换为 ref 变量。  </span><br><span class="line">它会忽略掉 Store 上面的方法和非响应性的数据，只返回 state 上的响应性数据。  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import &#123; defineComponent &#125; from &#39;vue&#39;</span><br><span class="line">import &#123; useStore &#125; from &#39;@&#x2F;stores&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 记得导入这个 API</span><br><span class="line">import &#123; storeToRefs &#125; from &#39;pinia&#39;</span><br><span class="line"></span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    const store &#x3D; useStore()</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 通过 storeToRefs 来拿到响应性的 message</span><br><span class="line">    const &#123; message &#125; &#x3D; storeToRefs(store)</span><br><span class="line">    &#x2F;&#x2F;const &#123; message &#125; &#x3D; toRefs(store) &#x2F;&#x2F;跟 storeToRefs 操作都一样，只不过用 Vue 的这个 API 来处理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    console.log(&#39;message&#39;, message.value)</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;要用时直接赋值即可</span><br><span class="line">    &#x2F;&#x2F;message.value &#x3D; &#39;New Message.&#39;</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">      message,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>批量修改<br>patch为增量修改。修改的内容会补充到state中  </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入对象修改，替换掉state中的message和randomMessages，其他不变</span></span><br><span class="line">store.$patch(&#123;</span><br><span class="line">  message: <span class="string">&#x27;New Message&#x27;</span>,</span><br><span class="line">  randomMessages: [<span class="string">&#x27;msg1&#x27;</span>, <span class="string">&#x27;msg2&#x27;</span>, <span class="string">&#x27;msg3&#x27;</span>],</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者传入函数修改</span></span><br><span class="line">store.$patch(<span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">  state.message = <span class="string">&#x27;New Message&#x27;</span></span><br><span class="line">  <span class="comment">// 数组改成用追加的方式，而不是重新赋值</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    state.randomMessages.push(<span class="string">`msg<span class="subst">$&#123;i + <span class="number">1</span>&#125;</span>`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//重新覆盖所有state的方式修改</span></span><br><span class="line">store.$state = &#123;</span><br><span class="line">  message: <span class="string">&#x27;New Message&#x27;</span>,</span><br><span class="line">  randomMessages: [<span class="string">&#x27;msg1&#x27;</span>, <span class="string">&#x27;msg2&#x27;</span>, <span class="string">&#x27;msg3&#x27;</span>],</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//直接重置的方式修改</span></span><br><span class="line">store.$reset()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//监听store的变化，进行回调。会在组件销毁时销毁</span></span><br><span class="line">store.$subscribe(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//监听store的变化，手动销毁</span></span><br><span class="line"><span class="comment">// 定义一个退订变量，它是一个函数</span></span><br><span class="line"><span class="keyword">const</span> unsubscribe = store.$subscribe(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;, &#123; detached: <span class="literal">true</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在合适的时期调用它，可以取消这个订阅</span></span><br><span class="line">unsubscribe()</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 多store  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">### 1、在scr/stores目录下建立多个文件，每个store一个。  </span></span><br></pre></td></tr></table></figure>
+<p>src<br>└─stores<br>  │ # 入口文件<br>  ├─index.ts<br>  │ # 多个 store<br>  ├─user.ts<br>  ├─game.ts<br>  └─news.ts</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">### 2、每个store文件中，导出use方法。  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">&#x2F;&#x2F;每个store的id必须唯一</span><br><span class="line">export const useUserStore &#x3D; defineStore(&#39;user&#39;, &#123;</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">### 3、在index.ts里统一输出。  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">export * from &#39;.&#x2F;user&#39;</span><br><span class="line">export * from &#39;.&#x2F;game&#39;</span><br><span class="line">export * from &#39;.&#x2F;news&#39;</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">### 4、使用时只需要从stores导入。  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import &#123; useUserStore, useGameStore &#125; from &#39;@&#x2F;stores&#39;</span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    &#x2F;&#x2F; 先从 userStore 获取用户信息（已经登录过，所以可以直接拿到）</span><br><span class="line">    const userStore &#x3D; useUserStore()</span><br><span class="line">    const &#123; userId, userName &#125; &#x3D; storeToRefs(userStore)</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 使用 gameStore 里的方法，传入用户 ID 去查询用户的游戏列表</span><br><span class="line">    const gameStore &#x3D; useGameStore()</span><br><span class="line">    const gameList &#x3D; ref&lt;GameItem[]&gt;([])</span><br><span class="line">    onMounted(async () &#x3D;&gt; &#123;</span><br><span class="line">      gameList.value &#x3D; await gameStore.queryGameList(userId.value)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">      userId,</span><br><span class="line">      userName,</span><br><span class="line">      gameList,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">&lt;br&gt;  </span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt;  </span><br><span class="line"></span><br><span class="line">## store之间相互调用  </span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">import &#123; defineStore &#125; from &#39;pinia&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导入用户信息的 Store 并启用它</span><br><span class="line">import &#123; useUserStore &#125; from &#39;.&#x2F;user&#39;</span><br><span class="line">const userStore &#x3D; useUserStore()</span><br><span class="line"></span><br><span class="line">export const useMessageStore &#x3D; defineStore(&#39;message&#39;, &#123;</span><br><span class="line">  state: () &#x3D;&gt; (&#123;</span><br><span class="line">    message: &#39;Hello World&#39;,</span><br><span class="line">  &#125;),</span><br><span class="line">  getters: &#123;</span><br><span class="line">    &#x2F;&#x2F; 这里我们就可以直接引用 userStore 上面的数据了</span><br><span class="line">    greeting: () &#x3D;&gt; &#96;Welcome, $&#123;userStore.userName&#125;!&#96;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">&#96;&#96;&#96;    </span><br><span class="line"></span><br><span class="line">&lt;br&gt;  </span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;br&gt; </span><br><span class="line">&lt;br&gt; </span><br><span class="line">&lt;br&gt; </span><br><span class="line">  </span><br><span class="line"># 十二、补遗  </span><br><span class="line">  </span><br><span class="line">使用了script-setup</span><br><span class="line">&#96;&#96;&#96;typescript</span><br><span class="line">&lt;!-- 使用 script-setup 格式 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;Child &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang&#x3D;&quot;ts&quot;&gt;</span><br><span class="line">&#x2F;&#x2F;无需再defineComponent和return，</span><br><span class="line">import Child from &#39;@cp&#x2F;Child.vue&#39;</span><br><span class="line"></span><br><span class="line">defineProps(&#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    type: String,</span><br><span class="line">    required: false,</span><br><span class="line">    default: &#39;Petter&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  userInfo: Object,</span><br><span class="line">  tags: Array</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const msg: string &#x3D; &#39;Hello World!&#39;;  </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取 emit</span><br><span class="line">const emit &#x3D; defineEmits([&#39;chang-name&#39;]);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 调用 emit</span><br><span class="line">emit(&#39;chang-name&#39;, &#39;Tom&#39;);</span><br><span class="line"></span><br><span class="line">const post &#x3D; await fetch(&#96;&#x2F;api&#x2F;post&#x2F;1&#96;).then((r) &#x3D;&gt; r.json())</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2022/09/22/typescript/typescript/" data-toggle="tooltip" data-placement="top" title="typescript知识点">Next post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+				
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">Tags</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#vue" title="vue">vue</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; アライさん 2022 
+                    <br>
+                    Powered by <a target="_blank" rel="noopener" href="http://www.hexo.io">Hexo</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Theme by <a target="_blank" rel="noopener" href="https://github.com/kinggozhang/hexo-theme-ace">ACE</a> 
+					
+					
+					<i class="fa fa-eye" id="leancounter"></i>
+					
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+   
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+
+<!-- Bootstrap Core JavaScript -->
+
+   
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+	
+<script src="/js/particles.js"></script>
+
+	
+<script src="/js/particles_config.js"></script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://araisann.github.io/2022/09/23/vue/vue%E5%AE%9E%E6%88%98/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://araisann.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

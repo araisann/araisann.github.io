@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ノート">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          typescript知识点 - null
+        
+    </title>
+
+    <link rel="canonical" href="https://araisann.github.io/2022/09/22/typescript/typescript/">
+
+    <!-- Bootstrap Core CSS -->
+
+   
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    
+
+    <!-- Custom CSS --> 
+    
+<link rel="stylesheet" href="/css/beantech.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/donate.css">
+
+	
+<link rel="stylesheet" href="/css/w3.css">
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/toc.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+    }
+   .post-heading{
+    padding:20px;
+    }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+</style>
+
+<header id="headerid" class="w3-indigo intro-header" style="position:relative;">
+    <!-- Signature -->
+	
+        <div class="container">
+            <div class=" row" >
+			
+			<canvas id="particles-js-canvas" style="position:absolute;z-index:1;top:0px;left:0px;" width="100%" height="50%"></canvas>
+			
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="z-index:2;">
+                
+                    <div class="post-heading" style="padding:40px">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#typescript" title="typescript">typescript</a>
+                            
+                        </div>
+                        <h1>typescript知识点</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by アライさん on
+                            2022年09月22日
+                        </span>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+  
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">アライさん ノート</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a  href="/">Homepage</a>
+                    </li>
+		    
+                    
+
+                        
+                        <li>
+           
+                            <a  href="https://araisann.github.io/tags/">Tags</a>
+                           
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>字符串        string<br>数值          number<br>布尔值        boolean<br>大整数        bigint<br>符号          symbol<br>不存在        null<br>未定义        undefined  </p>
+<h1 id="一、tsconfig-json"><a href="#一、tsconfig-json" class="headerlink" title="一、tsconfig.json"></a>一、tsconfig.json</h1><p>编译选项  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 基本选项 */</span></span><br><span class="line">    <span class="attr">&quot;target&quot;</span>: <span class="string">&quot;es5&quot;</span>,                       <span class="comment">// 指定 ECMAScript 目标版本: &#x27;ES3&#x27; (default), &#x27;ES5&#x27;, &#x27;ES6&#x27;/&#x27;ES2015&#x27;, &#x27;ES2016&#x27;, &#x27;ES2017&#x27;, or &#x27;ESNEXT&#x27;</span></span><br><span class="line">    <span class="attr">&quot;module&quot;</span>: <span class="string">&quot;commonjs&quot;</span>,                  <span class="comment">// 指定使用模块: &#x27;commonjs&#x27;, &#x27;amd&#x27;, &#x27;system&#x27;, &#x27;umd&#x27; or &#x27;es2015&#x27;</span></span><br><span class="line">    <span class="attr">&quot;lib&quot;</span>: [],                             <span class="comment">// 指定要包含在编译中的库文件</span></span><br><span class="line">    <span class="attr">&quot;allowJs&quot;</span>: <span class="literal">true</span>,                       <span class="comment">// 允许编译 javascript 文件</span></span><br><span class="line">    <span class="attr">&quot;checkJs&quot;</span>: <span class="literal">true</span>,                       <span class="comment">// 报告 javascript 文件中的错误</span></span><br><span class="line">    <span class="attr">&quot;jsx&quot;</span>: <span class="string">&quot;preserve&quot;</span>,                     <span class="comment">// 指定 jsx 代码的生成: &#x27;preserve&#x27;, &#x27;react-native&#x27;, or &#x27;react&#x27;</span></span><br><span class="line">    <span class="attr">&quot;declaration&quot;</span>: <span class="literal">true</span>,                   <span class="comment">// 生成相应的 &#x27;.d.ts&#x27; 文件</span></span><br><span class="line">    <span class="attr">&quot;sourceMap&quot;</span>: <span class="literal">true</span>,                     <span class="comment">// 生成相应的 &#x27;.map&#x27; 文件</span></span><br><span class="line">    <span class="attr">&quot;outFile&quot;</span>: <span class="string">&quot;./&quot;</span>,                       <span class="comment">// 将输出文件合并为一个文件</span></span><br><span class="line">    <span class="attr">&quot;outDir&quot;</span>: <span class="string">&quot;./&quot;</span>,                        <span class="comment">// 指定输出目录</span></span><br><span class="line">    <span class="attr">&quot;rootDir&quot;</span>: <span class="string">&quot;./&quot;</span>,                       <span class="comment">// 用来控制输出目录结构 --outDir.</span></span><br><span class="line">    <span class="attr">&quot;removeComments&quot;</span>: <span class="literal">true</span>,                <span class="comment">// 删除编译后的所有的注释</span></span><br><span class="line">    <span class="attr">&quot;noEmit&quot;</span>: <span class="literal">true</span>,                        <span class="comment">// 不生成输出文件</span></span><br><span class="line">    <span class="attr">&quot;importHelpers&quot;</span>: <span class="literal">true</span>,                 <span class="comment">// 从 tslib 导入辅助工具函数</span></span><br><span class="line">    <span class="attr">&quot;isolatedModules&quot;</span>: <span class="literal">true</span>,               <span class="comment">// 将每个文件作为单独的模块 （与 &#x27;ts.transpileModule&#x27; 类似）.</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 严格的类型检查选项 */</span></span><br><span class="line">    <span class="attr">&quot;strict&quot;</span>: <span class="literal">true</span>,                        <span class="comment">// 启用所有严格类型检查选项</span></span><br><span class="line">    <span class="attr">&quot;noImplicitAny&quot;</span>: <span class="literal">true</span>,                 <span class="comment">// 在表达式和声明上有隐含的 any类型时报错</span></span><br><span class="line">    <span class="attr">&quot;strictNullChecks&quot;</span>: <span class="literal">true</span>,              <span class="comment">// 启用严格的 null 检查</span></span><br><span class="line">    <span class="attr">&quot;noImplicitThis&quot;</span>: <span class="literal">true</span>,                <span class="comment">// 当 this 表达式值为 any 类型的时候，生成一个错误</span></span><br><span class="line">    <span class="attr">&quot;alwaysStrict&quot;</span>: <span class="literal">true</span>,                  <span class="comment">// 以严格模式检查每个模块，并在每个文件里加入 &#x27;use strict&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 额外的检查 */</span></span><br><span class="line">    <span class="attr">&quot;noUnusedLocals&quot;</span>: <span class="literal">true</span>,                <span class="comment">// 有未使用的变量时，抛出错误</span></span><br><span class="line">    <span class="attr">&quot;noUnusedParameters&quot;</span>: <span class="literal">true</span>,            <span class="comment">// 有未使用的参数时，抛出错误</span></span><br><span class="line">    <span class="attr">&quot;noImplicitReturns&quot;</span>: <span class="literal">true</span>,             <span class="comment">// 并不是所有函数里的代码都有返回值时，抛出错误</span></span><br><span class="line">    <span class="attr">&quot;noFallthroughCasesInSwitch&quot;</span>: <span class="literal">true</span>,    <span class="comment">// 报告 switch 语句的 fallthrough 错误。（即，不允许 switch 的 case 语句贯穿）</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 模块解析选项 */</span></span><br><span class="line">    <span class="attr">&quot;moduleResolution&quot;</span>: <span class="string">&quot;node&quot;</span>,            <span class="comment">// 选择模块解析策略： &#x27;node&#x27; (Node.js) or &#x27;classic&#x27; (TypeScript pre-1.6)</span></span><br><span class="line">    <span class="attr">&quot;baseUrl&quot;</span>: <span class="string">&quot;./&quot;</span>,                       <span class="comment">// 用于解析非相对模块名称的基目录</span></span><br><span class="line">    <span class="attr">&quot;paths&quot;</span>: &#123;&#125;,                           <span class="comment">// 模块名到基于 baseUrl 的路径映射的列表</span></span><br><span class="line">    <span class="attr">&quot;rootDirs&quot;</span>: [],                        <span class="comment">// 根文件夹列表，其组合内容表示项目运行时的结构内容</span></span><br><span class="line">    <span class="attr">&quot;typeRoots&quot;</span>: [],                       <span class="comment">// 包含类型声明的文件列表</span></span><br><span class="line">    <span class="attr">&quot;types&quot;</span>: [],                           <span class="comment">// 需要包含的类型声明文件名列表</span></span><br><span class="line">    <span class="attr">&quot;allowSyntheticDefaultImports&quot;</span>: <span class="literal">true</span>,  <span class="comment">// 允许从没有设置默认导出的模块中默认导入。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Source Map Options */</span></span><br><span class="line">    <span class="attr">&quot;sourceRoot&quot;</span>: <span class="string">&quot;./&quot;</span>,                    <span class="comment">// 指定调试器应该找到 TypeScript 文件而不是源文件的位置</span></span><br><span class="line">    <span class="attr">&quot;mapRoot&quot;</span>: <span class="string">&quot;./&quot;</span>,                       <span class="comment">// 指定调试器应该找到映射文件而不是生成文件的位置</span></span><br><span class="line">    <span class="attr">&quot;inlineSourceMap&quot;</span>: <span class="literal">true</span>,               <span class="comment">// 生成单个 soucemaps 文件，而不是将 sourcemaps 生成不同的文件</span></span><br><span class="line">    <span class="attr">&quot;inlineSources&quot;</span>: <span class="literal">true</span>,                 <span class="comment">// 将代码与 sourcemaps 生成到一个文件中，要求同时设置了 --inlineSourceMap 或 --sourceMap 属性</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 其他选项 */</span></span><br><span class="line">    <span class="attr">&quot;experimentalDecorators&quot;</span>: <span class="literal">true</span>,        <span class="comment">// 启用装饰器</span></span><br><span class="line">    <span class="attr">&quot;emitDecoratorMetadata&quot;</span>: <span class="literal">true</span>          <span class="comment">// 为装饰器提供元数据的支持</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"># 二、导入导出、文件模块  </span><br><span class="line">直接在ts文件中定义变量，如```const foo = 123;```，将变成全局变量。  </span><br><span class="line">如ts文件的根级别含有export或者import，那么相关变量就会变成本地作用域。  </span><br><span class="line">如```export const foo = 123;```，无法直接在其他文件中访问。  </span><br><span class="line">需要  </span><br><span class="line">```typescript</span><br><span class="line"><span class="comment">//从foo.ts中导入</span></span><br><span class="line">import &#123;foo&#125; from &#x27;./foo&#x27;;</span><br><span class="line">const bar = foo;</span><br><span class="line">```  </span><br><span class="line">  </span><br><span class="line">```typescript</span><br><span class="line">export const someVar = 123; </span><br><span class="line">export type someType = &#123; foo:string; &#125;;</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">const someVar = 123;</span><br><span class="line">type someType = &#123; foo:string; &#125;;</span><br><span class="line">export &#123;someVar,someType&#125;;</span><br><span class="line"><span class="comment">//重命名后导出</span></span><br><span class="line">export &#123;someVar as aDiffname , someType&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入</span></span><br><span class="line">import &#123; someVar,  someType as newName &#125; from &#x27;./foo&#x27;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入全部，使用foo.someVar访问</span></span><br><span class="line">import * as foo from &#x27;./foo&#x27;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从foo导入后，只导出someVar</span></span><br><span class="line">export &#123;someVar&#125; from &#x27;./foo&#x27;;</span><br><span class="line"><span class="comment">//从foo导入后，全部再导出</span></span><br><span class="line">export * from &#x27;./foo&#x27;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-----------------------------------</span></span><br><span class="line"><span class="comment">//默认导出</span></span><br><span class="line">export default (someVar = 123);</span><br><span class="line">export default function someFunction()&#123;&#125;</span><br><span class="line">export default class someClass&#123;&#125;</span><br><span class="line"><span class="comment">//导入默认导出，默认导出，无法使用&#123;&#125;的方式导入，只能全部导入</span></span><br><span class="line">import someLocalname from &#x27;./foo&#x27;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当前目录</span></span><br><span class="line">&#x27;./foo&#x27;</span><br><span class="line"><span class="comment">//上级目录</span></span><br><span class="line">&#x27;../foo&#x27;</span><br><span class="line"><span class="comment">//兄弟目录bother</span></span><br><span class="line">&#x27;../bother/foo&#x27;</span><br><span class="line"></span><br><span class="line"><span class="comment">//导入路径也支持动态查找，会一层层往上找</span></span><br><span class="line">import * as foo from &#x27;foo&#x27;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//-----------------------------------</span></span><br><span class="line"><span class="comment">//支持但不推荐</span></span><br><span class="line">namespace Utility &#123;</span><br><span class="line">  export function log(msg) &#123;</span><br><span class="line">    console.log(msg);</span><br><span class="line">  &#125;</span><br><span class="line">  export function error(msg) &#123;</span><br><span class="line">    console.log(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// usage</span></span><br><span class="line">Utility.log(&#x27;Call me&#x27;);</span><br><span class="line">Utility.error(&#x27;maybe&#x27;);</span><br><span class="line">```  </span><br><span class="line">  </span><br><span class="line">## global.d.ts 全局命名空间  </span><br><span class="line">  </span><br><span class="line">## declare动态查找  </span><br><span class="line">支持引入任何文件。  </span><br><span class="line">```typescript</span><br><span class="line"><span class="comment">//在global.d.ts中添加如下代码，动态引入所有css文件</span></span><br><span class="line">declare module &#x27;*.css&#x27;;</span><br><span class="line"><span class="comment">//之后就可以</span></span><br><span class="line">import * as foo from &#x27;./some/file.css&#x27;</span><br></pre></td></tr></table></figure>
+
+<br>  
+<br>  
+<br>  
+
+<h1 id="三、基本类型"><a href="#三、基本类型" class="headerlink" title="三、基本类型"></a>三、基本类型</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num: <span class="built_in">number</span> = <span class="number">123</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>(<span class="params">num:<span class="built_in">number</span></span>):<span class="title">number</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> boolArray: <span class="built_in">string</span>[];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Name &#123;</span><br><span class="line">    first:<span class="built_in">string</span>;</span><br><span class="line">    second:<span class="built_in">string</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> name:Name;</span><br><span class="line"><span class="comment">//等同</span></span><br><span class="line"><span class="keyword">let</span> name:&#123;</span><br><span class="line">    first:<span class="built_in">string</span>;</span><br><span class="line">    second:<span class="built_in">string</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//first和second都需要赋值</span></span><br><span class="line">name = &#123;</span><br><span class="line">    first:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    second:<span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## 特殊类型any、null、undefined、void  </span></span><br><span class="line"><span class="string">any:任何类型，不做类型检查。  </span></span><br><span class="line"><span class="string">null和undefined可以被赋予任何类型。  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">let</span> num:<span class="built_in">number</span>;</span><br><span class="line"><span class="keyword">let</span> str:<span class="built_in">string</span>;</span><br><span class="line">num = <span class="literal">null</span>;</span><br><span class="line">str = <span class="literal">undefined</span>;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">void:代表没有返回值。  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message:<span class="built_in">string</span></span>):<span class="title">void</span></span>&#123;&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## 范型    </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="comment">//T的类型由传入参时确定，可以支持传入不同的类型，不影响操作</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>&lt;<span class="title">T</span>&gt;(<span class="params">items:T[]</span>):<span class="title">T</span>[]</span>&#123;&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## 联合类型，多种类型之一  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="comment">//支持传入2种类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcname</span>(<span class="params">parm: <span class="built_in">string</span>[] | <span class="built_in">string</span></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//对类型进行判断</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> parm === <span class="string">&#x27;string&#x27;</span>) &#123;&#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## 交差类型  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">object</span>, <span class="title">U</span> <span class="title">extends</span> <span class="title">object</span>&gt;(<span class="params">first: T, second: U</span>): <span class="title">T</span> &amp; <span class="title">U</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = &lt;T &amp; U&gt;&#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> id <span class="keyword">in</span> first) &#123;</span><br><span class="line">    (&lt;T&gt;result)[id] = first[id];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> id <span class="keyword">in</span> second) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!result.hasOwnProperty(id)) &#123;</span><br><span class="line">      (&lt;U&gt;result)[id] = second[id];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> x = extend(&#123; a: <span class="string">&#x27;hello&#x27;</span> &#125;, &#123; b: <span class="number">42</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在 x 拥有了 a 属性与 b 属性</span></span><br><span class="line"><span class="keyword">const</span> a = x.a;</span><br><span class="line"><span class="keyword">const</span> b = x.b;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## 元组类型Tuple  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">let</span> nameNumber: [<span class="built_in">string</span>,<span class="built_in">number</span>];</span><br><span class="line"><span class="keyword">const</span> [name,num] = nameNumber;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">## 类型别名  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">type</span> StrOrNum = <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line"><span class="comment">//sample可以储存string或number</span></span><br><span class="line"><span class="keyword">let</span> sample: StrOrNum;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Text = <span class="built_in">string</span> | &#123; count:<span class="built_in">number</span> &#125;;</span><br><span class="line"><span class="keyword">type</span> Coordinates = [<span class="built_in">number</span>,<span class="built_in">string</span>];</span><br><span class="line"><span class="keyword">type</span> Callback = <span class="function">(<span class="params">data:<span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 四、@types  </span></span><br><span class="line"><span class="string">使用@type来使用JavaScript库  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>shell</span><br><span class="line">npm install <span class="meta">@types</span>/jquery --save-dev</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">配合tsconfig.json，控制  </span></span><br><span class="line"><span class="string">只允许使用jquery的@type包，其他的即便安装了也不行。  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;types&quot;</span> : [</span><br><span class="line">      <span class="string">&quot;jquery&quot;</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 五、使用编译时不存在，但实际环境中可用的代码  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">var</span> foo: <span class="built_in">any</span>;</span><br><span class="line">foo = <span class="number">123</span>; <span class="comment">// allow</span></span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">建议放入独立的global.d.ts 或者 vendor.d.ts中。  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 六、接口  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">interface</span> Point &#123;</span><br><span class="line">  x: <span class="built_in">number</span>,</span><br><span class="line">  y: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">const</span> myPoint: Point</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lib b.d.ts</span></span><br><span class="line"><span class="keyword">interface</span> Point &#123;</span><br><span class="line">  z: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接口可以被轻松扩展</span></span><br><span class="line">myPoint.z</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//不建议使用如下方式定义接口，因为不好扩展</span></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">const</span> myPoint: &#123; x: <span class="built_in">number</span>; y: <span class="built_in">number</span> &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>用类实现接口，可以很好的保持同步，一旦接口改动，类不同步就会报错。  </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Point &#123;</span><br><span class="line">    x:<span class="built_in">number</span>;</span><br><span class="line">    y:<span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> myPoint <span class="keyword">implements</span> Point&#123;</span><br><span class="line">    x:<span class="built_in">number</span>;</span><br><span class="line">    <span class="comment">//不定义y就会报错</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> foo: Point = <span class="keyword">new</span> MyPoint();</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 七、enum枚举  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="built_in">enum</span> Color&#123;</span><br><span class="line">    Red,</span><br><span class="line">    Blue,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> col = Color.Red;</span><br><span class="line">col = <span class="number">1</span>;<span class="comment">//col为Colors.Blue</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">enum</span> Tristate &#123;</span><br><span class="line">  False = <span class="number">3</span>,</span><br><span class="line">  True,<span class="comment">//4</span></span><br><span class="line">  Unknown<span class="comment">//5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Tristate[<span class="number">3</span>]); <span class="comment">// &#x27;False&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(Tristate[<span class="string">&#x27;False&#x27;</span>]); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(Tristate[Tristate.False]); <span class="comment">// &#x27;False&#x27; because `Tristate.False == 3`</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------</span></span><br><span class="line"><span class="comment">//字符串枚举</span></span><br><span class="line"><span class="built_in">enum</span> Tristate &#123;</span><br><span class="line">  A = <span class="string">&#x27;你好&#x27;</span>,</span><br><span class="line">  B = <span class="string">&#x27;你坏&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;你好&#x27;</span> === Tristate.A);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------</span></span><br><span class="line"><span class="comment">//可以使用常量枚举</span></span><br><span class="line"><span class="keyword">const</span> enmu Tristate&#123;</span><br><span class="line">    A:<span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> a = Tristate.A;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------</span></span><br><span class="line"><span class="comment">//为枚举定义一些操作</span></span><br><span class="line"><span class="built_in">enum</span> Weekday &#123;</span><br><span class="line">  Monday,</span><br><span class="line">  Tuesday,</span><br><span class="line">  Wednesday,</span><br><span class="line">  Thursday,</span><br><span class="line">  Friday,</span><br><span class="line">  Saturday,</span><br><span class="line">  Sunday</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> Weekday &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isBusinessDay</span>(<span class="params">day: Weekday</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (day) &#123;</span><br><span class="line">      <span class="keyword">case</span> Weekday.Saturday:</span><br><span class="line">      <span class="keyword">case</span> Weekday.Sunday:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mon = Weekday.Monday;</span><br><span class="line"><span class="built_in">console</span>.log(Weekday.isBusinessDay(mon)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------</span></span><br><span class="line"><span class="comment">//拆分枚举</span></span><br><span class="line"><span class="built_in">enum</span> Color&#123;</span><br><span class="line">    Red,</span><br><span class="line">    Green,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">enum</span> Color&#123;</span><br><span class="line">    <span class="comment">//此处一定要指定具体的值，防止和之前的值冲突</span></span><br><span class="line">    DarkRed = <span class="number">2</span>,</span><br><span class="line">    DartGreen,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>  
+<br>  
+<br>  
+
+<h1 id="八、lib-d-ts"><a href="#八、lib-d-ts" class="headerlink" title="八、lib.d.ts"></a>八、lib.d.ts</h1><p>lib.d.ts包含 JavaScript 运行时以及 DOM 中存在各种常见的环境声明。<br>它自动包含在 TypeScript 项目的编译上下文中。<br><br><br><br><br><br>  </p>
+<h1 id="九、函数"><a href="#九、函数" class="headerlink" title="九、函数"></a>九、函数</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">sampleParameter:&#123;bar:<span class="built_in">number</span>&#125;, parm?: <span class="built_in">string</span>, parm2:<span class="built_in">string</span> = &#x27;&#x27;</span>)</span>&#123;&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">foo(&#123;bar:<span class="number">100</span>&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Foo&#123;</span><br><span class="line">    foo:<span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">sample:Foo</span>):<span class="title">Foo</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sample;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line"><span class="built_in">console</span>.log(foo(&#123;foo:<span class="string">&#x27;你好&#x27;</span>&#125;).foo);<span class="comment">//打印你好</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//动态参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">...args: <span class="built_in">number</span>[]</span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//------------------------------------</span></span><br><span class="line"><span class="comment">//函数声明</span></span><br><span class="line"><span class="comment">//接受number传参，返回number</span></span><br><span class="line"><span class="keyword">type</span> LongHand = &#123;</span><br><span class="line">    (a:<span class="built_in">number</span>):<span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line"><span class="keyword">type</span> LongHand = <span class="function">(<span class="params">a: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//支持重载的函数声明</span></span><br><span class="line"><span class="comment">//接受number或string传参，返回number或string</span></span><br><span class="line"><span class="keyword">type</span> LongHand = &#123;</span><br><span class="line">  (a: <span class="built_in">number</span>): <span class="built_in">number</span>;</span><br><span class="line">  (a: <span class="built_in">string</span>): <span class="built_in">string</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="string">``</span><span class="string">`    </span></span><br><span class="line"><span class="string">TypeScript支持函数重载  </span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string"># 十、类型判断  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">typeof</span> x === <span class="string">&#x27;string&#x27;</span></span><br><span class="line">arg <span class="keyword">instanceof</span> ClassName</span><br><span class="line"></span><br><span class="line"><span class="comment">//in</span></span><br><span class="line"><span class="keyword">interface</span> A &#123; x:<span class="built_in">number</span>&#125;</span><br><span class="line"><span class="keyword">interface</span> B &#123; b:<span class="built_in">number</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doStuff</span>(<span class="params">q:A|B</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( <span class="string">&#x27;x&#x27;</span> <span class="keyword">in</span> q)&#123;</span><br><span class="line">        <span class="comment">//是A</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//-------------------------------</span></span><br><span class="line"><span class="comment">//自定义的类型检查</span></span><br><span class="line"><span class="comment">// 仅仅是一个 interface</span></span><br><span class="line"><span class="keyword">interface</span> Foo &#123;</span><br><span class="line">  foo: <span class="built_in">number</span>;</span><br><span class="line">  common: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Bar &#123;</span><br><span class="line">  bar: <span class="built_in">number</span>;</span><br><span class="line">  common: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用户自己定义的类型保护！</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFoo</span>(<span class="params">arg: Foo | Bar</span>): <span class="title">arg</span> <span class="title">is</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (arg <span class="keyword">as</span> Foo).foo !== <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用户自己定义的类型保护使用用例：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doStuff</span>(<span class="params">arg: Foo | Bar</span>) </span>&#123;</span><br><span class="line"><span class="comment">//这里无法使用instanceof，因为Foo和Bar不是class</span></span><br><span class="line">  <span class="keyword">if</span> (isFoo(arg)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arg.foo); <span class="comment">// ok</span></span><br><span class="line">    <span class="built_in">console</span>.log(arg.bar); <span class="comment">// Error</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arg.foo); <span class="comment">// Error</span></span><br><span class="line">    <span class="built_in">console</span>.log(arg.bar); <span class="comment">// ok</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`    </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string">&lt;br&gt;  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 十一、字面量类型  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>typescript</span><br><span class="line"><span class="keyword">let</span> foo:<span class="string">&#x27;Hello&#x27;</span>;</span><br><span class="line">foo = <span class="string">&#x27;Bar&#x27;</span>;<span class="comment">//报错，因为foo的类型是字符串Hello</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//实际用处</span></span><br><span class="line"><span class="keyword">type</span> CardinalDirection = <span class="string">&#x27;North&#x27;</span> | <span class="string">&#x27;East&#x27;</span> | <span class="string">&#x27;South&#x27;</span> | <span class="string">&#x27;West&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">direction: CardinalDirection</span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">move(<span class="string">&#x27;North&#x27;</span>);</span><br><span class="line">move(<span class="string">&#x27;Nurth&#x27;</span>);<span class="comment">//报错，因为direction的类型只有那4种字符串</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> OneToFive = <span class="number">1</span> | <span class="number">2</span> | <span class="number">3</span> | <span class="number">4</span> | <span class="number">5</span>;</span><br><span class="line"><span class="keyword">type</span> Bools = <span class="literal">true</span> | <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<br>  
+<br>  
+<br>  
+
+<h1 id="十二、只读属性"><a href="#十二、只读属性" class="headerlink" title="十二、只读属性"></a>十二、只读属性</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">config: &#123; <span class="keyword">readonly</span> bar: <span class="built_in">number</span>,  bas: <span class="built_in">number</span> &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//无法修改传入的bar不允许修改，bas允许</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------</span></span><br><span class="line"><span class="keyword">type</span> Foo = &#123;</span><br><span class="line">    <span class="keyword">readonly</span> bar:<span class="built_in">number</span>;</span><br><span class="line">    bas:<span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> foo:Foo = &#123;bar:<span class="number">123</span>,bas:<span class="number">456</span>&#125;;</span><br><span class="line"></span><br><span class="line">foo.bas = <span class="number">10</span>;<span class="comment">//不允许修改bar</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> FooReadonly = Readonly&lt;Foo&gt;;</span><br><span class="line"><span class="keyword">const</span> fooReadonly: FooReadonly = &#123; bar: <span class="number">123</span>, bas: <span class="number">456</span> &#125;;</span><br><span class="line"><span class="comment">//fooReadonly的任何属性都不允许修改了</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//----------------------------------</span></span><br><span class="line"><span class="keyword">class</span> Foo&#123;</span><br><span class="line">    <span class="comment">//bar无法修改</span></span><br><span class="line">    <span class="keyword">readonly</span> bar = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//baz在constructor初始化之后无法修改</span></span><br><span class="line">    <span class="keyword">readonly</span> baz: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">this</span>.baz = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>  
+<br>  
+<br>  
+
+<h1 id="十三、范型"><a href="#十三、范型" class="headerlink" title="十三、范型"></a>十三、范型</h1><p>配合axios使用 </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> ResponseData&lt;T = any&gt; &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 状态码</span></span><br><span class="line"><span class="comment">   * @type &#123; number &#125;</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  code: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 数据</span></span><br><span class="line"><span class="comment">   * @type &#123; T &#125;</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  result: T;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 消息</span></span><br><span class="line"><span class="comment">   * @type &#123; string &#125;</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  message: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//axios.ts</span></span><br><span class="line"><span class="keyword">import</span> Ax <span class="keyword">from</span> <span class="string">&#x27;./axios&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; ResponseData &#125; <span class="keyword">from</span> <span class="string">&#x27;./interface.ts&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getUser</span>&lt;<span class="title">T</span>&gt;(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Ax.get&lt;ResponseData&lt;T&gt;&gt;(<span class="string">&#x27;/somepath&#x27;</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> res.data)</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(err));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// user 被推断出为</span></span><br><span class="line">  <span class="comment">// &#123;</span></span><br><span class="line">  <span class="comment">//  code: number,</span></span><br><span class="line">  <span class="comment">//  result: &#123; name: string, age: number &#125;,</span></span><br><span class="line">  <span class="comment">//  message: string</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line">  <span class="keyword">const</span> user = <span class="keyword">await</span> getUser&lt;User&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2022/09/23/vue/vue实战/" data-toggle="tooltip" data-placement="top" title="vue实战">&larr; Previous post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2022/09/16/react/react_node.js开发实战/" data-toggle="tooltip" data-placement="top" title="react_node.js开发实战">Next post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+				
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">Tags</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#typescript" title="typescript">typescript</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; アライさん 2022 
+                    <br>
+                    Powered by <a target="_blank" rel="noopener" href="http://www.hexo.io">Hexo</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Theme by <a target="_blank" rel="noopener" href="https://github.com/kinggozhang/hexo-theme-ace">ACE</a> 
+					
+					
+					<i class="fa fa-eye" id="leancounter"></i>
+					
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+   
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+
+<!-- Bootstrap Core JavaScript -->
+
+   
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+	
+<script src="/js/particles.js"></script>
+
+	
+<script src="/js/particles_config.js"></script>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://araisann.github.io/2022/09/22/typescript/typescript/index.html/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://araisann.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

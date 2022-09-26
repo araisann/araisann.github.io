@@ -232,6 +232,135 @@
 
 
 <div class="w3-row-padding">
+	<a href="/2019/10/23/其他技术/hexo全局_config/">
+        <h2 class="post-title">
+            hexo全局_config.yml配置
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/23/其他技术/hexo全局_config/">
+
+        <div class="post-content-preview">
+            
+
+hexo _config.yml123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475title: アライさん ノートsubtitle: アライさん なのだ.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月23日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/23/其他技术/使用SSH_Key连接Github/">
+        <h2 class="post-title">
+            使用SSH连接Github
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/23/其他技术/使用SSH_Key连接Github/">
+
+        <div class="post-content-preview">
+            
+
+创建一个SSH key1ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
+提示输入ssh key的名字Enter passphrase，提示输入ssh时的密码（可以直接按回车无需密码）  
+进入/home/user/.ssh/目录复制刚创建的、带pub后缀的key文件中的内容。粘贴到github的  设置  -  SSH.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月23日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/flutter/动画/">
+        <h2 class="post-title">
+            Flutter动画
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/flutter/动画/">
+
+        <div class="post-content-preview">
+            12345678910111213141516171819202122232425262728class _pageState extends State&lt;Page&gt; with SingleTickerProviderStateMixin &#123;    Animation _doubleTween;  Animation _colorTween;  Animation.........
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
+	<a href="/2019/10/22/flutter/Flutter状态栏高度/">
+        <h2 class="post-title">
+            状态栏高度
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+	</a>
+
+<div>
+
+    <a href="/2019/10/22/flutter/Flutter状态栏高度/">
+
+        <div class="post-content-preview">
+            
+
+MediaQuery.of(context).padding.top;
+...
+        </div>
+    </a>
+    
+        <p class="post-meta">
+            Posted by アライさん on
+            2019年10月22日
+        </p>
+    
+
+</div>
+</div>
+<hr>
+
+
+<div class="w3-row-padding">
 	<a href="/2019/10/22/flutter/Fluro路由管理/">
         <h2 class="post-title">
             Fluro路由管理
@@ -432,136 +561,6 @@ net_utils.dart123456789101112131415161718192021.........
 <hr>
 
 
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Flutter自定义Dialog对话框/">
-        <h2 class="post-title">
-            自定义Dialog对话框
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Flutter自定义Dialog对话框/">
-
-        <div class="post-content-preview">
-            
-
-123456789101112131415showDialog(            context: context,            barrierDismissible: false,            builder: (BuildContext context) &#123;              return CustomDialog(         .........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/自定义AppBar/">
-        <h2 class="post-title">
-            自定义AppBar
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/自定义AppBar/">
-
-        <div class="post-content-preview">
-            
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647import &#x27;package:flutter/material.dart&#x27;;///带返回按钮的简单appbarclass CustomAppBar extends StatelessWidge.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Scoped_Model/">
-        <h2 class="post-title">
-            Scoped_Model：全局State管理
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Scoped_Model/">
-
-        <div class="post-content-preview">
-            多个model合并1class MainModel extends Model with AModel,BModel,CModel&#123;&#125;
-并在flutter工程根目录下创建analysis_options.yaml  
-123analyzer:  errors:    mixin_inherits_from_not_object: ignore
-
-
-使用这种方法可是使.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
-<div class="w3-row-padding">
-	<a href="/2019/10/22/flutter/Flare制作不需要代码交互的动画/">
-        <h2 class="post-title">
-            Flare动画
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-	</a>
-
-<div>
-
-    <a href="/2019/10/22/flutter/Flare制作不需要代码交互的动画/">
-
-        <div class="post-content-preview">
-            Flare制作部分在https://www.2dimensions.com 上创建自己的flare，拖动调整关键帧，形成动画。菱形代表关键帧。动画制作成功后，左下侧面板Untitled，改成自定义的动画名称比如anime。export动画，选择Binary，打开Duration from Last KeyFrame。下载生成的flr文件。  
-Flutter代码部分在根目录下创建flr.........
-        </div>
-    </a>
-    
-        <p class="post-meta">
-            Posted by アライさん on
-            2019年10月22日
-        </p>
-    
-
-</div>
-</div>
-<hr>
-
-
 
 <!-- Pager -->
 
@@ -685,11 +684,15 @@ Flutter代码部分在根目录下创建flr.........
             
         
             
-            <a href="/tags/#react" title="react" rel="1">react</a>
+            <a href="/tags/#react" title="react" rel="3">react</a>
             
         
             
-            <a href="/tags/#vue" title="vue" rel="9">vue</a>
+            <a href="/tags/#vue" title="vue" rel="10">vue</a>
+            
+        
+            
+            <a href="/tags/#typescript" title="typescript" rel="1">typescript</a>
             
         
     </div>
@@ -703,23 +706,23 @@ Flutter代码部分在根目录下创建flr.........
     <ul>
       
         <li>
+          <a href="/2022/09/23/vue/vue%E5%AE%9E%E6%88%98/">vue实战</a>
+        </li>
+      
+        <li>
+          <a href="/2022/09/22/typescript/typescript/">typescript知识点</a>
+        </li>
+      
+        <li>
+          <a href="/2022/09/16/react/react_node.js%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/">react_node.js开发实战</a>
+        </li>
+      
+        <li>
+          <a href="/2022/09/13/react/redux/">redux</a>
+        </li>
+      
+        <li>
           <a href="/2022/09/09/react/react%E5%9F%BA%E7%A1%80/">react基础</a>
-        </li>
-      
-        <li>
-          <a href="/2022/08/23/vue/web%E5%9F%BA%E7%A1%80/">web基础</a>
-        </li>
-      
-        <li>
-          <a href="/2022/08/18/vue/ts%E4%B8%8Ejs/">typescript与javascript</a>
-        </li>
-      
-        <li>
-          <a href="/2022/08/16/vue/vite%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">vite构建项目</a>
-        </li>
-      
-        <li>
-          <a href="/2022/08/16/vue/vuex%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">vuex状态管理</a>
         </li>
       
     </ul>
